@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation - PromptStack</title>
+  <meta name="description" content="Documentation for PromptStack - The AI workstation for builders">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Use same CSS variables as main site */
+    :root {
+      --bg-primary: #0c0d0f;
+      --bg-secondary: #14161a;
+      --bg-elevated: #1a1d22;
+      --text-heading: #ffffff;
+      --text-body: #b4b9c4;
+      --text-muted: #6b7280;
+      --accent: #22c55e;
+      --accent-hover: #4ade80;
+      --border-default: rgba(255, 255, 255, 0.1);
+      --border-subtle: rgba(255, 255, 255, 0.05);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, monospace;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-body);
+    }
+
+    .docs-container {
+      display: flex;
+      max-width: 1400px;
+      margin: 100px auto 0;
+      padding: 0 2rem;
+      gap: 3rem;
+    }
+
+    .docs-sidebar {
+      position: sticky;
+      top: 100px;
+      width: 250px;
+      flex-shrink: 0;
+      height: fit-content;
+    }
+
+    .docs-sidebar h3 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .docs-sidebar nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .docs-sidebar nav li {
+      margin-bottom: 0.5rem;
+    }
+
+    .docs-sidebar nav a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: var(--text-body);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .docs-sidebar nav a:hover {
+      background: rgba(34, 197, 94, 0.1);
+      color: var(--accent, #22c55e);
+    }
+
+    .docs-sidebar nav a.active {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--accent, #22c55e);
+      font-weight: 500;
+    }
+
+    .docs-content {
+      flex: 1;
+      min-width: 0;
+      max-width: 800px;
+      padding-bottom: 4rem;
+    }
+
+    .docs-content section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 100px;
+    }
+
+    .docs-content h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .docs-content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text-heading);
+    }
+
+    .docs-content h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-heading);
+    }
+
+    .docs-content p {
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--text-body);
+      font-size: 1.05rem;
+    }
+
+    .docs-content ul, .docs-content ol {
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--text-body);
+      padding-left: 1.5rem;
+    }
+
+    .docs-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .docs-content code {
+      background: rgba(34, 197, 94, 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      color: var(--accent, #22c55e);
+    }
+
+    .docs-content pre {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-default);
+    }
+
+    .docs-content pre code {
+      background: none;
+      padding: 0;
+      color: #e2e8f0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: var(--bg-secondary);
+      border: none;
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      background: var(--bg-elevated);
+      transform: translateY(-2px);
+    }
+
+    .feature-card h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-heading);
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      color: var(--bg-primary);
+    }
+
+    .callout {
+      background: var(--bg-secondary);
+      border: none;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .callout h4 {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 968px) {
+      .docs-container {
+        flex-direction: column;
+        margin-top: 80px;
+      }
+
+      .docs-sidebar {
+        position: static;
+        width: 100%;
+        border-bottom: 1px solid var(--border-default);
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .docs-content {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+          <span class="logo-icon terminal-prompt">&gt;-</span>
+          <span class="logo-text">PromptStack</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/#how-it-works">How it works</a>
+        <a href="/#what-you-can-build">What you can build</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/docs.html" style="color: var(--accent, #22c55e);">Docs</a>
+        <a href="https://github.com/prompt-stack/releases/releases/latest" class="nav-cta">Download</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Docs Layout -->
+  <div class="docs-container">
+    <!-- Sidebar Navigation -->
+    <aside class="docs-sidebar">
+      <h3>Documentation</h3>
+      <nav>
+        <ul>
+          <li><a href="#getting-started" class="active">Getting Started</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#first-run">First Run</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#chat">Chat Interface</a></li>
+          <li><a href="#files">File Explorer</a></li>
+          <li><a href="#terminal">Terminal</a></li>
+          <li><a href="#git">Git Integration</a></li>
+          <li><a href="#cloud-sync">Cloud Sync</a></li>
+          <li><a href="#troubleshooting">Troubleshooting</a></li>
+          <li><a href="#faq-docs">FAQ</a></li>
+          <li><a href="#community">Community</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+      <section id="getting-started">
+        <h1>Documentation</h1>
+        <p>Welcome to PromptStack! This guide will help you get started with the AI workstation for builders.</p>
+      </section>
+
+      <section id="installation">
+        <h2>Installation</h2>
+        <h3>System Requirements</h3>
+        <ul>
+          <li><strong>macOS:</strong> Version 12 (Monterey) or later</li>
+          <li><strong>Memory:</strong> 4GB RAM minimum (8GB recommended)</li>
+          <li><strong>Storage:</strong> 500MB available space</li>
+          <li><strong>Internet:</strong> Required for AI provider connections</li>
+        </ul>
+
+        <h3>Download & Install</h3>
+        <ol>
+          <li>Download the latest version from <a href="https://github.com/prompt-stack/releases/releases/latest" target="_blank">GitHub Releases</a></li>
+          <li>Open the downloaded <code>.dmg</code> file</li>
+          <li>Drag PromptStack to your Applications folder</li>
+          <li>Launch PromptStack from Applications or Spotlight</li>
+        </ol>
+
+        <div class="callout">
+          <h4>First Launch Security</h4>
+          <p>If macOS blocks the app, go to System Settings → Privacy & Security and click "Open Anyway" to allow PromptStack to run.</p>
+        </div>
+      </section>
+
+      <section id="first-run">
+        <h2>First Run</h2>
+        <p>When you first open PromptStack, you'll see the main interface with three panels:</p>
+
+        <ul>
+          <li><strong>Left Panel:</strong> File Explorer - Browse and manage your project files</li>
+          <li><strong>Middle Panel:</strong> Content Editor - View and edit files with syntax highlighting</li>
+          <li><strong>Right Panel:</strong> Terminal & AI Chat - Execute commands and chat with AI agents</li>
+        </ul>
+
+        <h3>Setting Up AI Providers</h3>
+        <p>To use AI features, you'll need to configure at least one provider:</p>
+        <ol>
+          <li>Open Settings from the top menu</li>
+          <li>Navigate to the "AI Providers" section</li>
+          <li>Enter your API key for Claude, Codex, Gemini, or another supported provider</li>
+          <li>Save your settings</li>
+        </ol>
+
+        <p>Supported providers:</p>
+        <ul>
+          <li><strong>Claude</strong> - Anthropic's AI assistant</li>
+          <li><strong>Codex</strong> - OpenAI's code model</li>
+          <li><strong>Gemini</strong> - Google's AI model</li>
+          <li><strong>Ollama</strong> - Local AI models</li>
+        </ul>
+      </section>
+
+      <section id="features">
+        <h2>Features</h2>
+        <p>PromptStack combines a powerful IDE with AI-native workflows. Here's what you can do:</p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>AI Chat</h4>
+            <p>Chat with Claude, Codex, Gemini, and other AI providers directly in your workspace.</p>
+          </div>
+          <div class="feature-card">
+            <h4>File Management</h4>
+            <p>Browse, edit, and preview 33+ file formats including code, docs, images, and data files.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Prompt Stacks</h4>
+            <p>Create and run reusable automation workflows with pre-configured runtimes.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Multi-Format Preview</h4>
+            <p>View JSON, Markdown, PDFs, images, videos, spreadsheets, and more without switching apps.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Voice Notes</h4>
+            <p>Record and transcribe voice notes with AI-powered transcription.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Usage Tracking</h4>
+            <p>Monitor token usage and costs across all AI providers.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="chat">
+        <h2>Chat Interface</h2>
+        <p>The chat interface lets you interact with AI agents while maintaining full context of your project.</p>
+
+        <h3>Starting a Conversation</h3>
+        <ol>
+          <li>Open the Terminal panel (right side)</li>
+          <li>Click the "Chat" tab to switch to headless chat mode</li>
+          <li>Select your AI provider from the dropdown</li>
+          <li>Type your message and press Enter</li>
+        </ol>
+
+        <h3>Chat Features</h3>
+        <ul>
+          <li><strong>File Context:</strong> Attach files to provide context to the AI</li>
+          <li><strong>Tool Use:</strong> AI can execute tools and commands on your behalf</li>
+          <li><strong>Streaming Responses:</strong> See AI responses in real-time</li>
+          <li><strong>Thinking Blocks:</strong> View Claude's internal reasoning process</li>
+          <li><strong>Session History:</strong> Access previous conversations</li>
+        </ul>
+      </section>
+
+      <section id="files">
+        <h2>File Explorer</h2>
+        <p>The File Explorer (left panel) provides a tree view of your project files.</p>
+
+        <h3>Features</h3>
+        <ul>
+          <li><strong>Quick Access:</strong> Pin frequently used folders for easy access</li>
+          <li><strong>Fuzzy Search:</strong> Press <code>Cmd+K</code> to quickly find files</li>
+          <li><strong>Inline Editing:</strong> Rename files directly in the tree</li>
+          <li><strong>Drag & Drop:</strong> Reorganize files and folders</li>
+          <li><strong>Context Menu:</strong> Right-click for file operations</li>
+        </ul>
+
+        <h3>Keyboard Shortcuts</h3>
+        <ul>
+          <li><code>Cmd+K</code> - Open file search</li>
+          <li><code>Enter</code> - Open selected file</li>
+          <li><code>Delete</code> - Delete selected file</li>
+          <li><code>Arrow Keys</code> - Navigate tree</li>
+        </ul>
+      </section>
+
+      <section id="terminal">
+        <h2>Terminal</h2>
+        <p>PromptStack includes a full PTY terminal emulator for running shell commands.</p>
+
+        <h3>Features</h3>
+        <ul>
+          <li><strong>Multiple Tabs:</strong> Run multiple terminal sessions simultaneously</li>
+          <li><strong>Dev Server Detection:</strong> Automatically detect running development servers</li>
+          <li><strong>File Attachments:</strong> Attach files to commands for AI context</li>
+          <li><strong>Command History:</strong> Access previous commands with up/down arrows</li>
+        </ul>
+
+        <h3>Switching Between Chat and Terminal</h3>
+        <p>Click the tabs at the top of the right panel to switch between:</p>
+        <ul>
+          <li><strong>Shell:</strong> Standard terminal with PTY support</li>
+          <li><strong>Chat:</strong> AI chat interface with streaming</li>
+        </ul>
+      </section>
+
+      <section id="git">
+        <h2>Git Integration</h2>
+        <p>Built-in Git support for version control.</p>
+
+        <h3>Features</h3>
+        <ul>
+          <li><strong>Status View:</strong> See changed files at a glance</li>
+          <li><strong>Stage Files:</strong> Stage/unstage files for commit</li>
+          <li><strong>Commit:</strong> Create commits with messages</li>
+          <li><strong>Branch Display:</strong> Current branch shown in session info</li>
+          <li><strong>Diff Viewer:</strong> Visual diff for file changes</li>
+        </ul>
+
+        <h3>Git Panel</h3>
+        <p>Access the Git panel from the middle panel's sidebar to:</p>
+        <ul>
+          <li>View current branch</li>
+          <li>See staged and unstaged changes</li>
+          <li>Commit with AI-generated commit messages</li>
+        </ul>
+      </section>
+
+      <section id="cloud-sync">
+        <h2>Cloud Sync <span class="coming-soon">Coming Soon</span></h2>
+        <p>Seamlessly sync your sessions, projects, and settings across devices with PromptStack Cloud.</p>
+
+        <h3>What's Coming</h3>
+        <ul>
+          <li><strong>Session Sync:</strong> Access your conversations from any device</li>
+          <li><strong>Project Sync:</strong> Keep your workspaces in sync</li>
+          <li><strong>Settings Sync:</strong> Unified preferences across installations</li>
+          <li><strong>Collaboration:</strong> Share sessions with team members</li>
+          <li><strong>Cloud Storage:</strong> Store files and artifacts in the cloud</li>
+        </ul>
+
+        <div class="callout">
+          <h4>Want Updates?</h4>
+          <p>Cloud sync is in active development. Follow our progress and get early access by joining our community.</p>
+        </div>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+
+        <h3>App Won't Open</h3>
+        <p><strong>Issue:</strong> macOS blocks the app from opening.</p>
+        <p><strong>Solution:</strong></p>
+        <ol>
+          <li>Go to System Settings → Privacy & Security</li>
+          <li>Scroll down to find "PromptStack was blocked"</li>
+          <li>Click "Open Anyway"</li>
+          <li>Confirm by clicking "Open" in the dialog</li>
+        </ol>
+
+        <h3>AI Provider Not Working</h3>
+        <p><strong>Issue:</strong> API key not accepted or requests failing.</p>
+        <p><strong>Solution:</strong></p>
+        <ul>
+          <li>Verify your API key is correct</li>
+          <li>Check your API key has sufficient credits/quota</li>
+          <li>Ensure you have internet connectivity</li>
+          <li>Try switching to a different provider</li>
+        </ul>
+
+        <h3>Files Not Showing</h3>
+        <p><strong>Issue:</strong> File Explorer is empty or files are missing.</p>
+        <p><strong>Solution:</strong></p>
+        <ul>
+          <li>Check you've selected a project folder</li>
+          <li>Verify folder permissions</li>
+          <li>Try refreshing the file tree (Cmd+R)</li>
+        </ul>
+
+        <h3>Performance Issues</h3>
+        <p><strong>Issue:</strong> App is slow or unresponsive.</p>
+        <p><strong>Solution:</strong></p>
+        <ul>
+          <li>Close unused terminal tabs</li>
+          <li>Clear old chat sessions</li>
+          <li>Restart the application</li>
+          <li>Check available memory on your system</li>
+        </ul>
+
+        <h3>Getting Help</h3>
+        <p>If you're still experiencing issues:</p>
+        <ul>
+          <li>Check the <a href="#faq-docs">FAQ</a> below</li>
+          <li>Join our <a href="#community">community</a></li>
+          <li>Email us at <a href="mailto:promptstackdev@gmail.com">promptstackdev@gmail.com</a></li>
+        </ul>
+      </section>
+
+      <section id="faq-docs">
+        <h2>FAQ</h2>
+
+        <h3>Is PromptStack free?</h3>
+        <p>Yes! PromptStack is free during the beta period. Future pricing for cloud features will be announced.</p>
+
+        <h3>What AI providers are supported?</h3>
+        <p>PromptStack supports Claude (Anthropic), Codex (OpenAI), Gemini (Google), and Ollama for local models. More providers are being added.</p>
+
+        <h3>Can I use my own API keys?</h3>
+        <p>Yes! You bring your own API keys (BYOK) for all AI providers. This keeps your usage and costs under your control.</p>
+
+        <h3>Does it work offline?</h3>
+        <p>The file editor, terminal, and local features work offline. AI features require internet connectivity unless you're using Ollama with local models.</p>
+
+        <h3>What file formats are supported?</h3>
+        <p>PromptStack supports 33+ file formats including:</p>
+        <ul>
+          <li>Code: JS, TS, Python, Shell, CSS, etc.</li>
+          <li>Documents: PDF, DOCX, Markdown, HTML</li>
+          <li>Data: JSON, JSONL, YAML, CSV, Excel</li>
+          <li>Media: Images (PNG, JPG, SVG), Video, Audio</li>
+          <li>System: Logs, SQLite databases, Archives</li>
+        </ul>
+
+        <h3>Can I customize the interface?</h3>
+        <p>Yes! You can:</p>
+        <ul>
+          <li>Resize panels by dragging</li>
+          <li>Collapse/expand sections</li>
+          <li>Customize keyboard shortcuts (coming soon)</li>
+          <li>Choose your preferred theme (coming soon)</li>
+        </ul>
+
+        <h3>Is my data private?</h3>
+        <p>Yes. All your files and sessions are stored locally on your machine. When using AI features, only the messages you send are transmitted to your chosen AI provider according to their privacy policies.</p>
+      </section>
+
+      <section id="community">
+        <h2>Community & Support</h2>
+        <p>Join the PromptStack community to get help, share tips, and stay updated.</p>
+
+        <h3>Resources</h3>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:promptstackdev@gmail.com">promptstackdev@gmail.com</a></li>
+          <li><strong>Downloads:</strong> <a href="https://github.com/prompt-stack/releases/releases/latest" target="_blank">Latest Releases</a></li>
+          <li><strong>Website:</strong> <a href="https://prompt-stack.dev">prompt-stack.dev</a></li>
+        </ul>
+
+        <h3>Contributing</h3>
+        <p>PromptStack is built for builders. We welcome feedback, bug reports, and feature suggestions!</p>
+
+        <div class="callout">
+          <h4>Stay Updated</h4>
+          <p>Follow our releases page for the latest features, bug fixes, and improvements.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon terminal-prompt">&gt;-</span>
+          <span class="logo-text">PromptStack</span>
+        </div>
+        <div class="footer-links">
+          <a href="/docs.html">Documentation</a>
+          <a href="mailto:promptstackdev@gmail.com">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 PromptStack. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll to sections
+    document.querySelectorAll('.docs-sidebar a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Update active state
+            document.querySelectorAll('.docs-sidebar a').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    });
+
+    // Update active link on scroll
+    const sections = document.querySelectorAll('.docs-content section');
+    const navLinks = document.querySelectorAll('.docs-sidebar a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-100px 0px -80% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Mobile menu (reuse from main site if exists)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
