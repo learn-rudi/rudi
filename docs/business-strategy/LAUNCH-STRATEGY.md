@@ -24,7 +24,7 @@
 
 ### Phase 3: Tool Demos (Weeks 7-8)
 **Platform: Next.js**
-- Interactive PromptStack demo
+- Interactive RUDI demo
 - Policy builder tool
 - Deploy to tools.rudi.ai
 
@@ -101,7 +101,7 @@ Start with Squarespace TODAY for marketing, but immediately begin custom academy
 
 1. **Credibility**: You need a web presence to close deals NOW
 2. **Complexity**: The academy features you want need custom code
-3. **Demonstration**: Building PromptStack/RUDI Stack demos proves your expertise
+3. **Demonstration**: Building RUDI/RUDI Stack demos proves your expertise
 4. **Revenue**: Proper academy = recurring revenue stream
 5. **Growth**: Squarespace will limit you within 6 months
 

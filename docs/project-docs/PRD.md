@@ -103,7 +103,7 @@ rudi-web/
 ### 3.3 Tools & Demos
 **Pages**:
 - `/tools` - Tool directory
-- `/tools/prompt-stack` - Interactive demo
+- `/tools/rudi` - Interactive demo
 - `/tools/policy-builder` - Policy generator
 
 **Components Needed**:
@@ -291,7 +291,7 @@ enum Role {
 - [ ] Basic video player
 
 ### Phase 4: Tools & Interactivity (Week 7-8)
-- [ ] Prompt Stack demo
+- [ ] RUDI demo
 - [ ] Policy builder wizard
 - [ ] Interactive examples
 - [ ] Code playground

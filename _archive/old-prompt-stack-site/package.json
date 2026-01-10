@@ -1,9 +1,0 @@
-{
-  "name": "prompt-stack-website",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "python3 -m http.server 8000",
-    "dev:node": "npx serve -p 8000"
-  }
-}
