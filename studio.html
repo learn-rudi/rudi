@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RUDI Studio - Free AI Workspace for Learning & Productivity | Multi-Model Support</title>
-    <meta name="description" content="RUDI Studio is a free, open-source AI workspace for document drafting, data analysis, research synthesis, and automation. Supports Claude, GPT, Gemini. Download for macOS.">
-    <meta name="keywords" content="AI workspace, AI learning platform, AI productivity tool, RUDI Studio, Claude workspace, GPT interface, document drafting AI, data analysis AI, free AI tool, open source AI">
+    <title>RUDI CLI & Studio - AI Tools for Learning & Productivity</title>
+    <meta name="description" content="RUDI CLI: Universal package manager for MCP servers, AI tools, and agent configurations. Install now. RUDI Studio desktop app coming soon.">
+    <meta name="keywords" content="RUDI CLI, MCP server manager, AI tools, AI package manager, Claude MCP, AI workspace, RUDI Studio, AI learning platform, open source AI tools">
     <meta name="author" content="RUDI - Responsible Use of Digital Intelligence">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://learnrudi.com/studio.html">
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="RUDI">
-    <meta property="og:title" content="RUDI Studio - Free AI Workspace for Learning & Productivity">
-    <meta property="og:description" content="A unified AI workspace for document drafting, data analysis, research, and automation. Free and open source. Supports Claude, GPT, Gemini.">
+    <meta property="og:title" content="RUDI CLI & Studio - AI Tools for Learning & Productivity">
+    <meta property="og:description" content="RUDI CLI: Universal package manager for MCP servers and AI tools. Available now on GitHub. Studio desktop app coming soon.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://learnrudi.com/studio.html">
     <meta property="og:image" content="https://learnrudi.com/images/studio-og-preview.png">
@@ -241,6 +241,131 @@
         .hero-cta {
             display: flex;
             gap: 1rem;
+        }
+
+        /* CLI Highlight */
+        .cli-highlight {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 3rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .cli-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 0.6875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.375rem 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cli-highlight h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .cli-highlight > p {
+            color: var(--gray-400);
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+
+        .cli-install {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gray-800);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+        }
+
+        .cli-install code {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9375rem;
+            color: var(--studio-green);
+            flex: 1;
+        }
+
+        .copy-btn {
+            background: var(--gray-700);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .copy-btn:hover {
+            background: var(--gray-600);
+        }
+
+        .cli-highlight .hero-cta {
+            margin-top: 0;
+        }
+
+        .cli-highlight .btn-primary {
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .cli-highlight .btn-primary:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .cli-highlight .btn-secondary {
+            border-color: var(--gray-600);
+            color: var(--gray-300);
+        }
+
+        .cli-highlight .btn-secondary:hover {
+            background: var(--gray-700);
+            color: var(--white);
+        }
+
+        /* Studio Coming Soon */
+        .studio-preview {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: transparent;
+            color: var(--gray-500);
+            font-size: 0.6875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.375rem 0.75rem;
+            border: 1px solid var(--gray-200);
+            margin-bottom: 1rem;
+        }
+
+        .studio-preview h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+        }
+
+        .studio-teaser {
+            color: var(--gray-500);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
 
         /* Buttons */
@@ -913,21 +1038,38 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-inner">
-            <div class="hero-label">AI Workspace</div>
+            <div class="hero-label">AI Tools</div>
             <h1>One place to learn, practice, and work with AI</h1>
             <p class="hero-subtitle">
-                RUDI Studio is the platform we use to teach. A unified workspace for people learning to work with AI effectively.
+                RUDI builds tools for people learning to work with AI effectively. Start with our CLI today, or wait for the full Studio experience.
             </p>
-            <div class="hero-cta">
-                <a href="#" class="btn btn-primary">Download for macOS</a>
-                <a href="#" class="btn btn-secondary">View on GitHub</a>
+
+            <!-- CLI Available Now -->
+            <div class="cli-highlight">
+                <div class="cli-badge">Available Now</div>
+                <h2>RUDI CLI</h2>
+                <p>Universal package manager for MCP servers, AI tools, and agent configurations. Install with one command.</p>
+                <div class="cli-install">
+                    <code>npm install -g @rudi-cli/rudi</code>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText('npm install -g @rudi-cli/rudi'); this.textContent='Copied!'; setTimeout(() => this.textContent='Copy', 2000);">Copy</button>
+                </div>
+                <div class="hero-cta">
+                    <a href="https://github.com/learn-rudi/cli" target="_blank" class="btn btn-primary">View on GitHub</a>
+                    <a href="https://github.com/learn-rudi/cli#readme" target="_blank" class="btn btn-secondary">Documentation</a>
+                </div>
             </div>
 
-            <div class="video-preview">
-                <video autoplay muted loop playsinline>
-                    <source src="images/studio-demo.mp4" type="video/mp4">
-                </video>
-                <div class="video-overlay"></div>
+            <!-- Studio Coming Soon -->
+            <div class="studio-preview">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <h3>RUDI Studio Desktop</h3>
+                <p class="studio-teaser">A unified AI workspace with multi-model support, document handling, and workflow automation. The same platform we use to teach.</p>
+                <div class="video-preview">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/studio-demo.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
             </div>
 
         </div>
@@ -1193,10 +1335,13 @@
     <!-- CTA -->
     <section class="cta-section">
         <div class="cta-inner">
-            <h2>Ready to try it?</h2>
-            <p>RUDI Studio is free and open source. Download it and start practicing.</p>
+            <h2>Get started today</h2>
+            <p>Install the RUDI CLI and start managing your AI tools. Studio desktop is coming soon.</p>
+            <div class="cli-install" style="margin: 0 auto 1.5rem; justify-content: center; background: var(--gray-100);">
+                <code style="color: var(--gray-900);">npm install -g @rudi-cli/rudi</code>
+            </div>
             <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">Download for macOS</a>
+                <a href="https://github.com/learn-rudi/cli" target="_blank" class="btn btn-primary">View CLI on GitHub</a>
                 <a href="training.html" class="btn btn-secondary">Learn With Training</a>
             </div>
         </div>
