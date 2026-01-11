@@ -3,1298 +3,1713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Readiness Framework &amp; Assessment | RUDI</title>
-    <meta name="description" content="RUDI's AI Readiness Framework: Move from Familiarity to Fluency through structured competency development. Measure AI literacy across 3 dimensions (Conceptual, Operational, Governance) and 5 proficiency levels with responsible use training.">
-    <meta name="keywords" content="AI competency framework, AI assessment, 30-point framework, AI skills matrix, AI literacy measurement, competency assessment platform, AI proficiency levels, organizational AI readiness, AI skills assessment, enterprise AI framework, AI capability model, workforce AI assessment, AI maturity model, skills gap analysis, AI training framework">
+    <title>AI Readiness Framework & Assessment | RUDI</title>
+    <meta name="description" content="RUDI's AI Readiness Framework: Move from Familiarity to Fluency through structured competency development. Measure AI literacy across 3 dimensions and 5 proficiency levels.">
+    <meta name="keywords" content="AI competency framework, AI assessment, AI skills matrix, AI literacy measurement, competency assessment platform, AI proficiency levels, organizational AI readiness">
     <meta name="author" content="RUDI - Regional Upskilling Digital Initiative">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://learnrudi.com/framework.html">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://learnrudi.com/framework.html">
-    <meta property="og:title" content="AI Competency Framework &amp; Assessment | RUDI">
-    <meta property="og:description" content="30-point AI competency framework with precision assessment. Measure organizational AI readiness across 3 domains and 5 proficiency levels.">
+    <meta property="og:title" content="AI Competency Framework & Assessment | RUDI">
+    <meta property="og:description" content="Comprehensive AI competency framework with precision assessment. Measure organizational AI readiness across 3 domains and 5 proficiency levels.">
     <meta property="og:image" content="https://learnrudi.com/images/3d-cube-framework.png">
-    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://learnrudi.com/framework.html">
-    <meta property="twitter:title" content="AI Competency Framework | RUDI 30-Point Model">
-    <meta property="twitter:description" content="Industry-standard AI competency framework with precision assessment platform. Measure AI skills across 30 competencies.">
-    <meta property="twitter:image" content="https://learnrudi.com/images/3d-cube-framework.png">
+    <meta property="twitter:title" content="AI Competency Framework | RUDI">
+    <meta property="twitter:description" content="Industry-standard AI competency framework with precision assessment platform.">
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "EducationalOccupationalProgram",
-        "name": "RUDI 30-Point AI Competency Framework",
-        "description": "Comprehensive AI competency assessment framework covering 30 skills across 3 domains and 5 proficiency levels",
+        "name": "RUDI AI Competency Framework",
+        "description": "Comprehensive AI competency assessment framework covering skills across 3 domains and 5 proficiency levels",
         "url": "https://learnrudi.com/framework.html",
         "provider": {
             "@type": "Organization",
             "name": "RUDI",
             "url": "https://learnrudi.com"
         },
-        "programType": "Assessment Framework",
-        "teaches": [
-            {
-                "@type": "DefinedTerm",
-                "name": "Conceptual Understanding",
-                "description": "AI foundations, ethics, and strategic thinking"
-            },
-            {
-                "@type": "DefinedTerm",
-                "name": "Operational Skills",
-                "description": "Tool usage, automation, and implementation"
-            },
-            {
-                "@type": "DefinedTerm",
-                "name": "Governance Practices",
-                "description": "Risk management, compliance, and quality assurance"
-            }
-        ],
-        "competencyRequired": {
-            "@type": "DefinedTerm",
-            "name": "30-Point Competency Model",
-            "description": "3 domains × 5 proficiency levels × 2 skills per intersection = 30 total competencies"
-        },
-        "assesses": "AI Literacy and Readiness",
-        "educationalLevel": [
-            "Awareness",
-            "Basic",
-            "Proficient",
-            "Advanced",
-            "Expert"
-        ],
-        "occupationalCategory": "AI Professional",
-        "hasCourse": {
-            "@type": "Course",
-            "name": "AI Competency Assessment",
-            "description": "Comprehensive assessment of AI skills and capabilities",
-            "courseCode": "RUDI-ASSESS-30"
-        }
+        "programType": "Assessment Framework"
     }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gray-900: #111111;
+            --gray-800: #1a1a1a;
+            --gray-700: #333333;
+            --gray-600: #555555;
+            --gray-500: #777777;
+            --gray-400: #999999;
+            --gray-300: #b3b3b3;
+            --gray-200: #cccccc;
+            --gray-100: #e5e5e5;
+            --gray-50: #f5f5f5;
+            --white: #ffffff;
+            --accent: #c75b39;
+            --accent-dark: #a94d2f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gray-900);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gray-900);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-question {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--gray-900);
+        }
+
+        .hero-question span {
+            font-weight: 400;
+            color: var(--gray-500);
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-alt {
+            background: var(--gray-50);
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin-bottom: 4rem;
+        }
+
+        .section-header.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Assessment Form Card */
+        .assessment-card {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            padding: 3rem;
+        }
+
+        .assessment-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .assessment-card .card-subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Link Result Box */
+        .link-result {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-100);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-result-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 0.75rem;
+        }
+
+        .link-display {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            padding: 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8125rem;
+            word-break: break-all;
+            margin-bottom: 1rem;
+            color: var(--gray-700);
+        }
+
+        .link-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .link-actions .btn {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .copied-msg {
+            color: var(--accent);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            margin-top: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
+
+        .copied-msg.show {
+            opacity: 1;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 100%;
+            max-width: 540px;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .modal-header h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            transition: color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--gray-900);
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            max-height: calc(90vh - 60px);
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--gray-200);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--gray-900);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gray-900);
+            color: var(--white);
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gray-900);
+            border: 1px solid var(--gray-900);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .form-note {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Problem Cards */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .problem-card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+        }
+
+        .problem-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card p {
+            font-size: 1rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Needs Grid */
+        .needs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 3rem;
+        }
+
+        .need-card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+            text-align: center;
+        }
+
+        .need-icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--gray-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .need-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .need-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-box p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Two Approaches */
+        .approaches-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .approach-card {
+            padding: 3rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+        }
+
+        .approach-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .approach-subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .approach-list {
+            list-style: none;
+        }
+
+        .approach-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+        }
+
+        .approach-list li:last-child {
+            border-bottom: none;
+        }
+
+        .approach-focus {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-100);
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .approach-focus strong {
+            color: var(--gray-900);
+        }
+
+        /* Pyramid Section */
+        .pyramid-container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .pyramid-svg {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid var(--gray-100);
+            background: var(--white);
+            padding: 2rem;
+        }
+
+        /* Dimensions */
+        .dimensions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dimension-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            border: 1px solid var(--gray-100);
+            margin-top: -1px;
+        }
+
+        .dimension-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--gray-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .dimension-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .dimension-content p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Competency Calc */
+        .competency-calc {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            padding: 3rem;
+            border: 1px solid var(--gray-100);
+            margin-top: 3rem;
+        }
+
+        .calc-item {
+            text-align: center;
+        }
+
+        .calc-number {
+            font-size: 4rem;
+            font-weight: 200;
+            line-height: 1;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .calc-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-top: 0.5rem;
+        }
+
+        .calc-operator {
+            font-size: 2rem;
+            font-weight: 200;
+            color: var(--gray-300);
+        }
+
+        /* Proficiency Levels */
+        .levels-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .level-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            border: 1px solid var(--gray-100);
+            margin-top: -1px;
+        }
+
+        .level-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .level-number.highlight {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .level-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .level-content p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .level-content strong {
+            color: var(--gray-900);
+        }
+
+        /* Frameworks Fit */
+        .frameworks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .framework-card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+            text-align: center;
+        }
+
+        .framework-icon {
+            width: 56px;
+            height: 56px;
+            border: 1px solid var(--gray-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .framework-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .framework-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .framework-question {
+            font-size: 0.875rem;
+            font-style: italic;
+            color: var(--gray-500);
+        }
+
+        /* Responsible Use */
+        .responsible-intro {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .responsible-intro p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .responsible-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .responsible-card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+        }
+
+        .responsible-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .responsible-subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .habits-list {
+            list-style: none;
+        }
+
+        .habits-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 0.9375rem;
+        }
+
+        .habits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .habits-list strong {
+            color: var(--gray-900);
+        }
+
+        .habits-list span {
+            color: var(--gray-500);
+        }
+
+        /* Scrutiny Levels */
+        .scrutiny-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .scrutiny-item:last-child {
+            border-bottom: none;
+        }
+
+        .scrutiny-number {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .scrutiny-content h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .scrutiny-content p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+
+        .cta-section .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .cta-section .btn-secondary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            padding: 4rem 2rem 2rem;
+            color: var(--gray-400);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand {
+            max-width: 280px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .footer-section h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            text-decoration: none;
+            padding: 0.375rem 0;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+        }
+
+        /* Hero Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        .hero h1 {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        .hero-subtitle {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+        }
+
+        .hero-question {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+        }
+
+        /* Scroll Fade-in Animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in-section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered card reveals */
+        .problem-card,
+        .need-card,
+        .approach-card,
+        .dimension-item,
+        .level-item,
+        .framework-card,
+        .responsible-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .problem-card.revealed,
+        .need-card.revealed,
+        .approach-card.revealed,
+        .dimension-item.revealed,
+        .level-item.revealed,
+        .framework-card.revealed,
+        .responsible-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card hover effects */
+        .problem-card,
+        .need-card,
+        .approach-card,
+        .framework-card,
+        .responsible-card {
+            transition: all 0.3s ease, opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .problem-card:hover,
+        .need-card:hover,
+        .approach-card:hover,
+        .framework-card:hover,
+        .responsible-card:hover {
+            background: var(--gray-50);
+            border-color: var(--gray-200);
+        }
+
+        /* Pyramid image animation */
+        .pyramid-image {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pyramid-image.revealed {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .problem-grid,
+            .approaches-grid,
+            .responsible-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .needs-grid,
+            .frameworks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .competency-calc {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .calc-operator {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="site-header"></div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">RUDI</a>
+            <ul class="nav-links">
+                <li><a href="training.html">Training</a></li>
+                <li><a href="consulting.html">Consulting</a></li>
+                <li><a href="studio.html">Studio</a></li>
+                <li><a href="framework.html" class="active">Framework</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="section-padding bg-gray">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-badge"><i class="fas fa-chart-line"></i> Framework & Assessment</span>
-                <h1>The RUDI AI Readiness Framework</h1>
-                <p style="max-width: 800px; margin: 0 auto; font-size: 1.25rem; color: var(--gray-600);">
-                    A comprehensive model for building AI competency across your organization
-                </p>
-                <p style="max-width: 700px; margin: 1rem auto 0; font-size: 1.125rem; color: var(--navy-900); font-weight: 500;">
-                    Learn your organization's familiarity and comfort with generative AI.<br>
-                    <span style="color: var(--gray-600); font-weight: 400;">Employees are using AI. Do you know how?</span>
-                </p>
-            </div>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-label">Framework & Assessment</div>
+            <h1>The RUDI AI Readiness Framework</h1>
+            <p class="hero-subtitle">
+                A comprehensive model for building AI competency across your organization.
+                Move from Familiarity to Fluency through structured development.
+            </p>
+            <p class="hero-question">
+                Learn your organization's familiarity and comfort with generative AI.<br>
+                <span>Employees are using AI. Do you know how?</span>
+            </p>
+        </div>
+    </section>
 
-            <!-- Request Assessment CTA -->
-            <style>
-                @media (max-width: 768px) {
-                    #request-assessment {
-                        padding: 1.5rem !important;
-                        margin: 2rem auto 0 !important;
-                    }
-                    #request-assessment h2 {
-                        font-size: 1.35rem !important;
-                    }
-                    #request-assessment p {
-                        font-size: 0.95rem !important;
-                    }
-                }
-            </style>
-            <div id="request-assessment" style="max-width: 700px; margin: 3rem auto 0; background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 12px 32px rgba(0,0,0,0.1); border: 2px solid var(--navy-900);">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <div style="display: inline-block; background: rgba(15, 23, 42, 0.08); color: var(--navy-900); padding: 0.5rem 1.25rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">
-                        <i class="fas fa-clipboard-check"></i> AI READINESS ASSESSMENT
-                    </div>
-                    <h2 style="font-size: 1.75rem; color: var(--navy-900); margin-bottom: 0.75rem;">Get Your AI Readiness Report Today</h2>
-                    <p style="color: var(--gray-600); font-size: 1.05rem;">
-                        Share with your team immediately • 9 questions • 5-7 minutes • Completely anonymous
-                    </p>
+    <!-- Assessment Request -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="assessment-card" id="request-assessment">
+                <h3>Get Your AI Readiness Report</h3>
+                <p class="card-subtitle">9 questions / 5-7 minutes / Completely anonymous</p>
+
+                <div id="step1">
+                    <form id="orgForm">
+                        <div class="form-group">
+                            <label>Organization Name *</label>
+                            <input type="text" id="orgInput" required placeholder="Your company or firm name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Generate Assessment Link →</button>
+                    </form>
+                    <p class="form-note">Enter your organization name to get a shareable assessment link</p>
                 </div>
 
-                <style>
-                    @media (max-width: 768px) {
-                        .form-grid-2col {
-                            grid-template-columns: 1fr !important;
-                        }
-                    }
-                </style>
-                <form id="assessmentRequestForm" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                    <div class="form-grid-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <div>
-                            <label style="display: block; font-weight: 500; color: var(--navy-900); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                                Name <span style="color: #ef4444;">*</span>
-                            </label>
-                            <input type="text" name="name" required
-                                style="width: 100%; padding: 0.875rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem; font-family: 'Inter', sans-serif;"
-                                placeholder="Your name">
+                <div id="step2" style="display: none;">
+                    <div class="link-result">
+                        <p class="link-result-label">Your Assessment Link</p>
+                        <div id="linkDisplay" class="link-display"></div>
+                        <div class="link-actions">
+                            <button type="button" class="btn btn-primary" id="copyLink">Copy Link</button>
+                            <a id="startLink" href="#" class="btn btn-secondary">Take Assessment</a>
                         </div>
-                        <div>
-                            <label style="display: block; font-weight: 500; color: var(--navy-900); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                                Email <span style="color: #ef4444;">*</span>
-                            </label>
-                            <input type="email" name="email" required
-                                style="width: 100%; padding: 0.875rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem; font-family: 'Inter', sans-serif;"
-                                placeholder="your@email.com">
-                        </div>
+                        <p id="copiedMsg" class="copied-msg">Link copied to clipboard</p>
                     </div>
-
-                    <div>
-                        <label style="display: block; font-weight: 500; color: var(--navy-900); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Organization <span style="color: #ef4444;">*</span>
-                        </label>
-                        <input type="text" name="organization" required
-                            style="width: 100%; padding: 0.875rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem; font-family: 'Inter', sans-serif;"
-                            placeholder="Your company or firm name">
-                    </div>
-
-                    <div>
-                        <label style="display: block; font-weight: 500; color: var(--navy-900); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Role / Title <span style="color: #ef4444;">*</span>
-                        </label>
-                        <input type="text" name="role" required
-                            style="width: 100%; padding: 0.875rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem; font-family: 'Inter', sans-serif;"
-                            placeholder="e.g., Managing Partner, Director, Manager">
-                    </div>
-
-                    <button type="submit"
-                        style="width: 100%; background: var(--navy-900); color: white; padding: 1.125rem; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; margin-top: 0.5rem;">
-                        <i class="fas fa-paper-plane"></i> Request My Assessment
-                    </button>
-
-                    <p style="text-align: center; font-size: 0.85rem; color: var(--gray-500); margin: 0;">
-                        <i class="fas fa-bolt"></i> Get your custom survey link • Delivered via email
-                    </p>
-                </form>
-
-                <div id="successMessage" style="display: none; text-align: center; padding: 2rem;">
-                    <div style="color: var(--navy-900); font-size: 3rem; margin-bottom: 1rem;">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3 style="color: var(--navy-900); margin-bottom: 0.75rem;">Your Assessment Link is Ready!</h3>
-                    <div style="background: var(--navy-50); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border: 2px dashed var(--navy-900);">
-                        <p style="color: var(--navy-900); font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                            <i class="fas fa-link"></i> Your Survey Link
-                        </p>
-                        <div id="surveyLinkDisplay" style="background: white; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.9rem; color: var(--navy-900); word-break: break-all; margin-bottom: 1rem;">
-                            <!-- Link will be inserted here -->
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                            <button onclick="navigator.clipboard.writeText(document.getElementById('surveyLinkDisplay').textContent)" style="background: var(--navy-900); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">
-                                <i class="fas fa-copy"></i> Copy Link
-                            </button>
-                            <button onclick="window.open(document.getElementById('surveyLinkDisplay').textContent.trim(), '_blank')" style="background: var(--teal); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">
-                                <i class="fas fa-external-link-alt"></i> Take Survey Now
-                            </button>
-                        </div>
-                    </div>
-                    <p style="color: var(--gray-600); margin-bottom: 0.5rem;">
-                        <strong>Save this link.</strong> Share it with your organization to begin the assessment.
-                    </p>
-                    <p style="color: var(--gray-600); font-size: 0.875rem;">
-                        Link sent to <strong id="submittedEmail"></strong>
-                    </p>
+                    <p class="form-note">Share this link with your team. Want us to follow up with your results?</p>
+                    <button type="button" id="contactBtn" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem;">Leave Contact Info (Optional)</button>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- The Real Barrier to Strategic Adoption -->
-    <section class="section-padding">
-        <div class="container">
-            <div style="max-width: 1000px; margin: 0 auto;">
-                <div class="scroll-reveal" style="text-align: center; margin-bottom: 3rem;">
-                    <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem; color: var(--navy-900);">The Real Barrier to Strategic Adoption Isn't the Technology</h2>
-                    <p style="font-size: 1.25rem; color: var(--gray-600); line-height: 1.8; max-width: 800px; margin: 0 auto;">
-                        It's <strong style="color: var(--navy-900);">how your people use the tools.</strong>
-                    </p>
-                </div>
-
-                <style>
-                    @media (max-width: 768px) {
-                        .org-types-grid {
-                            grid-template-columns: 1fr !important;
-                            gap: 1.5rem !important;
-                        }
-                    }
-                </style>
-                <div class="org-types-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
-                    <div class="card scroll-reveal" style="border-left: 4px solid var(--accent);">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--navy-900);">The Tech-Savvy Organization</h3>
-                        <p style="color: var(--gray-600); font-size: 1rem; line-height: 1.7;">
-                            Highly fluent in technology, yet unable to figure out how to incorporate AI strategically. The tools are there, but adoption has plateaued.
-                        </p>
-                    </div>
-                    <div class="card scroll-reveal" style="border-left: 4px solid var(--navy-900);">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--navy-900);">The Starting-From-Scratch Organization</h3>
-                        <p style="color: var(--gray-600); font-size: 1rem; line-height: 1.7;">
-                            Little to no AI experience, unsure where to begin. Needs a clear roadmap but doesn't want to guess.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card scroll-reveal" style="background: linear-gradient(135deg, var(--navy-50) 0%, white 100%); padding: 2.5rem;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; color: var(--navy-900);">What Both Organizations Need</h3>
-                    <p style="text-align: center; color: var(--gray-600); max-width: 700px; margin: 0 auto 2rem; font-size: 1.05rem;">
-                        Whether tech-savvy or starting fresh, success requires a <strong style="color: var(--navy-900);">data-driven, people-centered approach</strong>
-                    </p>
-                    <style>
-                        @media (max-width: 768px) {
-                            .needs-grid {
-                                grid-template-columns: 1fr !important;
-                            }
-                        }
-                    </style>
-                    <div class="needs-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                        <div style="text-align: center;">
-                            <div style="width: 60px; height: 60px; background: var(--navy-900); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;">
-                                <i class="fas fa-tasks"></i>
-                            </div>
-                            <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--navy-900);">Workflows</h4>
-                            <p style="color: var(--gray-600); font-size: 0.95rem; line-height: 1.6;">How people use AI in daily tasks—drafting, analyzing, automating</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="width: 60px; height: 60px; background: var(--navy-900); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--navy-900);">Data</h4>
-                            <p style="color: var(--gray-600); font-size: 0.95rem; line-height: 1.6;">What data is safe to use—understanding boundaries and compliance</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="width: 60px; height: 60px; background: var(--navy-900); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--navy-900);">Culture</h4>
-                            <p style="color: var(--gray-600); font-size: 0.95rem; line-height: 1.6;">Building confidence and adoption across the organization</p>
-                        </div>
-                    </div>
-                    <div style="background: white; padding: 2rem; border-radius: 8px; border-left: 4px solid var(--navy-900); margin-top: 2rem;">
-                        <p style="text-align: center; font-size: 1.125rem; color: var(--navy-900); margin: 0; line-height: 1.7;">
-                            <strong>From surveying hundreds of organizations—from educators to Fortune 500 companies—we've learned the real ROI comes from people's efficiency at the micro level:</strong> using AI to draft documents, analyze data, automate repetitive tasks, and build micro-tools within the organization.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Two Axes of Responsibility -->
-    <section class="section-padding bg-gray">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <h2>Two Approaches to Strategic AI Adoption</h2>
-                <p class="text-secondary" style="font-size: 1.125rem;">You can focus on technology or culture. RUDI integrates both—with a human-centered approach.</p>
-            </div>
-
-            <div style="max-width: 1200px; margin: 0 auto;">
-                <!-- Two Approaches Cards -->
-                <style>
-                    @media (max-width: 768px) {
-                        .two-approaches-grid {
-                            grid-template-columns: 1fr !important;
-                            gap: 1.5rem !important;
-                        }
-                    }
-                </style>
-                <div class="two-approaches-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem;">
-                    <div class="card scroll-reveal" style="border-left: 4px solid var(--navy-900);">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--navy-900);">Cultural Axis</h3>
-                        <p style="color: var(--gray-600); font-size: 1rem; margin-bottom: 1.5rem; font-weight: 500;">People-Centric Approach</p>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check" style="color: var(--navy-900); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span style="color: var(--gray-600); line-height: 1.6;">Reduces fear and demystifies AI</span>
-                            </li>
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check" style="color: var(--navy-900); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span style="color: var(--gray-600); line-height: 1.6;">Embeds tools into daily workflows</span>
-                            </li>
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check" style="color: var(--navy-900); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span style="color: var(--gray-600); line-height: 1.6;">Builds literacy through learning</span>
-                            </li>
-                        </ul>
-                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--navy-100);">
-                            <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;"><strong style="color: var(--navy-900);">Focus:</strong> How people learn and adopt AI responsibly</p>
-                        </div>
-                    </div>
-
-                    <div class="card scroll-reveal" style="border-left: 4px solid var(--navy-900);">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--navy-900);">Technical Axis</h3>
-                        <p style="color: var(--gray-600); font-size: 1rem; margin-bottom: 1.5rem; font-weight: 500;">System-Centric Approach</p>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check" style="color: var(--navy-900); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span style="color: var(--gray-600); line-height: 1.6;">Aligns tools, data, infrastructure</span>
-                            </li>
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check" style="color: var(--navy-900); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span style="color: var(--gray-600); line-height: 1.6;">Ensures compliance & ethics</span>
-                            </li>
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check" style="color: var(--navy-900); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span style="color: var(--gray-600); line-height: 1.6;">Modernizes metrics & ROI</span>
-                            </li>
-                        </ul>
-                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--navy-100);">
-                            <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;"><strong style="color: var(--navy-900);">Focus:</strong> Infrastructure and system optimization</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Integration explanation -->
-                <div class="card scroll-reveal" style="background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%); color: white; padding: 3rem; text-align: center; margin-top: 3rem;">
-                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: white;">RUDI Integrates Both Approaches</h3>
-                    <p style="font-size: 1.125rem; margin: 0; color: rgba(255,255,255,0.95);">
-                        We address <strong>both the cultural and technical dimensions</strong> of AI adoption, but with a <strong>human-centered approach</strong>. We build comfort and literacy first, then layer in the governance and infrastructure.
-                        This ensures <strong>sustainable adoption</strong> that balances people, technology, and responsible practice.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The AI Readiness Pyramid -->
-    <section class="section-padding bg-gray">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <h2>Learn Where Your Organization Falls on the Pyramid</h2>
-                <p class="text-secondary" style="font-size: 1.125rem;">The psychological journey from Fear to Fluency—this is what the assessment measures</p>
-            </div>
-
-            <div style="max-width: 100%; margin: 0 auto; text-align: center;">
-                <div class="scroll-reveal">
-                    <!-- RUDI AI Readiness Pyramid (Inline SVG) -->
-                    <svg viewBox="0 0 1300 720" role="img" aria-labelledby="pyramid-title pyramid-desc" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; border-radius: 12px; background: white; box-shadow: 0 12px 32px rgba(0,0,0,0.1); padding: 1.5rem; margin: 0 auto;">
-                        <title id="pyramid-title">RUDI AI Readiness Pyramid</title>
-                        <desc id="pyramid-desc">Four stacked levels from Familiarity to Fluency with callouts describing each stage and an overview of conceptual, operational, and governance literacy.</desc>
-
-                        <style>
-                            .ink { fill: var(--navy-900, #0f172a); }
-                            .sub { fill: var(--gray-600, #475569); }
-                            .line { stroke: #e2e8f0; stroke-width: 2; }
-                            .accent { fill: var(--navy-700, #334155); }
-                            .bg { fill: #ffffff; }
-                            .stage { stroke: #1e293b; stroke-width: 2; }
-                            .stage--0 { fill: #e0f2fe; }
-                            .stage--1 { fill: #dbeafe; }
-                            .stage--2 { fill: #bfdbfe; }
-                            .stage--3 { fill: var(--navy-900, #0f172a); }
-                            .label { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; letter-spacing: 0.3px; }
-                            .meta { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; }
-                            .callout { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
-                            .callhead { font-weight: 600; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-                            .calltext { font-weight: 400; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
-                            .arrow { stroke: var(--navy-700, #334155); stroke-width: 2.5; }
-
-                            /* Mobile: hide callouts on small screens */
-                            @media (max-width: 768px) {
-                                .callout, .arrow { display: none; }
-                            }
-                        </style>
-
-
-                        <!-- PYRAMID LAYERS (shifted up to use full space) -->
-                        <!-- Level 1: Familiarity (bottom - widest) -->
-                        <polygon class="stage stage--0" points="100,650 800,650 720,520 180,520"/>
-                        <text class="label ink" font-size="28" x="220" y="590">1. FAMILIARITY <tspan class="meta sub" font-size="22">(Exposure)</tspan></text>
-                        <text class="sub" font-size="18" x="220" y="620">"I've seen it"</text>
-
-                        <!-- Level 2: Comfort -->
-                        <polygon class="stage stage--1" points="180,520 720,520 650,390 250,390"/>
-                        <text class="label ink" font-size="26" x="280" y="462">2. COMFORT <tspan class="meta sub" font-size="20">(Confidence)</tspan></text>
-                        <text class="sub" font-size="17" x="280" y="490">"I'm not afraid of it"</text>
-
-                        <!-- Level 3: Literacy -->
-                        <polygon class="stage stage--2" points="250,390 650,390 590,260 310,260"/>
-                        <text class="label ink" font-size="26" x="330" y="335">3. LITERACY</text>
-                        <text class="sub" font-size="17" x="330" y="360">"I understand what it does"</text>
-
-                        <!-- Level 4: Fluency (top - darkest, pointed) -->
-                        <polygon class="stage stage--3" points="310,260 590,260 450,80 450,80"/>
-                        <text class="label" font-size="20" x="395" y="188" fill="#ffffff">4. FLUENCY</text>
-
-                        <!-- RIGHT-SIDE CALLOUTS with Arrows -->
-                        <!-- Fluency callout -->
-                        <line class="arrow" x1="590" y1="170" x2="850" y2="170"/>
-                        <rect class="callout" x="850" y="110" rx="8" ry="8" width="400" height="130"/>
-                        <text class="ink callhead" font-size="20" x="870" y="135">Fluency (Deep Mastery)</text>
-                        <text class="sub calltext" font-size="15" x="870" y="160">Conceptual: Understanding how & why AI works</text>
-                        <text class="sub calltext" font-size="15" x="870" y="180">Operational: Creating with AI in real workflows</text>
-                        <text class="sub calltext" font-size="15" x="870" y="200">Governance: Responsible use, ethics & oversight</text>
-                        <text class="sub calltext" font-size="14" x="870" y="220" font-style="italic">(Like Bloom's taxonomy: from knowing → creating)</text>
-
-                        <!-- Literacy callout -->
-                        <line class="arrow" x1="650" y1="325" x2="850" y2="325"/>
-                        <rect class="callout" x="850" y="285" rx="8" ry="8" width="400" height="90"/>
-                        <text class="ink callhead" font-size="20" x="870" y="310">Literacy (Understanding Uses)</text>
-                        <text class="sub calltext" font-size="15" x="870" y="335">• I understand practical applications</text>
-                        <text class="sub calltext" font-size="15" x="870" y="355">• I can see how AI could be useful</text>
-
-                        <!-- Comfort callout -->
-                        <line class="arrow" x1="720" y1="455" x2="850" y2="455"/>
-                        <rect class="callout" x="850" y="415" rx="8" ry="8" width="400" height="85"/>
-                        <text class="ink callhead" font-size="20" x="870" y="440">Comfort (Confidence)</text>
-                        <text class="sub calltext" font-size="15" x="870" y="465">• Interact without anxiety</text>
-                        <text class="sub calltext" font-size="15" x="870" y="485">• AI becomes a tool, not a threat</text>
-
-                        <!-- Familiarity callout -->
-                        <line class="arrow" x1="800" y1="585" x2="850" y2="585"/>
-                        <rect class="callout" x="850" y="540" rx="8" ry="8" width="400" height="105"/>
-                        <text class="ink callhead" font-size="20" x="870" y="565">Familiarity (Overcoming Fear)</text>
-                        <text class="sub calltext" font-size="15" x="870" y="590">• Awareness that AI exists</text>
-                        <text class="sub calltext" font-size="15" x="870" y="610">• Curiosity & recognition</text>
-                        <text class="sub calltext" font-size="15" x="870" y="630">• Psychological barriers start to fade</text>
-
-                        <!-- Footer note -->
-                        <text x="50" y="690" class="sub" font-size="17" font-style="italic">Most organizations are stuck between Familiarity and Comfort — RUDI moves them toward Fluency.</text>
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Leave Your Contact Info</h4>
+                <button class="modal-close" id="closeModal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
                     </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe id="contactFrame" src="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
 
-                    <!-- Mid-Point CTA -->
-                    <div style="margin-top: 3.5rem; padding: 2rem; background: linear-gradient(135deg, var(--navy-50) 0%, white 100%); border-radius: 12px; border: 1px solid var(--navy-100); max-width: 600px; margin-left: auto; margin-right: auto;">
-                        <p style="font-size: 1.05rem; color: var(--navy-900); margin-bottom: 1.5rem; font-weight: 500;">
-                            Ready to see where you are on this pyramid?
-                        </p>
-                        <a href="#request-assessment" class="btn btn-primary" style="font-size: 1rem; padding: 0.875rem 2rem;">
-                            <i class="fas fa-chart-radar" style="margin-right: 0.5rem;"></i>Request Your Assessment
-                        </a>
-                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 1rem; margin-bottom: 0;">
-                            Get your personalized radar chart and discover exactly where to focus
-                        </p>
-                    </div>
+    <script>
+        // Store org name for modal
+        let currentOrg = '';
+
+        document.getElementById('orgForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const org = document.getElementById('orgInput').value.trim();
+            if (!org) return;
+
+            currentOrg = org;
+
+            // Generate assessment link
+            const baseUrl = window.location.origin + window.location.pathname.replace('framework.html', '');
+            const assessmentUrl = baseUrl + 'assessment.html?organization=' + encodeURIComponent(org);
+
+            // Show link
+            document.getElementById('linkDisplay').textContent = assessmentUrl;
+            document.getElementById('startLink').href = assessmentUrl;
+
+            // Toggle visibility
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+        });
+
+        document.getElementById('copyLink').addEventListener('click', function() {
+            const link = document.getElementById('linkDisplay').textContent;
+            navigator.clipboard.writeText(link).then(() => {
+                document.getElementById('copiedMsg').classList.add('show');
+                setTimeout(() => {
+                    document.getElementById('copiedMsg').classList.remove('show');
+                }, 2000);
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('contactModal');
+        const contactFrame = document.getElementById('contactFrame');
+
+        document.getElementById('contactBtn').addEventListener('click', function() {
+            // Load Tally form with organization pre-filled
+            const tallyUrl = 'https://tally.so/embed/q4G4l9?alignLeft=1&hideTitle=1&transparentBackground=1&organization=' + encodeURIComponent(currentOrg);
+            contactFrame.src = tallyUrl;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            contactFrame.src = '';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                contactFrame.src = '';
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                contactFrame.src = '';
+            }
+        });
+    </script>
+
+    <!-- The Real Barrier -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-header center">
+                <h2>The Real Barrier to Strategic Adoption Isn't the Technology</h2>
+                <p>It's <strong>how your people use the tools.</strong></p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>The Tech-Savvy Organization</h3>
+                    <p>Highly fluent in technology, yet unable to figure out how to incorporate AI strategically. The tools are there, but adoption has plateaued.</p>
                 </div>
+                <div class="problem-card">
+                    <h3>The Starting-From-Scratch Organization</h3>
+                    <p>Little to no AI experience, unsure where to begin. Needs a clear roadmap but doesn't want to guess.</p>
+                </div>
+            </div>
+
+            <div class="needs-grid">
+                <div class="need-card">
+                    <div class="need-icon">W</div>
+                    <h4>Workflows</h4>
+                    <p>How people use AI in daily tasks - drafting, analyzing, automating</p>
+                </div>
+                <div class="need-card">
+                    <div class="need-icon">D</div>
+                    <h4>Data</h4>
+                    <p>What data is safe to use - understanding boundaries and compliance</p>
+                </div>
+                <div class="need-card">
+                    <div class="need-icon">C</div>
+                    <h4>Culture</h4>
+                    <p>Building confidence and adoption across the organization</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>From surveying hundreds of organizations - from educators to Fortune 500 companies - we've learned the real ROI comes from people's efficiency at the micro level:</strong> using AI to draft documents, analyze data, automate repetitive tasks, and build micro-tools within the organization.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Framework Overview -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <h2>The AI Literacy Framework</h2>
-                <p class="text-secondary" style="font-size: 1.125rem;">Three dimensions of competency, five levels of proficiency</p>
+    <!-- Two Approaches -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header center">
+                <div class="section-label">Strategic AI Adoption</div>
+                <h2>Two Approaches to AI Integration</h2>
+                <p>You can focus on technology or culture. RUDI integrates both - with a human-centered approach.</p>
             </div>
 
-            <div style="max-width: 1000px; margin: 0 auto;">
-                <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 4rem;">
-                    <div style="display: flex; gap: 1rem;" class="scroll-reveal">
-                        <div style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(15, 23, 42, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--navy-900); font-size: 1.5rem;">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Conceptual Understanding</h3>
-                            <p style="color: var(--gray-600); font-size: 1.05rem;">Understanding AI at a high level — how it works, why outputs vary, limitations, and societal impact</p>
-                        </div>
-                    </div>
-
-                    <div style="display: flex; gap: 1rem;" class="scroll-reveal">
-                        <div style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(15, 23, 42, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--navy-900); font-size: 1.5rem;">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Operational Skills</h3>
-                            <p style="color: var(--gray-600); font-size: 1.05rem;">Using AI tools in practice — writing effective prompts, building workflows, integrating AI into daily work</p>
-                        </div>
-                    </div>
-
-                    <div style="display: flex; gap: 1rem;" class="scroll-reveal">
-                        <div style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(15, 23, 42, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--navy-900); font-size: 1.5rem;">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Governance & Ethics</h3>
-                            <p style="color: var(--gray-600); font-size: 1.05rem;">Oversight, ethics, and responsible use — understanding risks, applying policies, leading safe AI adoption</p>
-                        </div>
+            <div class="approaches-grid">
+                <div class="approach-card">
+                    <h3>Cultural Axis</h3>
+                    <div class="approach-subtitle">People-Centric Approach</div>
+                    <ul class="approach-list">
+                        <li>Reduces fear and demystifies AI</li>
+                        <li>Embeds tools into daily workflows</li>
+                        <li>Builds literacy through learning</li>
+                    </ul>
+                    <div class="approach-focus">
+                        <strong>Focus:</strong> How people learn and adopt AI responsibly
                     </div>
                 </div>
-
-                <style>
-                    @media (max-width: 768px) {
-                        .competency-calc {
-                            flex-direction: column !important;
-                            gap: 1.5rem !important;
-                        }
-                        .competency-calc > div:not(:nth-child(2)):not(:nth-child(4)) {
-                            margin: 0 !important;
-                        }
-                    }
-                </style>
-                <div class="card scroll-reveal" style="background: linear-gradient(135deg, var(--navy-50) 0%, white 100%); padding: 3rem;">
-                    <h3 style="text-align: center; margin-bottom: 2.5rem; font-size: 1.5rem;">Three Dimensions × Five Levels = Complete Competency Map</h3>
-
-                    <div class="competency-calc" style="display: flex; justify-content: center; align-items: center; gap: 3rem; margin-bottom: 2rem;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 3.5rem; font-weight: 200; color: var(--navy-900); line-height: 1;">3</div>
-                            <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.5rem; font-weight: 500;">DIMENSIONS</p>
-                        </div>
-
-                        <div style="font-size: 2rem; color: var(--navy-200); font-weight: 200;">×</div>
-
-                        <div style="text-align: center;">
-                            <div style="font-size: 3.5rem; font-weight: 200; color: var(--navy-900); line-height: 1;">5</div>
-                            <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.5rem; font-weight: 500;">PROFICIENCY LEVELS</p>
-                        </div>
-
-                        <div style="font-size: 2rem; color: var(--navy-200); font-weight: 200;">=</div>
-
-                        <div style="text-align: center;">
-                            <div style="font-size: 3.5rem; font-weight: 200; color: var(--navy-900); line-height: 1;">15</div>
-                            <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.5rem; font-weight: 500;">COMPETENCY POINTS</p>
-                        </div>
+                <div class="approach-card">
+                    <h3>Technical Axis</h3>
+                    <div class="approach-subtitle">System-Centric Approach</div>
+                    <ul class="approach-list">
+                        <li>Aligns tools, data, infrastructure</li>
+                        <li>Ensures compliance & ethics</li>
+                        <li>Modernizes metrics & ROI</li>
+                    </ul>
+                    <div class="approach-focus">
+                        <strong>Focus:</strong> Infrastructure and system optimization
                     </div>
+                </div>
+            </div>
 
-                    <p style="text-align: center; color: var(--gray-600); font-size: 1rem; margin: 0;">
-                        Your assessment maps your current proficiency across all 15 points, showing exactly where to focus training.
-                    </p>
+            <div class="highlight-box">
+                <p>
+                    <strong>RUDI Integrates Both Approaches.</strong> We address both the cultural and technical dimensions of AI adoption, but with a human-centered approach. We build comfort and literacy first, then layer in the governance and infrastructure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Pyramid -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-header center">
+                <div class="section-label">Readiness Pyramid</div>
+                <h2>The Journey from Fear to Fluency</h2>
+                <p>This is what the assessment measures - the psychological journey your organization takes</p>
+            </div>
+
+            <div class="pyramid-container">
+                <img src="images/framework-pyramid.png" alt="RUDI AI Readiness Pyramid - Four stacked levels from Familiarity to Fluency" class="pyramid-image" style="width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto; border-radius: 8px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- The AI Literacy Framework -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header center">
+                <div class="section-label">Literacy Framework</div>
+                <h2>Three Dimensions of AI Competency</h2>
+                <p>Every skill is measured across these three foundational areas</p>
+            </div>
+
+            <div class="dimensions-list">
+                <div class="dimension-item">
+                    <div class="dimension-number">01</div>
+                    <div class="dimension-content">
+                        <h3>Conceptual Understanding</h3>
+                        <p>Understanding AI at a high level - how it works, why outputs vary, limitations, and societal impact</p>
+                    </div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-number">02</div>
+                    <div class="dimension-content">
+                        <h3>Operational Skills</h3>
+                        <p>Using AI tools in practice - writing effective prompts, building workflows, integrating AI into daily work</p>
+                    </div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-number">03</div>
+                    <div class="dimension-content">
+                        <h3>Governance & Ethics</h3>
+                        <p>Oversight, ethics, and responsible use - understanding risks, applying policies, leading safe AI adoption</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="competency-calc">
+                <div class="calc-item">
+                    <div class="calc-number">3</div>
+                    <div class="calc-label">Dimensions</div>
+                </div>
+                <div class="calc-operator">x</div>
+                <div class="calc-item">
+                    <div class="calc-number">5</div>
+                    <div class="calc-label">Proficiency Levels</div>
+                </div>
+                <div class="calc-operator">=</div>
+                <div class="calc-item">
+                    <div class="calc-number">15</div>
+                    <div class="calc-label">Competency Points</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Proficiency Levels -->
-    <section class="section-padding bg-gray">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <h2>Five Proficiency Levels</h2>
-                <p class="text-secondary" style="font-size: 1.125rem;">Applied across each of the three dimensions</p>
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-header center">
+                <div class="section-label">Proficiency Scale</div>
+                <h2>Five Levels of Mastery</h2>
+                <p>Applied across each of the three dimensions</p>
             </div>
 
-            <div style="max-width: 900px; margin: 0 auto;">
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div class="card scroll-reveal" style="border-left: 3px solid var(--gray-400);">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--gray-400); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">
-                                0
-                            </div>
-                            <div>
-                                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">No Exposure</h3>
-                                <p class="text-secondary" style="font-size: 0.95rem; margin: 0;">
-                                    <strong>Conceptual:</strong> Never heard of generative AI •
-                                    <strong>Operational:</strong> Never opened an AI tool •
-                                    <strong>Governance:</strong> No awareness of AI risks
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card scroll-reveal" style="border-left: 3px solid var(--navy-700);">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--navy-700); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">
-                                1
-                            </div>
-                            <div>
-                                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Pre-Beginner</h3>
-                                <p class="text-secondary" style="font-size: 0.95rem; margin: 0;">
-                                    <strong>Conceptual:</strong> Heard "AI" or "ChatGPT" but can't explain •
-                                    <strong>Operational:</strong> Can open tools but unsure what to type •
-                                    <strong>Governance:</strong> Knows AI may be biased but not how
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card scroll-reveal" style="background: linear-gradient(135deg, #fff 0%, var(--navy-50) 100%); border-left: 4px solid var(--accent);">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 12px rgba(5,150,105,0.3);">
-                                2
-                            </div>
-                            <div style="flex-grow: 1;">
-                                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Beginner</h3>
-                                <p class="text-secondary" style="font-size: 0.95rem; margin: 0;">
-                                    <strong>Conceptual:</strong> Can describe AI as "a tool that generates text/images" •
-                                    <strong>Operational:</strong> Can try basic prompts, recognize when output is off •
-                                    <strong>Governance:</strong> Can name risks like privacy, misinformation, bias
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card scroll-reveal" style="background: linear-gradient(135deg, #fff 0%, var(--navy-50) 100%); border-left: 4px solid var(--accent);">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 12px rgba(5,150,105,0.3);">
-                                3
-                            </div>
-                            <div style="flex-grow: 1;">
-                                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Intermediate</h3>
-                                <p class="text-secondary" style="font-size: 0.95rem; margin: 0;">
-                                    <strong>Conceptual:</strong> Understands training data, bias, why outputs vary •
-                                    <strong>Operational:</strong> Uses AI for work tasks with cross-checking •
-                                    <strong>Governance:</strong> Knows policies, applies them correctly
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card scroll-reveal" style="background: linear-gradient(135deg, #fff 0%, var(--navy-50) 100%); border-left: 4px solid var(--navy-900);">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--navy-900); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 12px rgba(20,184,166,0.3);">
-                                4
-                            </div>
-                            <div style="flex-grow: 1;">
-                                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Advanced</h3>
-                                <p class="text-secondary" style="font-size: 0.95rem; margin: 0;">
-                                    <strong>Conceptual:</strong> Can critically discuss AI's societal role, ethics, limitations •
-                                    <strong>Operational:</strong> Designs AI workflows, mentors peers •
-                                    <strong>Governance:</strong> Leads conversations on AI policy, ethics, adoption
-                                </p>
-                            </div>
-                        </div>
+            <div class="levels-list">
+                <div class="level-item">
+                    <div class="level-number">0</div>
+                    <div class="level-content">
+                        <h3>No Exposure</h3>
+                        <p><strong>Conceptual:</strong> Never heard of generative AI / <strong>Operational:</strong> Never opened an AI tool / <strong>Governance:</strong> No awareness of AI risks</p>
                     </div>
                 </div>
-
-                <div class="card scroll-reveal" style="margin-top: 3rem; background: var(--navy-50); padding: 2rem;">
-                    <p style="text-align: center; font-size: 1.05rem; color: var(--navy-900); margin: 0;">
-                        <i class="fas fa-lightbulb" style="color: var(--navy-900); margin-right: 0.5rem;"></i>
-                        <strong>Most professionals start at Pre-Beginner or Beginner.</strong>
-                        RUDI training moves you systematically through each level across all three dimensions.
-                    </p>
+                <div class="level-item">
+                    <div class="level-number">1</div>
+                    <div class="level-content">
+                        <h3>Pre-Beginner</h3>
+                        <p><strong>Conceptual:</strong> Heard "AI" or "ChatGPT" but can't explain / <strong>Operational:</strong> Can open tools but unsure what to type / <strong>Governance:</strong> Knows AI may be biased but not how</p>
+                    </div>
+                </div>
+                <div class="level-item">
+                    <div class="level-number highlight">2</div>
+                    <div class="level-content">
+                        <h3>Beginner</h3>
+                        <p><strong>Conceptual:</strong> Can describe AI as "a tool that generates text/images" / <strong>Operational:</strong> Can try basic prompts, recognize when output is off / <strong>Governance:</strong> Can name risks like privacy, misinformation, bias</p>
+                    </div>
+                </div>
+                <div class="level-item">
+                    <div class="level-number highlight">3</div>
+                    <div class="level-content">
+                        <h3>Intermediate</h3>
+                        <p><strong>Conceptual:</strong> Understands training data, bias, why outputs vary / <strong>Operational:</strong> Uses AI for work tasks with cross-checking / <strong>Governance:</strong> Knows policies, applies them correctly</p>
+                    </div>
+                </div>
+                <div class="level-item">
+                    <div class="level-number highlight">4</div>
+                    <div class="level-content">
+                        <h3>Advanced</h3>
+                        <p><strong>Conceptual:</strong> Can critically discuss AI's societal role, ethics, limitations / <strong>Operational:</strong> Designs AI workflows, mentors peers / <strong>Governance:</strong> Leads conversations on AI policy, ethics, adoption</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How These Fit Together (Bridge Section) -->
-    <section class="section-padding" style="background: linear-gradient(135deg, var(--navy-50) 0%, white 100%); border-top: 1px solid var(--navy-100); border-bottom: 1px solid var(--navy-100);">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <div class="scroll-reveal" style="text-align: center; margin-bottom: 3rem;">
-                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">How These Frameworks Fit Together</h2>
-                    <p style="font-size: 1.1rem; color: var(--gray-600); max-width: 700px; margin: 0 auto;">
-                        Three complementary models working together to build AI fluency
-                    </p>
+    <!-- How These Fit Together -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header center">
+                <div class="section-label">Complete System</div>
+                <h2>How These Frameworks Fit Together</h2>
+                <p>Three complementary models working together to build AI fluency</p>
+            </div>
+
+            <div class="frameworks-grid">
+                <div class="framework-card">
+                    <div class="framework-icon">P</div>
+                    <h3>The Pyramid</h3>
+                    <p><strong>Your journey</strong> - the emotional arc from fear to confidence</p>
+                    <div class="framework-question">"Where am I going?"</div>
                 </div>
-
-                <style>
-                    @media (max-width: 768px) {
-                        .framework-fit-grid {
-                            grid-template-columns: 1fr !important;
-                        }
-                    }
-                </style>
-                <div class="framework-fit-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                    <div class="card scroll-reveal" style="background: white; text-align: center; border-top: 4px solid var(--accent);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1.5rem; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-mountain"></i>
-                        </div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--navy-900);">The Pyramid</h3>
-                        <p style="font-size: 0.95rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 1rem;">
-                            <strong>Your journey</strong> — the emotional arc from fear to confidence
-                        </p>
-                        <p style="font-size: 0.875rem; color: var(--navy-700); font-style: italic;">
-                            "Where am I going?"
-                        </p>
-                    </div>
-
-                    <div class="card scroll-reveal" style="background: white; text-align: center; border-top: 4px solid var(--navy-900);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1.5rem; background: var(--navy-900); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-table"></i>
-                        </div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--navy-900);">The 3×5 Matrix</h3>
-                        <p style="font-size: 0.95rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 1rem;">
-                            <strong>Your measurement</strong> — systematic assessment across 15 competency points
-                        </p>
-                        <p style="font-size: 0.875rem; color: var(--navy-700); font-style: italic;">
-                            "Where am I now?"
-                        </p>
-                    </div>
-
-                    <div class="card scroll-reveal" style="background: white; text-align: center; border-top: 4px solid var(--navy-700);">
-                        <div style="width: 56px; height: 56px; margin: 0 auto 1.5rem; background: var(--navy-700); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--navy-900);">The 3D Model</h3>
-                        <p style="font-size: 0.95rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 1rem;">
-                            <strong>Your practice</strong> — daily habits for responsible AI use
-                        </p>
-                        <p style="font-size: 0.875rem; color: var(--navy-700); font-style: italic;">
-                            "How do I use AI safely?"
-                        </p>
-                    </div>
+                <div class="framework-card">
+                    <div class="framework-icon">M</div>
+                    <h3>The 3x5 Matrix</h3>
+                    <p><strong>Your measurement</strong> - systematic assessment across 15 competency points</p>
+                    <div class="framework-question">"Where am I now?"</div>
                 </div>
-
-                <div class="scroll-reveal" style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 12px; border-left: 4px solid var(--navy-900); box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                    <p style="font-size: 1.05rem; color: var(--navy-900); line-height: 1.8; margin: 0;">
-                        <strong>Together, they form a complete system:</strong> The Pyramid shows your destination, the Matrix measures your progress, and the 3D Model guides your daily practice. RUDI's training and assessment tools help you move through all three.
-                    </p>
+                <div class="framework-card">
+                    <div class="framework-icon">3D</div>
+                    <h3>The 3D Model</h3>
+                    <p><strong>Your practice</strong> - daily habits for responsible AI use</p>
+                    <div class="framework-question">"How do I use AI safely?"</div>
                 </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <p>
+                    <strong>Together, they form a complete system:</strong> The Pyramid shows your destination, the Matrix measures your progress, and the 3D Model guides your daily practice. RUDI's training and assessment tools help you move through all three.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Responsible Use Model -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-header scroll-reveal">
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-header center">
+                <div class="section-label">Responsible Use</div>
                 <h2>The Responsible Use Model</h2>
-                <p class="text-secondary" style="font-size: 1.125rem;">How to use AI safely and effectively in practice</p>
+                <p>How to use AI safely and effectively in practice</p>
             </div>
 
-            <div style="max-width: 1100px; margin: 0 auto;">
-                <div class="card scroll-reveal" style="margin-bottom: 3rem; background: linear-gradient(135deg, var(--navy-50) 0%, white 100%); padding: 2.5rem;">
-                    <p style="font-size: 1.125rem; color: var(--gray-700); text-align: center; line-height: 1.8; margin: 0;">
-                        Beyond technical competency, RUDI teaches <strong>responsible AI use</strong> through a three-dimensional model that answers:
-                        <em>What data can I use? How carefully should I check outputs? What questions should I ask?</em>
-                    </p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
-                    <!-- Habits -->
-                    <div class="card scroll-reveal" style="border-top: 4px solid var(--accent);">
-                        <div style="text-align: center; margin-bottom: 1.5rem;">
-                            <div style="width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1rem;">
-                                <i class="fas fa-question-circle"></i>
-                            </div>
-                            <h3 style="font-size: 1.25rem; margin: 0;">Habits of Responsible Use</h3>
-                            <p style="color: var(--gray-600); font-size: 0.95rem; margin-top: 0.5rem;">The questions you ask</p>
-                        </div>
-                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.875rem;">
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check-circle" style="color: var(--accent); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span><strong>Source Tracing</strong> — Where did this come from?</span>
-                            </li>
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check-circle" style="color: var(--accent); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span><strong>Cross-Referencing</strong> — Does this hold up elsewhere?</span>
-                            </li>
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check-circle" style="color: var(--accent); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span><strong>Perspective Testing</strong> — Whose voice is present/missing?</span>
-                            </li>
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check-circle" style="color: var(--accent); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span><strong>Boundary Marking</strong> — What are the limits?</span>
-                            </li>
-                            <li style="display: flex; align-items: start; gap: 0.75rem;">
-                                <i class="fas fa-check-circle" style="color: var(--accent); margin-top: 0.25rem; flex-shrink: 0;"></i>
-                                <span><strong>Bias Awareness</strong> — What assumptions shape this?</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Levels of Scrutiny -->
-                    <div class="card scroll-reveal" style="border-top: 4px solid var(--navy-900);">
-                        <div style="text-align: center; margin-bottom: 1.5rem;">
-                            <div style="width: 60px; height: 60px; background: var(--navy-900); color: white; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1rem;">
-                                <i class="fas fa-layer-group"></i>
-                            </div>
-                            <h3 style="font-size: 1.25rem; margin: 0;">Levels of Scrutiny</h3>
-                            <p style="color: var(--gray-600); font-size: 0.95rem; margin-top: 0.5rem;">How carefully to check</p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <div style="width: 28px; height: 28px; background: rgba(15, 23, 42, 0.2); color: var(--navy-900); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">1</div>
-                                    <h4 style="font-size: 1rem; margin: 0;">Light Use</h4>
-                                </div>
-                                <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0; padding-left: 2.125rem;">Spell check, brainstorming, quick facts<br><em>Minimal scrutiny</em></p>
-                            </div>
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <div style="width: 28px; height: 28px; background: rgba(15, 23, 42, 0.4); color: var(--navy-900); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">2</div>
-                                    <h4 style="font-size: 1rem; margin: 0;">Medium Use</h4>
-                                </div>
-                                <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0; padding-left: 2.125rem;">Interpretation, analysis, abstract problems<br><em>Apply 2-3 habits</em></p>
-                            </div>
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <div style="width: 28px; height: 28px; background: var(--navy-900); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">3</div>
-                                    <h4 style="font-size: 1rem; margin: 0;">High-Stakes Use</h4>
-                                </div>
-                                <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0; padding-left: 2.125rem;">Legal, medical, financial decisions<br><em>Apply ALL 5 habits + verify with experts</em></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Data Types -->
-                    <div class="card scroll-reveal" style="border-top: 4px solid var(--navy-700);">
-                        <div style="text-align: center; margin-bottom: 1.5rem;">
-                            <div style="width: 60px; height: 60px; background: var(--navy-700); color: white; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1rem;">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <h3 style="font-size: 1.25rem; margin: 0;">Data Types</h3>
-                            <p style="color: var(--gray-600); font-size: 0.95rem; margin-top: 0.5rem;">What you're allowed to use</p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-check" style="color: var(--navy-900); font-size: 1rem;"></i>
-                                    <h4 style="font-size: 1rem; margin: 0; color: var(--navy-900);">Public Data</h4>
-                                </div>
-                                <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0; padding-left: 1.5rem;">Open-source info, articles, brainstorming</p>
-                            </div>
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-exclamation-triangle" style="color: #f59e0b; font-size: 1rem;"></i>
-                                    <h4 style="font-size: 1rem; margin: 0; color: #f59e0b;">Internal Data</h4>
-                                </div>
-                                <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0; padding-left: 1.5rem;">Workflows, non-sensitive reports (check policy)</p>
-                            </div>
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-exclamation-circle" style="color: #ef4444; font-size: 1rem;"></i>
-                                    <h4 style="font-size: 1rem; margin: 0; color: #ef4444;">Sensitive Data</h4>
-                                </div>
-                                <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0; padding-left: 1.5rem;">PII, HR records (must anonymize first)</p>
-                            </div>
-                            <div>
-                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-ban" style="color: #dc2626; font-size: 1rem;"></i>
-                                    <h4 style="font-size: 1rem; margin: 0; color: #dc2626;">Prohibited Data</h4>
-                                </div>
-                                <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0; padding-left: 1.5rem;">Protected records, trade secrets (never)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card scroll-reveal" style="margin-top: 3rem; background: var(--navy-50); padding: 2rem; text-align: center;">
-                    <p style="font-size: 1.05rem; color: var(--navy-900); margin: 0;">
-                        <i class="fas fa-shield-alt" style="color: var(--navy-900); margin-right: 0.5rem;"></i>
-                        <strong>This three-dimensional model ensures safe, effective AI use.</strong>
-                        RUDI training builds these habits into your daily workflow.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Domain Breakdown -->
-    <section class="section-padding bg-gray">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <h2>Domain Examples Across Proficiency Levels</h2>
-                <p class="text-secondary" style="font-size: 1.125rem;">What competency looks like at each stage</p>
-            </div>
-
-            <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 4rem;">
-                <!-- Conceptual Domain -->
-                <div class="scroll-reveal">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                        <div style="width: 70px; height: 70px; background: var(--accent); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Conceptual Domain</h3>
-                            <p style="color: var(--gray-600); font-size: 1.05rem;">Understanding AI at a high level</p>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Beginner</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Can describe AI as "a tool that generates text/images"</p>
-                        </div>
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Intermediate</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Understands training data, bias, why outputs vary</p>
-                        </div>
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Advanced</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Critically discusses AI's role in society, ethics, and limitations</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Operational Domain -->
-                <div class="scroll-reveal">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                        <div style="width: 70px; height: 70px; background: var(--accent); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Operational Domain</h3>
-                            <p style="color: var(--gray-600); font-size: 1.05rem;">Using AI tools in practice</p>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Beginner</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Can try basic prompts, recognizes when output is off</p>
-                        </div>
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Intermediate</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Uses AI for work tasks: reports, analysis, content creation</p>
-                        </div>
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Advanced</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Designs AI-enhanced workflows, mentors peers in safe usage</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Governance Domain -->
-                <div class="scroll-reveal">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                        <div style="width: 70px; height: 70px; background: var(--accent); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Governance Domain</h3>
-                            <p style="color: var(--gray-600); font-size: 1.05rem;">Oversight, ethics, and responsible use</p>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Beginner</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Can name risks: privacy, misinformation, bias</p>
-                        </div>
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Intermediate</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Knows organizational policies, applies them correctly</p>
-                        </div>
-                        <div class="card">
-                            <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--navy-900);">Advanced</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray-600);">Leads conversations on AI policy, ethics, and adoption</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Assessment Platform -->
-    <section class="section-padding" id="assessment" style="background: white; padding: 8rem 0;">
-        <div class="container">
-            <div class="section-header scroll-reveal" style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem; font-weight: 400; margin-bottom: 1rem;">Your AI Readiness — Visualized</h2>
-                <p class="text-secondary" style="font-size: 1.125rem; font-weight: 300; max-width: 700px; margin: 0 auto;">
-                    Discover where your team stands across all three dimensions with interactive visual reports
+            <div class="responsible-intro">
+                <p>
+                    Beyond technical competency, RUDI teaches <strong>responsible AI use</strong> through a framework that answers: What data can I use? How carefully should I check outputs? What questions should I ask?
                 </p>
             </div>
 
-            <!-- Lead with Radar Chart (Proof Point) -->
-            <style>
-                @media (max-width: 768px) {
-                    .radar-grid-2col {
-                        grid-template-columns: 1fr !important;
-                        gap: 2rem !important;
-                    }
-                }
-            </style>
-            <div style="max-width: 1100px; margin: 0 auto 5rem;">
-                <div class="radar-grid-2col" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;">
-                    <!-- Radar Chart First -->
-                    <div class="scroll-reveal">
-                        <div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
-                            <h4 class="mb-4" style="text-align: center; font-size: 1.2rem; color: var(--navy-900);">Your Readiness Snapshot</h4>
-                            <div style="position: relative; width: 100%; padding-bottom: 100%; background: white; border-radius: 8px;">
-                                <svg viewBox="0 0 400 400" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                                    <!-- Background circles -->
-                                    <circle cx="200" cy="200" r="150" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-                                    <circle cx="200" cy="200" r="120" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-                                    <circle cx="200" cy="200" r="90" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-                                    <circle cx="200" cy="200" r="60" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-                                    <circle cx="200" cy="200" r="30" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-
-                                    <!-- Axis lines (3 domains) -->
-                                    <line x1="200" y1="200" x2="200" y2="50" stroke="#e2e8f0" stroke-width="1.5"/>
-                                    <line x1="200" y1="200" x2="330" y2="275" stroke="#e2e8f0" stroke-width="1.5"/>
-                                    <line x1="200" y1="200" x2="70" y2="275" stroke="#e2e8f0" stroke-width="1.5"/>
-
-                                    <!-- Pre-assessment triangle (gray, smaller) -->
-                                    <polygon points="200,110 280,240 120,240"
-                                             fill="#9ca3af" fill-opacity="0.2" stroke="#9ca3af" stroke-width="2"/>
-
-                                    <!-- Post-assessment triangle (navy, larger) -->
-                                    <polygon points="200,75 310,260 90,260"
-                                             fill="var(--navy-900)" fill-opacity="0.3" stroke="var(--navy-900)" stroke-width="2.5"/>
-
-                                    <!-- Center dot -->
-                                    <circle cx="200" cy="200" r="4" fill="#0f172a"/>
-
-                                    <!-- Domain Labels -->
-                                    <g>
-                                        <circle cx="200" cy="35" r="8" fill="var(--navy-900)"/>
-                                        <text x="200" y="25" text-anchor="middle" font-size="12" fill="#1e293b" font-weight="600">Conceptual</text>
-                                    </g>
-                                    <g>
-                                        <circle cx="345" cy="285" r="8" fill="var(--navy-900)"/>
-                                        <text x="345" y="305" text-anchor="middle" font-size="12" fill="#1e293b" font-weight="600">Operational</text>
-                                    </g>
-                                    <g>
-                                        <circle cx="55" cy="285" r="8" fill="var(--navy-900)"/>
-                                        <text x="55" y="305" text-anchor="middle" font-size="12" fill="#1e293b" font-weight="600">Governance</text>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--navy-100);">
-                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-                                    <span style="font-size: 0.85rem; color: var(--gray-600);"><span style="display: inline-block; width: 12px; height: 12px; background: #9ca3af; border-radius: 2px; margin-right: 0.5rem;"></span>Before Training</span>
-                                    <span style="font-size: 0.85rem; color: var(--gray-600);"><span style="display: inline-block; width: 12px; height: 12px; background: var(--navy-900); border-radius: 2px; margin-right: 0.5rem;"></span>After Training</span>
-                                </div>
-                            </div>
+            <div class="responsible-grid">
+                <div class="responsible-card">
+                    <h3>Habits of Responsible Use</h3>
+                    <div class="responsible-subtitle">The questions you ask</div>
+                    <ul class="habits-list">
+                        <li><strong>Source Tracing</strong> <span>- Where did this come from?</span></li>
+                        <li><strong>Cross-Referencing</strong> <span>- Does this hold up elsewhere?</span></li>
+                        <li><strong>Perspective Testing</strong> <span>- Whose voice is present/missing?</span></li>
+                        <li><strong>Boundary Marking</strong> <span>- What are the limits?</span></li>
+                        <li><strong>Bias Awareness</strong> <span>- What assumptions shape this?</span></li>
+                    </ul>
+                </div>
+                <div class="responsible-card">
+                    <h3>Levels of Scrutiny</h3>
+                    <div class="responsible-subtitle">How carefully to check</div>
+                    <div class="scrutiny-item">
+                        <div class="scrutiny-number">1</div>
+                        <div class="scrutiny-content">
+                            <h4>Light Touch</h4>
+                            <p>Low-stakes tasks, internal brainstorming</p>
                         </div>
                     </div>
-
-                    <!-- Value Props -->
-                    <div class="scroll-reveal">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--navy-900); font-weight: 500;">What You'll Discover</h3>
-                        <p style="font-size: 1rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 2rem;">
-                            Your personalized readiness radar chart shows exactly where you stand — and where to focus next.
-                        </p>
-
-                        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                            <div style="display: flex; gap: 0.75rem; align-items: start;">
-                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--navy-900); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                                <div>
-                                    <h4 style="font-size: 0.95rem; margin-bottom: 0.25rem; font-weight: 600;">Conceptual Literacy</h4>
-                                    <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0;">Do you understand how AI works?</p>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; gap: 0.75rem; align-items: start;">
-                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--navy-900); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <div>
-                                    <h4 style="font-size: 0.95rem; margin-bottom: 0.25rem; font-weight: 600;">Operational Literacy</h4>
-                                    <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0;">Can you use AI tools effectively in your work?</p>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; gap: 0.75rem; align-items: start;">
-                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--navy-900); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 style="font-size: 0.95rem; margin-bottom: 0.25rem; font-weight: 600;">Governance Literacy</h4>
-                                    <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0;">Do you know what's safe and responsible?</p>
-                                </div>
-                            </div>
+                    <div class="scrutiny-item">
+                        <div class="scrutiny-number">2</div>
+                        <div class="scrutiny-content">
+                            <h4>Standard Review</h4>
+                            <p>Client-facing content, published work</p>
                         </div>
-
-                        <div style="margin-top: 2rem; padding: 1.5rem; background: var(--navy-50); border-radius: 8px; border-left: 4px solid var(--navy-900);">
-                            <p style="font-size: 0.95rem; color: var(--navy-900); margin: 0; font-style: italic;">
-                                <strong>Each dimension measured 0-4:</strong> From no awareness to expert fluency with personalized recommendations for growth.
-                            </p>
+                    </div>
+                    <div class="scrutiny-item">
+                        <div class="scrutiny-number">3</div>
+                        <div class="scrutiny-content">
+                            <h4>Deep Verification</h4>
+                            <p>Legal, compliance, high-stakes decisions</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- How Assessment Works -->
     <!-- CTA -->
-    <section class="section-padding" style="background: linear-gradient(135deg, var(--navy-50) 0%, white 100%); border-top: 1px solid var(--navy-100);">
-        <div class="container">
-            <div style="max-width: 850px; margin: 0 auto; text-align: center;">
-                <h2 class="mb-6" style="font-size: 2.5rem;">Ready to Move from Familiarity to Fluency?</h2>
-                <p style="font-size: 1.2rem; color: var(--navy-700); margin-bottom: 1rem; font-weight: 400;">
-                    Discover where your team stands and what to do next.
-                </p>
-                <p style="font-size: 1rem; color: var(--gray-600); margin-bottom: 3rem;">
-                    Your personalized radar chart is just one step away. Request your assessment now.
-                </p>
-                <div style="display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="#request-assessment" class="btn btn-primary" style="font-size: 1.05rem; padding: 1rem 2.5rem;">
-                        <i class="fas fa-chart-line" style="margin-right: 0.5rem;"></i>Get My Assessment
-                    </a>
-                    <a href="certificates.html" class="btn btn-secondary" style="font-size: 1.05rem; padding: 1rem 2.5rem;">
-                        View Certification Pathways
-                    </a>
-                </div>
-            </div>
+    <section class="cta-section">
+        <div class="cta-inner">
+            <h2>Ready to Assess Your Organization?</h2>
+            <p>Get your personalized AI readiness report and discover exactly where to focus your training efforts.</p>
+            <a href="#request-assessment" class="btn btn-secondary">Request Assessment</a>
         </div>
     </section>
 
-    <div id="site-footer"></div>
-
-    <script src="js/main.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
-
-    <!-- Load config -->
-    <script src="js/config.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">RUDI</div>
+                    <p>Responsible Use of Digital Intelligence. Training, consulting, and tools for organizations adopting AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="training.html">Training</a>
+                    <a href="consulting.html">Consulting</a>
+                    <a href="studio.html">Studio</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="framework.html">Framework</a>
+                    <a href="get-certificate.html">Certifications</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="ohio.html">Ohio TechCred</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                2025 RUDI. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Generate survey link
-        function generateSurveyLink(orgName, creatorEmail) {
-            const baseUrl = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-            const encodedName = encodeURIComponent(orgName);
-            const encodedCreator = encodeURIComponent(creatorEmail);
-            return `${baseUrl}/survey.html?company=${encodedName}&creator=${encodedCreator}`;
-        }
 
-        // Handle Assessment Request Form Submission
-        document.getElementById('assessmentRequestForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+        // Scroll-triggered animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
 
-            const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-
-            // Disable button and show loading
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating your survey link...';
-
-            // Generate survey link
-            const surveyLink = generateSurveyLink(form.organization.value, form.email.value);
-
-            const requestData = {
-                name: form.name.value,
-                email: form.email.value,
-                organization: form.organization.value,
-                role: form.role.value,
-                surveyLink: surveyLink,
-                timestamp: new Date().toISOString(),
-                type: 'assessment_request'
-            };
-
-            try {
-                // Send to Google Sheets
-                if (typeof CONFIG !== 'undefined' && CONFIG.SHEETS_WEBHOOK_URL) {
-                    await fetch(CONFIG.SHEETS_WEBHOOK_URL, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(requestData),
-                        mode: 'no-cors' // Apps Script requires no-cors
-                    });
-                    console.log('Assessment request saved to Google Sheets');
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
                 }
+            });
+        }, observerOptions);
 
-                // Update success message with the survey link
-                const successDiv = document.getElementById('successMessage');
-                successDiv.innerHTML = `
-                    <div style="color: var(--navy-900); font-size: 3rem; margin-bottom: 1rem;">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3 style="color: var(--navy-900); margin-bottom: 1.5rem;">Your Survey Link is Ready!</h3>
-
-                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border: 2px solid var(--navy-900);">
-                        <p style="color: var(--navy-700); font-weight: 600; margin-bottom: 0.75rem; font-size: 0.95rem;">
-                            Share this link with your team:
-                        </p>
-                        <div style="background: var(--navy-50); padding: 1rem; border-radius: 6px; margin-bottom: 1rem; border: 1px solid var(--navy-100);">
-                            <code id="generatedLink" style="word-break: break-all; color: var(--navy-800); font-size: 0.9rem;">${surveyLink}</code>
-                        </div>
-                        <div class="success-btn-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                            <button onclick="copyLinkToClipboard()" style="background: var(--navy-900); color: white; padding: 0.875rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
-                                <i class="fas fa-copy"></i> Copy Link
-                            </button>
-                            <button onclick="window.open('${surveyLink}', '_blank')" style="background: var(--teal); color: white; padding: 0.875rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
-                                <i class="fas fa-external-link-alt"></i> Take Survey Now
-                            </button>
-                        </div>
-                        <style>
-                            @media (max-width: 480px) {
-                                .success-btn-grid {
-                                    grid-template-columns: 1fr !important;
-                                }
-                            }
-                        </style>
-                    </div>
-
-                    <div style="text-align: left; background: var(--navy-50); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--navy-100);">
-                        <p style="color: var(--navy-900); font-weight: 600; margin-bottom: 0.75rem; font-size: 0.95rem;">
-                            <i class="fas fa-info-circle"></i> Next Steps:
-                        </p>
-                        <ol style="color: var(--navy-700); margin: 0; padding-left: 1.5rem; line-height: 1.8;">
-                            <li>Take the survey now or copy the link to share with your team</li>
-                            <li>Share via email, Slack, or Teams for team collaboration</li>
-                            <li>Survey responses will be collected anonymously</li>
-                            <li>You'll receive a summary report within 48 hours</li>
-                        </ol>
-                    </div>
-
-                    <p style="color: var(--gray-600); font-size: 0.9rem; margin-top: 1.5rem;">
-                        A confirmation has been sent to <strong>${requestData.email}</strong>
-                    </p>
-                `;
-
-                // Hide form, show success
-                form.style.display = 'none';
-                successDiv.style.display = 'block';
-
-                // Scroll to success message
-                successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            } catch (error) {
-                console.error('Error submitting form:', error);
-                alert('There was an error creating your survey link. Please try again or contact us at hoff@learnrudi.com');
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Request My Assessment';
-            }
+        // Observe section headers for fade-in
+        document.querySelectorAll('.section-header').forEach(el => {
+            el.classList.add('fade-in-section');
+            revealOnScroll.observe(el);
         });
 
-        // Copy link to clipboard (with fallback for non-HTTPS)
-        function copyLinkToClipboard() {
-            const link = document.getElementById('generatedLink').textContent;
-            const btn = event.target.closest('button');
-            const originalHTML = btn.innerHTML;
+        // Observe cards with staggered delays
+        const cardSelectors = [
+            '.problem-card',
+            '.need-card',
+            '.approach-card',
+            '.dimension-item',
+            '.level-item',
+            '.framework-card',
+            '.responsible-card'
+        ];
 
-            // Try modern clipboard API first (requires HTTPS)
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(link).then(() => {
-                    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                    btn.style.background = 'var(--navy-900)';
-                    setTimeout(() => {
-                        btn.innerHTML = originalHTML;
-                        btn.style.background = '';
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Clipboard API failed:', err);
-                    fallbackCopy(link, btn, originalHTML);
-                });
-            } else {
-                // Fallback for localhost/HTTP
-                fallbackCopy(link, btn, originalHTML);
-            }
+        cardSelectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+                revealOnScroll.observe(card);
+            });
+        });
+
+        // Observe pyramid image
+        const pyramidImage = document.querySelector('.pyramid-image');
+        if (pyramidImage) {
+            revealOnScroll.observe(pyramidImage);
         }
 
-        // Fallback copy method for localhost/HTTP
-        function fallbackCopy(text, btn, originalHTML) {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            textArea.style.position = 'fixed';
-            textArea.style.left = '-9999px';
-            document.body.appendChild(textArea);
-            textArea.select();
+        // Observe highlight boxes
+        document.querySelectorAll('.highlight-box').forEach(el => {
+            el.classList.add('fade-in-section');
+            revealOnScroll.observe(el);
+        });
 
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                    btn.style.background = 'var(--navy-900)';
-                    setTimeout(() => {
-                        btn.innerHTML = originalHTML;
-                        btn.style.background = '';
-                    }, 2000);
-                } else {
-                    throw new Error('Copy command failed');
-                }
-            } catch (err) {
-                console.error('Fallback copy failed:', err);
-                // Select the text so user can manually copy
-                const linkElement = document.getElementById('generatedLink');
-                const range = document.createRange();
-                range.selectNodeContents(linkElement);
-                const selection = window.getSelection();
-                selection.removeAllRanges();
-                selection.addRange(range);
-                alert('Copy failed. The link is now selected - press Cmd+C (Mac) or Ctrl+C (Windows) to copy.');
-            } finally {
-                document.body.removeChild(textArea);
-            }
+        // Observe assessment card
+        const assessmentCard = document.querySelector('.assessment-card');
+        if (assessmentCard) {
+            assessmentCard.classList.add('fade-in-section');
+            revealOnScroll.observe(assessmentCard);
+        }
+
+        // Observe competency calc
+        const competencyCalc = document.querySelector('.competency-calc');
+        if (competencyCalc) {
+            competencyCalc.classList.add('fade-in-section');
+            revealOnScroll.observe(competencyCalc);
         }
     </script>
 </body>

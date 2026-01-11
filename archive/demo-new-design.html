@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUDI - New Design Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           NEW RUDI DESIGN SYSTEM - DARK MODE FIRST
+           ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Dark Mode Colors */
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --bg-card: #141414;
+
+            /* Text */
+            --text-primary: #fafafa;
+            --text-secondary: #a3a3a3;
+            --text-muted: #737373;
+
+            /* Accent - Blue */
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --accent-dim: rgba(59, 130, 246, 0.1);
+
+            /* Borders */
+            --border: #262626;
+            --border-hover: #404040;
+
+            /* Success/Green */
+            --success: #10b981;
+            --success-dim: rgba(16, 185, 129, 0.1);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+
+            /* Spacing */
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.2;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .monospace {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-accent {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.15), transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--accent), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-tertiary);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border-color: var(--border);
+        }
+
+        .btn-ghost:hover {
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Code Block */
+        .code-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+
+        .code-block .comment {
+            color: var(--text-muted);
+        }
+
+        .code-block .keyword {
+            color: #c678dd;
+        }
+
+        .code-block .string {
+            color: #98c379;
+        }
+
+        .code-block .number {
+            color: #d19a66;
+        }
+
+        /* Section */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-dim);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .card ul li {
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: var(--success-dim);
+            color: var(--success);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .badge-accent {
+            background: var(--accent-dim);
+            color: var(--accent);
+        }
+
+        /* Terminal Window */
+        .terminal {
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .terminal-header {
+            background: #0a0a0a;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-hover);
+        }
+
+        .terminal-dot.red { background: #ef4444; }
+        .terminal-dot.yellow { background: #f59e0b; }
+        .terminal-dot.green { background: #10b981; }
+
+        .terminal-body {
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.8;
+        }
+
+        .terminal-line {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .terminal-prompt {
+            color: var(--success);
+        }
+
+        .terminal-command {
+            color: var(--text-primary);
+        }
+
+        .terminal-output {
+            color: var(--text-secondary);
+            margin-left: 1rem;
+        }
+
+        /* Origin Story Section */
+        .origin-story {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .origin-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .origin-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .origin-text strong {
+            color: var(--text-primary);
+        }
+
+        .origin-text .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .origin-screenshot {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .origin-screenshot img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Feature List */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-icon-sm {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-dim);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 4rem 0 5rem;
+            }
+
+            .stats-bar {
+                gap: 2rem;
+            }
+
+            .origin-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                RUDI<span class="logo-accent">.</span>AI
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Download Studio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="monospace">162,816 LOC</span>
+                <span style="color: var(--border)">|</span>
+                <span class="monospace">59 days</span>
+                <span style="color: var(--border)">|</span>
+                <span>Built with AI</span>
+            </div>
+
+            <h1>
+                Building AI Capacity<br>
+                <span class="gradient-text">Across Organizations</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                We help organizations understand, adopt, and implement AI responsibly through
+                training, consulting, custom development, and open-source tools.
+            </p>
+
+            <div class="stats-bar monospace">
+                <div class="stat">
+                    <div class="stat-number">162,816</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">59</div>
+                    <div class="stat-label">Days to RC</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">400+</div>
+                    <div class="stat-label">Files</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Repositories</div>
+                </div>
+            </div>
+
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Book Consultation</a>
+                <a href="#" class="btn btn-secondary">Download Studio (Free)</a>
+                <a href="#" class="btn btn-ghost">View Certifications →</a>
+            </div>
+
+            <!-- Terminal Example -->
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-command">rudi install slack</span>
+                    </div>
+                    <div class="terminal-output">✓ Installing Slack MCP stack...</div>
+                    <div class="terminal-output">✓ Stack installed successfully</div>
+                    <div style="height: 0.5rem;"></div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-command">rudi secrets set SLACK_BOT_TOKEN</span>
+                    </div>
+                    <div class="terminal-output">✓ Secret configured</div>
+                    <div style="height: 0.5rem;"></div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-command">rudi integrate all</span>
+                    </div>
+                    <div class="terminal-output">✓ Integrated with Claude, GPT, Gemini</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Story Section -->
+    <section class="origin-story">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Story Behind RUDI</h2>
+                <p>How AI wrote 162,816 lines of production code in 59 days</p>
+            </div>
+
+            <div class="origin-content">
+                <div>
+                    <p class="origin-text">
+                        <strong>I'm not a traditionally trained software engineer.</strong> But over 59 days,
+                        I built an entire AI development platform — 162,816 lines of production TypeScript/React.
+                    </p>
+                    <br>
+                    <p class="origin-text">
+                        <span class="highlight">AI wrote every line of code. I just directed it.</span>
+                    </p>
+                    <br>
+                    <p class="origin-text">
+                        This isn't a toy project. It's a full Electron desktop app with 25+ backend services,
+                        file management, terminal, git integration, bundled runtimes, and 33 file format viewers.
+                    </p>
+                    <br>
+                    <p class="origin-text">
+                        The codebase is clean. Professional. Production-ready.
+                    </p>
+                    <br>
+                    <p class="origin-text">
+                        <strong>The meta-proof:</strong> I used RUDI Studio to build RUDI Studio.
+                    </p>
+                    <br>
+                    <a href="#" class="btn btn-secondary">Read the Full Story →</a>
+                </div>
+
+                <div>
+                    <div class="code-block">
+                        <pre class="monospace"><span class="comment">// The IDE that built itself</span>
+<span class="keyword">import</span> { Studio } from <span class="string">'@rudi/studio'</span>
+
+<span class="keyword">const</span> stats = {
+  linesOfCode: <span class="number">162816</span>,
+  files: <span class="number">400</span>,
+  repositories: <span class="number">5</span>,
+  days: <span class="number">59</span>,
+
+  <span class="comment">// Built with AI, not by a software engineer</span>
+  builtBy: <span class="string">'AI'</span>,
+  directedBy: <span class="string">'Human with clear thinking'</span>
+}
+
+<span class="keyword">export default</span> Studio</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>How RUDI Helps Organizations</h2>
+                <p>Training, consulting, development, and open-source tools</p>
+            </div>
+
+            <div class="card-grid">
+                <!-- Training -->
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Training</h3>
+                    <p>TechCred-eligible certifications, corporate cohorts, and hands-on workshops</p>
+                    <ul>
+                        <li>3 certification levels</li>
+                        <li>Custom corporate programs</li>
+                        <li>ESC partnerships</li>
+                        <li>Learn in RUDI Studio</li>
+                    </ul>
+                    <a href="#" class="btn btn-ghost" style="width: 100%">Explore Training →</a>
+                </div>
+
+                <!-- Consulting -->
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>Consulting</h3>
+                    <p>AI readiness assessments, strategy development, and implementation planning</p>
+                    <ul>
+                        <li>Readiness assessment framework</li>
+                        <li>Executive advisory</li>
+                        <li>Policy & governance</li>
+                        <li>Change management</li>
+                    </ul>
+                    <a href="#" class="btn btn-ghost" style="width: 100%">Book Consultation →</a>
+                </div>
+
+                <!-- Development -->
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Development</h3>
+                    <p>Custom AI solutions, MCP stacks, and technical implementation</p>
+                    <ul>
+                        <li>Custom AI integrations</li>
+                        <li>MCP stack development</li>
+                        <li>Content & curriculum</li>
+                        <li>Ongoing support</li>
+                    </ul>
+                    <a href="#" class="btn btn-ghost" style="width: 100%">Request Proposal →</a>
+                </div>
+
+                <!-- Products -->
+                <div class="card" style="border-color: var(--accent);">
+                    <div class="badge badge-accent">Open Source</div>
+                    <div class="card-icon">🛠️</div>
+                    <h3>Products</h3>
+                    <p>Free, open-source tools for AI-augmented development</p>
+                    <ul>
+                        <li>Studio (Desktop IDE)</li>
+                        <li>CLI (Package Manager)</li>
+                        <li>Registry (14+ MCP Stacks)</li>
+                        <li>Cloud (Coming Soon)</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" style="width: 100%">Download Free →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header">
+                <h2>RUDI Studio Features</h2>
+                <p>The IDE I used to build this entire platform</p>
+            </div>
+
+            <div class="feature-list" style="max-width: 800px; margin: 0 auto;">
+                <div class="feature-item">
+                    <div class="feature-icon-sm">📁</div>
+                    <div class="feature-text">
+                        <h4>File Management</h4>
+                        <p>Tree view, search, quick access. Organize complex codebases with ease.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-sm">💻</div>
+                    <div class="feature-text">
+                        <h4>Integrated Terminal</h4>
+                        <p>Full PTY support. Multiple tabs. Dev server detection.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-sm">🤖</div>
+                    <div class="feature-text">
+                        <h4>AI Chat</h4>
+                        <p>Claude, GPT, Gemini, Ollama. Chat with AI while you work.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-sm">📦</div>
+                    <div class="feature-text">
+                        <h4>Bundled Runtimes</h4>
+                        <p>Python 3.12, Node.js 20, Git, FFmpeg, ripgrep. No setup required.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-sm">🔍</div>
+                    <div class="feature-text">
+                        <h4>33 File Viewers</h4>
+                        <p>Code, PDF, images, video, Excel, SQLite, and more.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-sm">🌿</div>
+                    <div class="feature-text">
+                        <h4>Git Integration</h4>
+                        <p>Status, staging, commits. Version control built-in.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn btn-primary">Download Studio (Free) →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section>
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Ready to Get Started?</h2>
+            <p style="color: var(--text-secondary); font-size: 1.125rem; max-width: 600px; margin: 0 auto 2rem;">
+                Whether you need training, consulting, development, or just want to try Studio — we're here to help.
+            </p>
+            <div class="cta-group" style="justify-content: center;">
+                <a href="#" class="btn btn-primary">Book a Consultation</a>
+                <a href="#" class="btn btn-secondary">Download Studio</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

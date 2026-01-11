@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Assessment | RUDI</title>
+    <meta name="description" content="Assess your organization's AI readiness with RUDI's comprehensive 9-question assessment. Anonymous, 5-7 minutes, actionable insights.">
+    <meta name="keywords" content="AI readiness assessment, AI literacy survey, organizational AI maturity, AI adoption assessment, AI skills evaluation">
+    <meta name="author" content="RUDI - Responsible Use of Digital Intelligence">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://learnrudi.com/assessment.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learnrudi.com/assessment.html">
+    <meta property="og:title" content="AI Readiness Assessment | RUDI">
+    <meta property="og:description" content="9-question assessment to measure your organization's AI readiness. Anonymous responses, actionable insights.">
+    <meta property="og:image" content="https://learnrudi.com/images/framework-pyramid.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://learnrudi.com/assessment.html">
+    <meta name="twitter:title" content="AI Readiness Assessment | RUDI">
+    <meta name="twitter:description" content="9-question assessment to measure your organization's AI readiness.">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "RUDI AI Readiness Assessment",
+        "description": "A 9-question assessment to measure organizational AI readiness across familiarity, comfort, and adoption dimensions",
+        "url": "https://learnrudi.com/assessment.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "RUDI",
+            "url": "https://learnrudi.com"
+        },
+        "educationalLevel": "Professional",
+        "timeRequired": "PT7M",
+        "numberOfQuestions": 9
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gray-900: #161616;
+            --gray-800: #262626;
+            --gray-600: #525252;
+            --gray-400: #8d8d8d;
+            --gray-100: #e0e0e0;
+            --gray-50: #f4f4f4;
+            --white: #ffffff;
+            --accent: #c75b39;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--gray-900);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .assessment-header {
+            padding: 1rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        /* Hero Section */
+        .assessment-hero {
+            padding: 2rem 2rem 1.5rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .org-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.1s forwards;
+        }
+
+        .assessment-title {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.2s forwards;
+        }
+
+        .assessment-title span {
+            color: var(--accent);
+        }
+
+        .assessment-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.3s forwards;
+        }
+
+        .assessment-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 0.75rem;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.4s forwards;
+        }
+
+        .meta-item {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+        }
+
+        .meta-item strong {
+            color: var(--gray-900);
+            font-weight: 500;
+        }
+
+        /* Share Button */
+        .share-container {
+            margin-top: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.5s forwards;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gray-900);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .share-btn:hover {
+            background: var(--gray-800);
+        }
+
+        .share-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .share-btn.copied {
+            background: var(--accent);
+        }
+
+        /* Form Container */
+        .form-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 2rem;
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.5s forwards;
+        }
+
+        .form-wrapper {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--gray-100);
+        }
+
+        .form-wrapper iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        .assessment-footer {
+            text-align: center;
+            padding: 1rem;
+            color: var(--gray-400);
+            font-size: 0.75rem;
+        }
+
+        .assessment-footer a {
+            color: var(--gray-600);
+            text-decoration: none;
+        }
+
+        .assessment-footer a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .assessment-hero {
+                padding: 1.5rem 1rem 1rem;
+            }
+            .assessment-title {
+                font-size: 1.5rem;
+            }
+            .assessment-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .form-container {
+                padding: 0 1rem 2rem;
+            }
+            .form-wrapper iframe {
+                height: 700px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="assessment-header">
+        <a href="index.html" class="logo">RUDI</a>
+    </header>
+
+    <section class="assessment-hero">
+        <p class="org-label" id="orgLabel">AI Readiness Assessment</p>
+        <h1 class="assessment-title">
+            <span id="orgName"></span> AI Readiness Assessment
+        </h1>
+        <p class="assessment-subtitle">
+            9 questions to understand where your organization stands with AI adoption.
+        </p>
+        <div class="assessment-meta">
+            <div class="meta-item"><strong>9</strong> questions</div>
+            <div class="meta-item"><strong>5-7</strong> minutes</div>
+            <div class="meta-item"><strong>Anonymous</strong> responses</div>
+        </div>
+        <div class="share-container">
+            <button class="share-btn" id="shareBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+                Share Assessment Link
+            </button>
+        </div>
+    </section>
+
+    <div class="form-container">
+        <div class="form-wrapper">
+            <iframe
+                id="tallyFrame"
+                src="https://tally.so/embed/0Q8QqB?alignLeft=1&hideTitle=1&transparentBackground=1"
+                loading="lazy"
+            ></iframe>
+        </div>
+    </div>
+
+    <footer class="assessment-footer">
+        <p>Powered by <a href="index.html">RUDI</a> · Responsible Use of Digital Intelligence</p>
+    </footer>
+
+    <!-- Tally embed script for dynamic height -->
+    <script src="https://tally.so/widgets/embed.js"></script>
+
+    <script>
+        // Get organization from URL
+        const params = new URLSearchParams(window.location.search);
+        const org = params.get('organization') || '';
+
+        // Update page with organization name
+        if (org) {
+            document.getElementById('orgName').textContent = org;
+            document.getElementById('orgLabel').textContent = 'Assessment for';
+            document.title = `${org} - AI Readiness Assessment | RUDI`;
+        } else {
+            document.getElementById('orgName').textContent = 'Your Organization\'s';
+        }
+
+        // Update Tally iframe with organization only (anonymous responses)
+        const tallyFrame = document.getElementById('tallyFrame');
+        const tallyParams = new URLSearchParams({
+            alignLeft: '1',
+            hideTitle: '1',
+            transparentBackground: '1',
+            dynamicHeight: '1',
+            organization: org
+        });
+        tallyFrame.src = `https://tally.so/embed/0Q8QqB?${tallyParams.toString()}`;
+
+        // Share button - copy link to clipboard
+        document.getElementById('shareBtn').addEventListener('click', function() {
+            const shareUrl = window.location.href;
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                this.classList.add('copied');
+                this.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Link Copied!
+                `;
+                setTimeout(() => {
+                    this.classList.remove('copied');
+                    this.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                        Share Assessment Link
+                    `;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

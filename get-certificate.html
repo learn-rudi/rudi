@@ -3,75 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claim Your AI Certificate | RUDI AI | Certificate of Completion</title>
-    <meta name="description" content="Claim and verify your RUDI AI certificate of completion. Stackable credentials recognized by employers. Share your achievement across LinkedIn and professional networks.">
-    <meta name="keywords" content="Claim certificate, certificate of completion, AI literacy certificate, verify certificate, RUDI AI credential">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="RUDI AI">
+    <title>Claim Your AI Certificate | RUDI</title>
+    <meta name="description" content="Claim and verify your RUDI AI certificate of completion. Stackable credentials recognized by employers.">
+    <meta name="keywords" content="Claim certificate, certificate of completion, AI literacy certificate, verify certificate, RUDI credential">
+    <meta name="author" content="RUDI">
     <link rel="canonical" href="https://learnrudi.com/get-certificate.html">
 
     <!-- Open Graph -->
-    <meta property="og:site_name" content="RUDI AI">
-    <meta property="og:title" content="Claim Your AI Certificate | RUDI AI">
-    <meta property="og:description" content="Claim your RUDI AI certificate and verify your credentials. Share your achievement across professional networks.">
+    <meta property="og:site_name" content="RUDI">
+    <meta property="og:title" content="Claim Your AI Certificate | RUDI">
+    <meta property="og:description" content="Claim your RUDI AI certificate and verify your credentials.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://learnrudi.com/get-certificate.html">
-    <meta property="og:image" content="https://learnrudi.com/images/Diverse Business Team in Office.png">
-    <meta property="og:locale" content="en_US">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@RUDIAI">
-    <meta name="twitter:title" content="Claim Your AI Certificate | RUDI">
-    <meta name="twitter:description" content="Verify and claim your RUDI AI certificate of completion.">
-    <meta name="twitter:image" content="https://learnrudi.com/images/Diverse Business Team in Office.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
     <style>
-        .hero-section {
-            background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
-            padding: 4rem 0 6rem;
-            color: white;
+        :root {
+            --gray-900: #111111;
+            --gray-800: #1a1a1a;
+            --gray-700: #333333;
+            --gray-600: #555555;
+            --gray-500: #777777;
+            --gray-400: #999999;
+            --gray-300: #b3b3b3;
+            --gray-200: #cccccc;
+            --gray-100: #e5e5e5;
+            --gray-50: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links a:hover {
+            color: var(--gray-900);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .hero-section h1 {
-            color: white;
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-400);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-alt {
+            background: var(--gray-50);
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin-bottom: 4rem;
+        }
+
+        .section-header.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
             margin-bottom: 1rem;
         }
 
-        .hero-section p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Certificate Preview */
         .certificate-preview {
-            margin: -4rem auto 4rem;
-            max-width: 900px;
-            background: white;
-            border-radius: 16px;
+            max-width: 800px;
+            margin: -4rem auto 0;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             padding: 2rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-
-        .certificate-preview img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            border: 2px solid var(--navy-100);
+            position: relative;
+            z-index: 10;
         }
 
         .cert-mini-preview {
-            border: 3px solid var(--navy-900);
-            border-radius: 12px;
+            border: 2px solid var(--gray-900);
             padding: 2rem;
-            background: white;
+            background: var(--white);
             position: relative;
-            overflow: hidden;
         }
 
         .cert-mini-preview::before {
@@ -81,38 +210,97 @@
             left: 8px;
             right: 8px;
             bottom: 8px;
-            border: 1.5px solid var(--navy-900);
-            border-radius: 8px;
-            z-index: 1;
+            border: 1px solid var(--gray-900);
             pointer-events: none;
         }
 
-        .cert-mini-preview::after {
-            content: '';
-            position: absolute;
-            top: -100px;
-            left: -100px;
-            width: 500px;
-            height: 500px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='rgba(30,58,138,0.02)' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='50' fill='none' stroke='rgba(30,58,138,0.02)' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='70' fill='none' stroke='rgba(30,58,138,0.02)' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='3' fill='rgba(30,58,138,0.04)'/%3E%3Cg%3E%3Cline x1='100' y1='100' x2='130' y2='100' stroke='rgba(30,58,138,0.03)' stroke-width='1.5'/%3E%3Ccircle cx='130' cy='100' r='4' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='85' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='85' r='3' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='115' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='115' r='3' fill='rgba(30,58,138,0.03)'/%3E%3C/g%3E%3Cg transform='rotate(60 100 100)'%3E%3Cline x1='100' y1='100' x2='130' y2='100' stroke='rgba(30,58,138,0.03)' stroke-width='1.5'/%3E%3Ccircle cx='130' cy='100' r='4' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='85' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='85' r='3' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='115' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='115' r='3' fill='rgba(30,58,138,0.03)'/%3E%3C/g%3E%3Cg transform='rotate(120 100 100)'%3E%3Cline x1='100' y1='100' x2='130' y2='100' stroke='rgba(30,58,138,0.03)' stroke-width='1.5'/%3E%3Ccircle cx='130' cy='100' r='4' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='85' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='85' r='3' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='115' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='115' r='3' fill='rgba(30,58,138,0.03)'/%3E%3C/g%3E%3Cg transform='rotate(180 100 100)'%3E%3Cline x1='100' y1='100' x2='130' y2='100' stroke='rgba(30,58,138,0.03)' stroke-width='1.5'/%3E%3Ccircle cx='130' cy='100' r='4' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='85' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='85' r='3' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='115' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='115' r='3' fill='rgba(30,58,138,0.03)'/%3E%3C/g%3E%3Cg transform='rotate(240 100 100)'%3E%3Cline x1='100' y1='100' x2='130' y2='100' stroke='rgba(30,58,138,0.03)' stroke-width='1.5'/%3E%3Ccircle cx='130' cy='100' r='4' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='85' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='85' r='3' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='115' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='115' r='3' fill='rgba(30,58,138,0.03)'/%3E%3C/g%3E%3Cg transform='rotate(300 100 100)'%3E%3Cline x1='100' y1='100' x2='130' y2='100' stroke='rgba(30,58,138,0.03)' stroke-width='1.5'/%3E%3Ccircle cx='130' cy='100' r='4' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='85' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='85' r='3' fill='rgba(30,58,138,0.03)'/%3E%3Cline x1='130' y1='100' x2='145' y2='115' stroke='rgba(30,58,138,0.03)' stroke-width='1'/%3E%3Ccircle cx='145' cy='115' r='3' fill='rgba(30,58,138,0.03)'/%3E%3C/g%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.8;
+        .cert-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
+        .cert-logo {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-subtitle {
+            font-size: 0.625rem;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-label {
+            font-size: 0.625rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .cert-name {
+            font-size: 2rem;
+            font-weight: 300;
+            border-bottom: 2px solid var(--gray-900);
+            padding-bottom: 0.5rem;
+            margin: 0 auto 1rem;
+            max-width: 400px;
+        }
+
+        .cert-course {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-hours {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .cert-description {
+            font-size: 0.625rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto 1rem;
+        }
+
+        /* Form */
         .form-section {
             max-width: 600px;
-            margin: 0 auto 4rem;
+            margin: 0 auto;
         }
 
         .form-card {
-            background: white;
-            border-radius: 12px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             padding: 3rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .form-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .form-card > p {
+            text-align: center;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
         }
 
         .form-group {
@@ -121,40 +309,54 @@
 
         .form-group label {
             display: block;
-            font-weight: 600;
-            color: var(--navy-900);
+            font-size: 0.875rem;
+            font-weight: 500;
             margin-bottom: 0.5rem;
-            font-size: 0.95rem;
         }
 
         .form-group input {
             width: 100%;
             padding: 0.875rem 1rem;
-            border: 2px solid var(--navy-100);
-            border-radius: 8px;
+            border: 1px solid var(--gray-200);
+            font-family: inherit;
             font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s;
         }
 
         .form-group input:focus {
             outline: none;
-            border-color: var(--teal);
-            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+            border-color: var(--gray-900);
         }
 
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gray-900);
+            color: var(--white);
+            width: 100%;
+        }
+
+        /* Info Banner */
         .info-banner {
-            background: var(--navy-50);
-            border-left: 4px solid var(--teal);
+            background: var(--gray-50);
+            border-left: 3px solid var(--gray-900);
             padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         .info-banner h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            color: var(--navy-900);
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
 
         .info-banner ul {
@@ -164,16 +366,15 @@
 
         .info-banner li {
             margin-bottom: 0.5rem;
-            color: var(--navy-700);
+            color: var(--gray-700);
+            font-size: 0.9375rem;
         }
 
+        /* Success Message */
         .success-message {
             display: none;
-            background: #ecfdf5;
-            border: 2px solid #10b981;
-            color: #065f46;
+            border: 1px solid var(--gray-900);
             padding: 2rem;
-            border-radius: 12px;
             text-align: center;
         }
 
@@ -181,218 +382,327 @@
             display: block;
         }
 
-        .success-message i {
-            font-size: 3rem;
-            color: #10b981;
-            margin-bottom: 1rem;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .benefit-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .benefit-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--teal);
-            color: white;
-            border-radius: 50%;
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            border: 2px solid var(--gray-900);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
             margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .success-message h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--gray-600);
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .benefit-card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            border: 1px solid var(--gray-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.25rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .benefit-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .benefit-card a {
+            color: var(--gray-900);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            padding: 4rem 2rem 2rem;
+            color: var(--gray-400);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand {
+            max-width: 280px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .footer-section h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            text-decoration: none;
+            padding: 0.375rem 0;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="site-header"></div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">RUDI</a>
+            <ul class="nav-links">
+                <li><a href="training.html">Training</a></li>
+                <li><a href="consulting.html">Consulting</a></li>
+                <li><a href="studio.html">Studio</a></li>
+                <li><a href="framework.html">Framework</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <span class="section-badge" style="background: rgba(255,255,255,0.2); color: white;">
-                <i class="fas fa-certificate"></i> Certificate Available
-            </span>
-            <h1>Claim Your Certificate of Completion</h1>
-            <p>Thank you for participating in the RUDI Responsible AI Literacy training. Your official certificate is ready!</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-label">Certificate of Completion</div>
+            <h1>Claim Your Certificate</h1>
+            <p class="hero-subtitle">
+                Thank you for completing RUDI training. Your official certificate is ready.
+            </p>
         </div>
     </section>
 
     <!-- Certificate Preview -->
-    <div class="container">
-        <div class="certificate-preview">
-            <div class="cert-mini-preview">
-                <div style="text-align: center; padding: 1.5rem; position: relative; z-index: 2;">
-                    <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; color: var(--navy-900); margin-bottom: 0.25rem;">RUDI</div>
-                    <div style="font-size: 0.65rem; color: #666; margin-bottom: 1rem;">Institute for the Responsible Use of Digital Intelligence</div>
+    <section class="section">
+        <div class="section-inner">
+            <div class="certificate-preview">
+                <div class="cert-mini-preview">
+                    <div class="cert-content">
+                        <div class="cert-logo">RUDI</div>
+                        <div class="cert-subtitle">Institute for the Responsible Use of Digital Intelligence</div>
 
-                    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Certificate of Completion</h2>
-                    <div style="font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">This Certifies That</div>
+                        <h2 class="cert-title">Certificate of Completion</h2>
+                        <div class="cert-label">This Certifies That</div>
 
-                    <div style="font-size: 2rem; font-family: 'Crimson Pro', serif; font-weight: 600; border-bottom: 2px solid #1a1a1a; padding-bottom: 0.5rem; margin: 0 auto 1rem; max-width: 400px;">Your Name Here</div>
+                        <div class="cert-name">Your Name Here</div>
 
-                    <div style="font-size: 0.75rem; margin-bottom: 0.75rem;">has successfully completed</div>
+                        <div style="font-size: 0.75rem; margin-bottom: 0.75rem;">has successfully completed</div>
 
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Responsible AI Literacy</h3>
-                    <div style="font-size: 0.85rem; color: #1e3a8a; font-weight: 700; margin-bottom: 1rem;">Foundation & Application • 3 Contact Hours</div>
+                        <div class="cert-course">Responsible AI Literacy</div>
+                        <div class="cert-hours">Foundation & Application | 3 Contact Hours</div>
 
-                    <p style="font-size: 0.65rem; color: #555; line-height: 1.6; margin-bottom: 0.75rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                        A comprehensive course covering: Governance frameworks for responsible AI use •
-                        Evolution of intelligence • Major AI ecosystems • Traditional vs. Generative AI •
-                        Modalities of generative AI • Large Language Model fundamentals •
-                        Prompt design for non-technical users • Hands-on overview of generative AI tools
-                    </p>
+                        <p class="cert-description">
+                            A comprehensive course covering: Governance frameworks for responsible AI use |
+                            Evolution of intelligence | Major AI ecosystems | Traditional vs. Generative AI |
+                            Prompt design for non-technical users | Hands-on overview of generative AI tools
+                        </p>
 
-                    <div style="font-size: 0.7rem; font-weight: 700; margin-bottom: 0.5rem;">3 Contact Hours  |  0.3 CEU Equivalent</div>
-
-                    <div style="font-size: 0.6rem; color: #999; font-style: italic; margin-bottom: 1.5rem;">
-                        Co-presented by RUDI and Did You Know Publishing, Inc.<br>
-                        CEU administered by Ohio Head Start Association
-                    </div>
-
-                    <div class="responsive-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1rem;">
-                        <div>
-                            <div style="height: 40px; border-bottom: 2px solid #1a1a1a; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
-                                <div style="font-family: 'Brush Script MT', cursive; font-size: 1.5rem; font-style: italic; letter-spacing: 0.5px;">Brandon Z. Hoff</div>
-                            </div>
-                            <div style="font-size: 0.75rem; font-weight: 700;">Brandon Z. Hoff</div>
-                            <div style="font-size: 0.65rem; color: #666;">Founder, RUDI</div>
-                        </div>
-                        <div>
-                            <div style="height: 40px; border-bottom: 2px solid #1a1a1a; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
-                                <div style="font-family: 'Snell Roundhand', 'Apple Chancery', 'Lucida Handwriting', cursive; font-size: 1.4rem; font-style: italic; font-weight: 300; letter-spacing: 0.3px;">William Shoecraft</div>
-                            </div>
-                            <div style="font-size: 0.75rem; font-weight: 700;">William Shoecraft</div>
-                            <div style="font-size: 0.65rem; color: #666;">CEO, Did You Know Publishing, Inc.</div>
-                        </div>
-                    </div>
-
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #ddd;">
-                        <div style="font-size: 0.55rem; color: #999; text-align: left;">
-                            Certificate ID: abc123...<br>
-                            Issued: October 8, 2025
-                        </div>
-                        <div style="display: flex; gap: 0.5rem; align-items: center;">
-                            <div style="width: 40px; height: 40px;">
-                                <img src="images/rudi-qr-code.png" alt="QR Code" style="width: 100%; height: 100%; display: block;">
-                            </div>
-                            <svg width="45" height="45" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="100" cy="100" r="95" fill="none" stroke="#1e3a8a" stroke-width="3"/>
-                                <text x="100" y="75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#1e3a8a" letter-spacing="2">RUDI</text>
-                                <text x="100" y="92" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="500" fill="#475569">EST. 2023</text>
-                                <line x1="45" y1="100" x2="155" y2="100" stroke="#1e3a8a" stroke-width="1.5"/>
-                                <text x="100" y="120" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600" fill="#1e3a8a">VERIFIED</text>
-                                <text x="100" y="135" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600" fill="#1e3a8a">CERTIFICATE</text>
-                            </svg>
+                        <div style="font-size: 0.75rem; font-weight: 600; margin-bottom: 1.5rem;">
+                            3 Contact Hours | 0.3 CEU Equivalent
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Form Section -->
-    <section class="section-padding">
-        <div class="container">
+    <section class="section section-alt">
+        <div class="section-inner">
             <div class="form-section">
                 <div class="form-card" id="optinForm">
-                    <h2 class="mb-4" style="text-align: center;">Request Your Certificate</h2>
-                    <p style="text-align: center; color: var(--gray-600); margin-bottom: 2rem;">
-                        Enter your information below to receive your personalized certificate
-                    </p>
+                    <h2>Request Your Certificate</h2>
+                    <p>Enter your information below to receive your personalized certificate</p>
 
                     <form id="certificateForm" onsubmit="submitForm(event)">
                         <div class="form-group">
-                            <label for="fullName">
-                                <i class="fas fa-user"></i> Full Name (as it should appear on certificate)
-                            </label>
+                            <label for="fullName">Full Name (as it should appear on certificate)</label>
                             <input type="text" id="fullName" name="fullName" required placeholder="e.g., Julie Stone">
                         </div>
 
                         <div class="form-group">
-                            <label for="email">
-                                <i class="fas fa-envelope"></i> Email Address
-                            </label>
+                            <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" required placeholder="you@example.com">
                         </div>
 
                         <div class="form-group">
-                            <label for="trainingDate">
-                                <i class="fas fa-calendar"></i> Training Date
-                            </label>
+                            <label for="trainingDate">Training Date</label>
                             <input type="date" id="trainingDate" name="trainingDate" value="2025-10-08" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-                            <i class="fas fa-certificate"></i> Get My Certificate
-                        </button>
+                        <button type="submit" class="btn btn-primary">Request Certificate</button>
                     </form>
                 </div>
 
                 <!-- Success Message -->
                 <div class="success-message" id="successMessage">
-                    <i class="fas fa-check-circle"></i>
-                    <h3 style="margin-bottom: 0.5rem;">Certificate Request Received!</h3>
-                    <p style="margin: 0;">Your personalized certificate will be emailed to you within 24-48 hours.</p>
+                    <div class="success-icon">&#10003;</div>
+                    <h3>Certificate Request Received</h3>
+                    <p>Your personalized certificate will be emailed to you within 24-48 hours.</p>
                 </div>
             </div>
 
             <!-- Info Banner -->
-            <div style="max-width: 800px; margin: 0 auto;">
+            <div style="max-width: 600px; margin: 3rem auto 0;">
                 <div class="info-banner">
-                    <h3><i class="fas fa-star"></i> What's Included</h3>
+                    <h3>What's Included</h3>
                     <ul>
                         <li><strong>Official RUDI Certificate:</strong> Recognized credential for professional development</li>
                         <li><strong>3 Contact Hours (0.3 CEU equivalent):</strong> Documented learning time</li>
-                        <li><strong>Verifiable Credential:</strong> Each certificate includes a unique QR code for instant verification</li>
+                        <li><strong>Verifiable Credential:</strong> Each certificate includes a unique verification code</li>
                         <li><strong>Digital & Print Ready:</strong> High-resolution PDF suitable for framing or digital portfolios</li>
                     </ul>
-                </div>
-            </div>
-
-            <!-- Benefits Grid -->
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Professional Development</h3>
-                    <p style="color: var(--gray-600); font-size: 0.95rem;">Add to your resume, LinkedIn profile, or professional portfolio</p>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">TechCred Eligible</h3>
-                    <p style="color: var(--gray-600); font-size: 0.95rem;">This training can be submitted for Ohio TechCred reimbursement</p>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Organizational Training</h3>
-                    <p style="color: var(--gray-600); font-size: 0.95rem;">Interested in training your team? <a href="contact.html">Contact us</a> for group rates</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="site-footer"></div>
+    <!-- Benefits -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">PD</div>
+                    <h3>Professional Development</h3>
+                    <p>Add to your resume, LinkedIn profile, or professional portfolio</p>
+                </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
+                <div class="benefit-card">
+                    <div class="benefit-icon">TC</div>
+                    <h3>TechCred Eligible</h3>
+                    <p>This training can be submitted for Ohio TechCred reimbursement</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">ORG</div>
+                    <h3>Organizational Training</h3>
+                    <p>Interested in training your team? <a href="contact.html">Contact us</a> for group rates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">RUDI</div>
+                    <p>Responsible Use of Digital Intelligence. Training, consulting, and tools for organizations adopting AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="training.html">Training</a>
+                    <a href="consulting.html">Consulting</a>
+                    <a href="studio.html">Studio</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="framework.html">Framework</a>
+                    <a href="get-certificate.html">Certifications</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="ohio.html">Ohio TechCred</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                2025 RUDI. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
     <script>
         function submitForm(e) {
@@ -407,14 +717,11 @@
                 level: 'Foundation & Application'
             };
 
-            // Here you would send this to your backend/Google Sheets
             console.log('Certificate request:', formData);
 
-            // Show success message
             document.getElementById('optinForm').style.display = 'none';
             document.getElementById('successMessage').classList.add('show');
 
-            // Scroll to success message
             document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>

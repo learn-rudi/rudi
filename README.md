@@ -1,135 +1,105 @@
-# RUDI AI - Website
+# RUDI - Responsible Use of Digital Intelligence
 
-Professional AI certification and training platform. Static HTML website for RUDI AI - Responsible Use of Digital Intelligence.
+AI readiness training, consulting, and tools for organizations. Static website deployed on Vercel.
+
+**Live Site:** [learnrudi.com](https://learnrudi.com)
 
 ## Overview
 
-RUDI AI provides TechCred-eligible AI certifications across three levels:
-- **Level 1: AI Literacy** - Foundation concepts and applications
-- **Level 2: Applied AI** - Hands-on practice with real tools
-- **Level 3: AI Assistants, Agents & Workflows** - Advanced implementation
+RUDI helps organizations build AI competency through:
+
+- **Training** - Applied AI training across three maturity levels: Ambient AI, Chat Interfaces, and Agent Workflows
+- **Consulting** - Strategic AI consulting through a 4-phase engagement process
+- **Framework** - Comprehensive AI readiness assessment and competency framework
+- **Studio** - Free, open-source AI workspace for learning and productivity
+
+## Pages
+
+| Page | Description |
+|------|-------------|
+| `index.html` | Homepage |
+| `training.html` | AI training programs and workshops |
+| `consulting.html` | AI consulting and advisory services |
+| `studio.html` | RUDI Studio - AI workspace application |
+| `framework.html` | AI Readiness Framework and assessment generator |
+| `assessment.html` | Anonymous AI readiness assessment (9 questions) |
+| `get-certificate.html` | Certificate verification |
+| `ohio.html` | Ohio TechCred partnership information |
+| `about.html` | About RUDI |
+| `contact.html` | Contact form |
+| `partners.html` | Partner organizations |
+
+## Tech Stack
+
+- Static HTML/CSS/JavaScript
+- IBM Plex Sans typography
+- Tally.so for form handling
+- Vercel for hosting
+
+## Local Development
+
+```bash
+# Python 3
+python3 -m http.server 8080
+
+# Node.js
+npx http-server -p 8080
+```
+
+Visit `http://localhost:8080`
+
+## Deployment
+
+Auto-deploys to Vercel on push to main branch.
+
+```bash
+# Manual deploy
+vercel --prod
+```
 
 ## Project Structure
 
 ```
-rudi-web/
-├── index.html              # Landing page
-├── certificates.html       # Certificate overview
-├── certificates-business.html
-├── certificates-education.html
-├── contact.html
-├── courses.html
-├── framework.html
-├── get-certificate.html
-├── ohio.html              # Ohio TechCred information
-├── research.html
-├── resources.html
-├── survey.html            # AI literacy survey (public)
-├── survey-admin.html      # Survey link generator (admin only)
-├── credentials.json       # Google service account (gitignored)
-├── scripts/               # Setup and utility scripts
-│   └── setup-sheet.js    # Google Sheets setup script
-├── css/                   # Stylesheets
-├── js/                    # JavaScript modules
-│   └── config.js         # Survey configuration
-├── images/                # Site images
-├── assets/                # Certificates and other assets
-├── tools/                 # Development tools
-│   ├── certificate-tools/
-│   └── qr-tools/
-└── docs/                  # Documentation
-    ├── assessment/        # Assessment and testing docs
-    ├── business-strategy/ # Business plans and strategies
-    ├── codecamp/          # Course content
-    ├── design/            # Design assets and specs
-    ├── planning/          # Project planning docs
-    ├── project-docs/      # Technical documentation
-    ├── survey-outline.txt # Survey questions
-    └── setup/             # Setup guides
+rudi/
+├── index.html              # Homepage
+├── training.html           # Training programs
+├── consulting.html         # Consulting services
+├── studio.html             # RUDI Studio app
+├── framework.html          # AI Readiness Framework
+├── assessment.html         # Assessment survey
+├── get-certificate.html    # Certificate verification
+├── about.html              # About page
+├── contact.html            # Contact form
+├── ohio.html               # Ohio TechCred info
+├── partners.html           # Partners
+├── images/                 # Site images and media
+│   ├── hero-orb.mp4
+│   ├── framework-pyramid.png
+│   ├── training-hero.png
+│   └── ...
+├── archive/                # Deprecated pages
+└── test-form.js            # Playwright test
 ```
 
-## Quick Start
+## AI Readiness Assessment
 
-This is a static HTML website. No build process required.
+The assessment system allows organizations to:
 
-### Local Development
+1. Generate a custom assessment link with their organization name
+2. Share the link with team members
+3. Collect anonymous responses (only org name is tracked)
+4. Optionally leave contact info for follow-up
 
-Simply open `index.html` in a web browser, or use a local server:
+Assessment data is collected via Tally.so forms.
 
-```bash
-# Using Python 3
-python3 -m http.server 8000
+## SEO & Discoverability
 
-# Using Python 2
-python -m SimpleHTTPServer 8000
-
-# Using Node.js http-server
-npx http-server -p 8000
-```
-
-Then visit `http://localhost:8000`
-
-## Deployment
-
-Deployed on Vercel. The site is static HTML/CSS/JS with no build step.
-
-### Deploy to Vercel
-
-```bash
-vercel
-```
-
-Or push to the connected GitHub repository for automatic deployment.
-
-## Features
-
-- Professional AI certification programs
-- Ohio TechCred partnership information
-- Two certification paths: Business and Education
-- Certificate verification system
-- **AI Literacy Survey System** - Anonymous surveys with Google Sheets integration
-- Contact forms and inquiry handling
-- Responsive design
-
-## Survey System
-
-The RUDI Survey System allows you to create custom anonymous AI literacy surveys for organizations.
-
-### Quick Start
-
-1. **Create survey links**: Open `survey-admin.html` to generate custom survey links
-2. **View responses**: Check the [Google Sheet](https://docs.google.com/spreadsheets/d/1LC-kPwyQZG3w8TnA46wE6bXiajC9A0M3eb6dXZrhG-s) for real-time results
-3. **Share links**: Send custom survey URLs to organizations
-
-### Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Configure Google Sheet
-node scripts/setup-sheet.js <SHEET_ID>
-
-# Update webhook URL in js/config.js
-```
-
-For detailed setup instructions, see [SURVEY-README.md](SURVEY-README.md) and [GOOGLE-SHEETS-SETUP.md](GOOGLE-SHEETS-SETUP.md).
-
-## Documentation
-
-See `/docs` directory for:
-- Assessment strategy and question banks
-- Business strategy and launch plans
-- Course content and syllabi
-- Design specifications
-- Project documentation
-- Setup instructions
-
-## Environment
-
-No environment variables required for the static site.
-
-Sensitive credentials (if any) are stored in `.secure/` (gitignored).
+All pages include:
+- Meta descriptions and keywords
+- Open Graph tags for social sharing
+- Twitter Card meta tags
+- Schema.org structured data (JSON-LD)
+- Canonical URLs
 
 ## License
 
@@ -137,6 +107,5 @@ MIT
 
 ## Contact
 
-RUDI AI - Responsible Use of Digital Intelligence
-- Website: https://rudi.ai
-- Ohio Partnership: https://upskill-ohio.vercel.app
+**RUDI** - Responsible Use of Digital Intelligence
+Website: [learnrudi.com](https://learnrudi.com)

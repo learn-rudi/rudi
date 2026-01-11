@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Training Programs | RUDI</title>
+    <meta name="description" content="Applied AI training across three maturity levels—Ambient AI, Chat Interfaces, and Agent Workflows—grounded in Responsible AI principles.">
+    <meta name="keywords" content="AI training, AI literacy, corporate AI training, responsible AI, AI workshops, AI certification">
+    <meta name="author" content="RUDI">
+    <link rel="canonical" href="https://learnrudi.com/training.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learnrudi.com/training.html">
+    <meta property="og:title" content="AI Training Programs | RUDI">
+    <meta property="og:description" content="Train your team to use AI—responsibly, confidently, and in real workflows.">
+    <meta property="og:image" content="https://learnrudi.com/images/training-hero.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Training Programs | RUDI">
+    <meta name="twitter:description" content="Applied AI training across three maturity levels, grounded in Responsible AI principles.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "RUDI AI Training Programs",
+        "description": "Applied AI training across three maturity levels—Ambient AI, Chat Interfaces, and Agent Workflows—grounded in Responsible AI principles.",
+        "url": "https://learnrudi.com/training.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "RUDI",
+            "url": "https://learnrudi.com"
+        },
+        "educationalLevel": "Professional",
+        "teaches": ["AI Literacy", "Responsible AI", "Prompt Engineering", "AI Workflows"]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --gray-900: #161616;
+            --gray-800: #262626;
+            --gray-700: #393939;
+            --gray-600: #525252;
+            --gray-500: #6f6f6f;
+            --gray-400: #8d8d8d;
+            --gray-300: #a8a8a8;
+            --gray-200: #c6c6c6;
+            --gray-100: #e0e0e0;
+            --gray-50: #f4f4f4;
+            --white: #ffffff;
+            --accent: #c75b39;
+            --accent-dark: #a94d2f;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--gray-900);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gray-900);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gray-900);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(199, 91, 57, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gray-900);
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-text {
+            background: none;
+            color: var(--gray-900);
+            padding: 0;
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+        }
+
+        .btn-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .btn-text:hover {
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .btn-text:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-intro {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 0 6rem;
+            background: var(--gray-900);
+            color: var(--white);
+            border-bottom: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero .section-label {
+            color: var(--accent);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-300);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .hero .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero .btn-primary {
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .hero .btn-primary:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(199, 91, 57, 0.4);
+        }
+
+        .hero .btn-secondary {
+            color: var(--white);
+            border-color: var(--gray-600);
+        }
+
+        .hero .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hero entrance animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero .section-label {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        .hero h1 {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        .hero-subtitle {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+        }
+
+        .hero .cta-group {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+        }
+
+        .hero-visual {
+            animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+        }
+
+        /* 3 Levels Grid */
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .level-card {
+            padding: 3rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            background: var(--white);
+            position: relative;
+        }
+
+        .level-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.08);
+            z-index: 10;
+        }
+
+        .level-number {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-400);
+            margin-bottom: 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .level-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .level-card .subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .level-card p {
+            font-size: 1rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .level-outcomes {
+            margin-top: auto;
+        }
+
+        .level-outcomes h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 1rem;
+        }
+
+        .level-outcomes ul {
+            list-style: none;
+        }
+
+        .level-outcomes li {
+            padding: 0.5rem 0;
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .level-outcomes li:last-child {
+            border-bottom: none;
+        }
+
+        /* Methodology */
+        .methodology-section {
+            background: var(--gray-50);
+        }
+
+        .methodology-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+        }
+
+        .method-step {
+            padding: 2rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .method-step .step-num {
+            width: 40px;
+            height: 40px;
+            background: var(--gray-900);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 auto 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .method-step h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .method-step p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        /* Pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .pillar {
+            padding: 3rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+        }
+
+        .pillar h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pillar h3 span {
+            width: 32px;
+            height: 32px;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+
+        .pillar ul {
+            list-style: none;
+        }
+
+        .pillar li {
+            padding: 0.75rem 0;
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .pillar li:last-child {
+            border-bottom: none;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .cert-card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.08);
+            z-index: 10;
+        }
+
+        .cert-card .tier {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 0.75rem;
+        }
+
+        .cert-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .hours {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .cert-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Studio CTA */
+        .studio-section {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .studio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .studio-content .section-label {
+            color: var(--gray-400);
+        }
+
+        .studio-content h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .studio-content p {
+            font-size: 1.125rem;
+            color: var(--gray-300);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .studio-content .btn-primary {
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .studio-content .btn-primary:hover {
+            background: var(--gray-100);
+        }
+
+        .studio-features {
+            border-left: 1px solid var(--gray-700);
+            padding-left: 2rem;
+        }
+
+        .studio-feature {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-700);
+        }
+
+        .studio-feature:last-child {
+            border-bottom: none;
+        }
+
+        .studio-feature h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+        }
+
+        .studio-feature p {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gray-50);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            padding: 4rem 0 2rem;
+            color: var(--gray-300);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            max-width: 280px;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.875rem;
+            padding: 0.375rem 0;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero h1 { font-size: 3rem; }
+            .levels-grid { grid-template-columns: 1fr; }
+            .methodology-steps { grid-template-columns: repeat(3, 1fr); }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 1fr; }
+            .studio-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 8rem 0 4rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-visual { display: none; }
+            section { padding: 4rem 0; }
+            .section-title { font-size: 2rem; }
+            .methodology-steps { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        /* Fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered card animations */
+        .level-card,
+        .cert-card,
+        .method-step,
+        .pillar {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .level-card.revealed,
+        .cert-card.revealed,
+        .method-step.revealed,
+        .pillar.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .studio-feature {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .studio-feature.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">RUDI</a>
+            <ul class="nav-links">
+                <li><a href="training.html" class="active">Training</a></li>
+                <li><a href="consulting.html">Consulting</a></li>
+                <li><a href="studio.html">Studio</a></li>
+                <li><a href="framework.html">Framework</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="section-label">AI Training Programs</p>
+                    <h1>From AI awareness to AI advantage</h1>
+                    <p class="hero-subtitle">
+                        Applied AI training across three maturity levels—Ambient AI, Chat Interfaces, and Agent Workflows—grounded in a Responsible AI framework that balances people + technology.
+                    </p>
+                    <div class="cta-group">
+                        <a href="#levels" class="btn btn-primary">See the 3 Levels</a>
+                        <a href="contact.html" class="btn btn-secondary">Request Training Plan</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="images/training-hero.png" alt="AI learning pathways visualization - streams of knowledge flowing toward mastery">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 3 Levels -->
+    <section id="levels" class="fade-in">
+        <div class="container">
+            <p class="section-label">Training Framework</p>
+            <h2 class="section-title">Three levels of AI maturity</h2>
+            <p class="section-intro">
+                We train teams from AI happening around them → to AI collaborating with them → to AI working alongside them.
+            </p>
+
+            <div class="levels-grid">
+                <div class="level-card">
+                    <div class="level-number">Level 01</div>
+                    <h3>Ambient AI</h3>
+                    <div class="subtitle">Passive Use</div>
+                    <p>
+                        AI is already embedded in tools your team uses daily—search, email, documents, social platforms. Most people don't recognize it.
+                    </p>
+                    <div class="level-outcomes">
+                        <h4>Outcomes</h4>
+                        <ul>
+                            <li>Recognize AI outputs in everyday tools</li>
+                            <li>Reduce misinformation and hallucination risk</li>
+                            <li>Establish baseline AI use policies</li>
+                            <li>Build verification habits</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-number">Level 02</div>
+                    <h3>Chat Interfaces</h3>
+                    <div class="subtitle">Active Collaboration</div>
+                    <p>
+                        ChatGPT, Claude, Gemini, Perplexity—direct conversation with AI models. This is where most organizations are trying to start (and struggling).
+                    </p>
+                    <div class="level-outcomes">
+                        <h4>Outcomes</h4>
+                        <ul>
+                            <li>Prompting as communication skill</li>
+                            <li>Task decomposition patterns</li>
+                            <li>Reusable templates and workflows</li>
+                            <li>Quality assurance habits</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-number">Level 03</div>
+                    <h3>Agents + Workflows</h3>
+                    <div class="subtitle">Applied Automation</div>
+                    <p>
+                        AI assistants that execute multi-step tasks, call tools, follow processes, and integrate into real work. This is where RUDI Studio becomes essential.
+                    </p>
+                    <div class="level-outcomes">
+                        <h4>Outcomes</h4>
+                        <ul>
+                            <li>Workflow design and automation</li>
+                            <li>Role-based AI assistants</li>
+                            <li>Human-in-the-loop guardrails</li>
+                            <li>Measurable time savings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="methodology-section fade-in">
+        <div class="container">
+            <p class="section-label">How We Train</p>
+            <h2 class="section-title">The RUDI Applied Training Method</h2>
+            <p class="section-intro">
+                Not generic workshops. Applied AI training with real work, real tools, and measurable outcomes.
+            </p>
+
+            <div class="methodology-steps">
+                <div class="method-step">
+                    <div class="step-num">1</div>
+                    <h4>Assess</h4>
+                    <p>Tools, roles, risk, and readiness baseline</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-num">2</div>
+                    <h4>Teach</h4>
+                    <p>Core concepts and repeatable patterns</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-num">3</div>
+                    <h4>Practice</h4>
+                    <p>Hands-on labs with real work</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-num">4</div>
+                    <h4>Deploy</h4>
+                    <p>Templates, playbooks, assistants</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-num">5</div>
+                    <h4>Measure</h4>
+                    <p>Adoption, time saved, risk reduction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsible AI Pillars -->
+    <section class="fade-in">
+        <div class="container">
+            <p class="section-label">Responsible AI</p>
+            <h2 class="section-title">People + Technology</h2>
+            <p class="section-intro">
+                Across all three levels, we teach Responsible AI through two pillars—so adoption is useful, safe, and sustainable.
+            </p>
+
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <h3><span>P</span> People</h3>
+                    <ul>
+                        <li>AI literacy and judgment development</li>
+                        <li>Bias awareness and responsible decision-making</li>
+                        <li>Communication norms (when to use AI, when not to)</li>
+                        <li>Change management and adoption design</li>
+                        <li>Verification and quality habits</li>
+                    </ul>
+                </div>
+                <div class="pillar">
+                    <h3><span>T</span> Technology</h3>
+                    <ul>
+                        <li>Data privacy and sensitive information handling</li>
+                        <li>Governance guardrails and access controls</li>
+                        <li>Tool selection criteria and risk tiers</li>
+                        <li>Workflow design for safe automation</li>
+                        <li>Monitoring, logging, and audit trails</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section style="background: var(--gray-50);" class="fade-in">
+        <div class="container">
+            <p class="section-label">Credentials</p>
+            <h2 class="section-title">Certification tracks</h2>
+            <p class="section-intro">
+                Stackable credentials that demonstrate AI capability. TechCred eligible for Ohio employers.
+            </p>
+
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="tier">Foundation</div>
+                    <h3>AI Literacy Certificate</h3>
+                    <div class="hours">3 contact hours</div>
+                    <p>Core concepts, responsible use principles, and practical introduction to AI tools.</p>
+                    <a href="get-certificate.html" class="btn btn-text">Learn more →</a>
+                </div>
+                <div class="cert-card">
+                    <div class="tier">Practitioner</div>
+                    <h3>Applied AI Certificate</h3>
+                    <div class="hours">8 contact hours</div>
+                    <p>Prompting mastery, workflow integration, and hands-on application to real work tasks.</p>
+                    <a href="contact.html" class="btn btn-text">Learn more →</a>
+                </div>
+                <div class="cert-card">
+                    <div class="tier">Specialist</div>
+                    <h3>AI Workflow Engineer</h3>
+                    <div class="hours">16 contact hours</div>
+                    <p>Agent design, automation patterns, and building organizational AI capability.</p>
+                    <a href="contact.html" class="btn btn-text">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Lab -->
+    <section class="studio-section fade-in">
+        <div class="container">
+            <div class="studio-grid">
+                <div class="studio-content">
+                    <p class="section-label">Level 3 Lab</p>
+                    <h2>RUDI Studio: The hands-on training environment</h2>
+                    <p>
+                        For Level 3 training, participants work in RUDI Studio—our open-source AI workstation. Learn how agents work, how to structure tasks, and how to build repeatable workflows.
+                    </p>
+                    <p>
+                        The same platform we use to teach is available for your team.
+                    </p>
+                    <a href="studio.html" class="btn btn-primary">Explore Studio</a>
+                </div>
+
+                <div class="studio-features">
+                    <div class="studio-feature">
+                        <h4>Guided labs</h4>
+                        <p>Step-by-step exercises with real-world scenarios</p>
+                    </div>
+                    <div class="studio-feature">
+                        <h4>Workflow templates</h4>
+                        <p>Pre-built patterns for common business tasks</p>
+                    </div>
+                    <div class="studio-feature">
+                        <h4>Role-based assistants</h4>
+                        <p>Learn to design AI helpers for specific job functions</p>
+                    </div>
+                    <div class="studio-feature">
+                        <h4>Safe-by-default guardrails</h4>
+                        <p>Built-in governance and human-in-the-loop controls</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section fade-in">
+        <div class="container">
+            <h2>Ready to train your team?</h2>
+            <p>We'll assess your needs, recommend a training path, and deliver applied AI training that changes how your team works.</p>
+            <div class="cta-group">
+                <a href="contact.html" class="btn btn-primary">Request Training Plan</a>
+                <a href="framework.html" class="btn btn-secondary">Explore the Framework</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="color: var(--white); margin-bottom: 1rem;">RUDI</div>
+                    <p>Responsible Use of Digital Intelligence. Training, consulting, and tools for organizations adopting AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="training.html">Training</a>
+                    <a href="consulting.html">Consulting</a>
+                    <a href="studio.html">Studio</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="framework.html">Framework</a>
+                    <a href="get-certificate.html">Certifications</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="ohio.html">Ohio TechCred</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 RUDI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Staggered card animations
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Level cards with stagger
+        document.querySelectorAll('.level-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+            cardObserver.observe(card);
+        });
+
+        // Cert cards with stagger
+        document.querySelectorAll('.cert-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+            cardObserver.observe(card);
+        });
+
+        // Method steps with stagger
+        document.querySelectorAll('.method-step').forEach((step, index) => {
+            step.style.transitionDelay = `${index * 0.08}s`;
+            cardObserver.observe(step);
+        });
+
+        // Pillars with stagger
+        document.querySelectorAll('.pillar').forEach((pillar, index) => {
+            pillar.style.transitionDelay = `${index * 0.15}s`;
+            cardObserver.observe(pillar);
+        });
+
+        // Studio features with stagger
+        document.querySelectorAll('.studio-feature').forEach((feature, index) => {
+            feature.style.transitionDelay = `${index * 0.1}s`;
+            cardObserver.observe(feature);
+        });
+    </script>
+</body>
+</html>

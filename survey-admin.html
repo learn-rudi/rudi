@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RUDI Survey Admin - Create Survey Links</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Clerk Authentication -->
     <script
@@ -17,42 +17,65 @@
         type="text/javascript">
     </script>
     <style>
+        :root {
+            --gray-900: #111111;
+            --gray-800: #1a1a1a;
+            --gray-700: #333333;
+            --gray-600: #555555;
+            --gray-500: #777777;
+            --gray-400: #999999;
+            --gray-300: #b3b3b3;
+            --gray-200: #cccccc;
+            --gray-100: #e5e5e5;
+            --gray-50: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--gray-50);
+            -webkit-font-smoothing: antialiased;
+        }
+
         .admin-container {
             min-height: 100vh;
-            background: #f8fafc;
-            padding: 2rem 0;
+            padding: 2rem;
         }
 
         .admin-card {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             overflow: hidden;
-            border: 1px solid var(--navy-100);
         }
 
         .admin-header {
-            background: var(--navy-900);
-            color: white;
-            padding: 2rem;
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 2.5rem 3rem;
             text-align: center;
-            border-bottom: 2px solid var(--teal);
         }
 
         .admin-header h1 {
-            font-family: 'Poppins', sans-serif;
             font-size: 1.75rem;
-            font-weight: 400;
+            font-weight: 300;
             margin-bottom: 0.5rem;
-            color: white;
+            letter-spacing: -0.02em;
         }
 
         .admin-header p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
-            font-weight: 300;
+            color: var(--gray-400);
+            font-size: 0.9375rem;
         }
 
         .admin-content {
@@ -66,58 +89,54 @@
         .form-label {
             display: block;
             font-weight: 500;
-            color: var(--navy-900);
+            color: var(--gray-900);
             margin-bottom: 0.75rem;
-            font-size: 1rem;
+            font-size: 0.9375rem;
         }
 
         .form-input {
             width: 100%;
             padding: 0.875rem 1rem;
-            border: 1px solid var(--navy-100);
-            border-radius: 6px;
+            border: 1px solid var(--gray-200);
             font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.2s;
+            font-family: inherit;
         }
 
         .form-input:focus {
             outline: none;
-            border-color: var(--navy-800);
-            box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.1);
+            border-color: var(--gray-900);
         }
 
         .form-hint {
             margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--navy-600);
+            font-size: 0.875rem;
+            color: var(--gray-500);
         }
 
         .generate-btn {
             width: 100%;
-            background: var(--navy-900);
-            color: white;
+            background: var(--gray-900);
+            color: var(--white);
             padding: 1rem;
             border: none;
-            border-radius: 6px;
-            font-size: 1rem;
+            font-size: 0.875rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .generate-btn:hover {
-            background: var(--navy-800);
+            background: var(--gray-800);
         }
 
         .result-section {
             display: none;
             margin-top: 2rem;
             padding: 1.5rem;
-            background: var(--navy-50);
-            border-radius: 6px;
-            border: 1px solid var(--navy-100);
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
         }
 
         .result-section.show {
@@ -128,34 +147,27 @@
             display: flex;
             align-items: center;
             margin-bottom: 1.5rem;
-            color: var(--navy-900);
-        }
-
-        .result-header i {
-            font-size: 1.25rem;
-            margin-right: 0.75rem;
+            color: var(--gray-900);
         }
 
         .result-header h3 {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             margin: 0;
-            color: var(--navy-900);
             font-weight: 500;
         }
 
         .link-display {
-            background: white;
+            background: var(--white);
             padding: 1rem;
-            border-radius: 6px;
-            border: 1px solid var(--navy-100);
+            border: 1px solid var(--gray-200);
             margin-bottom: 1rem;
         }
 
         .link-url {
             word-break: break-all;
-            color: var(--navy-800);
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.95rem;
+            color: var(--gray-700);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
         }
 
         .action-buttons {
@@ -167,70 +179,54 @@
         .action-btn {
             padding: 0.875rem;
             border: none;
-            border-radius: 6px;
-            font-size: 0.95rem;
+            font-size: 0.875rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .copy-btn {
-            background: var(--navy-900);
-            color: white;
+            background: var(--gray-900);
+            color: var(--white);
         }
 
         .copy-btn:hover {
-            background: var(--navy-800);
+            background: var(--gray-800);
         }
 
         .copy-btn.copied {
-            background: #10b981;
+            background: var(--gray-600);
         }
 
         .open-btn {
-            background: var(--navy-700);
-            color: white;
+            background: var(--gray-700);
+            color: var(--white);
         }
 
         .open-btn:hover {
-            background: var(--navy-600);
-        }
-
-        .qr-section {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--navy-100);
-        }
-
-        .qr-code {
-            text-align: center;
-            margin-top: 1rem;
-        }
-
-        .qr-code canvas {
-            max-width: 200px;
-            height: auto;
+            background: var(--gray-600);
         }
 
         .survey-list {
             margin-top: 3rem;
             padding-top: 3rem;
-            border-top: 2px solid var(--navy-100);
+            border-top: 1px solid var(--gray-200);
         }
 
         .survey-list h2 {
-            font-size: 1.5rem;
-            color: var(--navy-900);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--gray-900);
             margin-bottom: 1.5rem;
         }
 
         .survey-item {
-            background: white;
+            background: var(--white);
             padding: 1.25rem;
-            border-radius: 6px;
             margin-bottom: 0.75rem;
-            border: 1px solid var(--navy-100);
+            border: 1px solid var(--gray-200);
         }
 
         .survey-item-header {
@@ -242,19 +238,19 @@
 
         .survey-name {
             font-weight: 500;
-            color: var(--navy-900);
+            color: var(--gray-900);
             font-size: 1rem;
         }
 
         .survey-date {
-            color: var(--navy-600);
-            font-size: 0.9rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
         }
 
         .survey-link {
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.85rem;
-            color: var(--navy-700);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8125rem;
+            color: var(--gray-600);
             word-break: break-all;
             display: block;
             margin-bottom: 0.75rem;
@@ -268,14 +264,51 @@
         .survey-actions button {
             padding: 0.5rem 1rem;
             border: none;
-            border-radius: 4px;
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             cursor: pointer;
-            transition: all 0.2s;
+            font-weight: 500;
+            font-family: inherit;
+        }
+
+        .user-header {
+            background: var(--gray-50);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--gray-200);
+        }
+
+        .sign-in-section {
+            padding: 3rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: none;
+        }
+
+        .sign-in-inner {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .sign-in-inner h3 {
+            color: var(--gray-900);
+            margin-bottom: 1rem;
             font-weight: 500;
         }
 
+        .sign-in-inner p {
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            font-size: 0.9375rem;
+        }
+
         @media (max-width: 768px) {
+            .admin-container {
+                padding: 1rem;
+            }
+
             .admin-content {
                 padding: 1.5rem;
             }
@@ -291,19 +324,15 @@
         <div class="admin-card">
             <!-- Header -->
             <div class="admin-header">
-                <h1><i class="fas fa-cog"></i> Survey Admin</h1>
+                <h1>Survey Admin</h1>
                 <p>Create custom survey links for organizations</p>
             </div>
 
             <!-- Sign In Section (shown when not authenticated) -->
-            <div id="signInSection" class="admin-content" style="padding: 3rem; border-bottom: 2px solid var(--navy-100); display: none;">
-                <div style="max-width: 400px; margin: 0 auto; text-align: center;">
-                    <h3 style="color: var(--navy-900); margin-bottom: 1rem; font-weight: 500;">
-                        <i class="fas fa-lock"></i> Sign In Required
-                    </h3>
-                    <p style="color: var(--navy-600); margin-bottom: 2rem; font-size: 0.95rem;">
-                        Please sign in to create and manage survey links
-                    </p>
+            <div id="signInSection" class="sign-in-section">
+                <div class="sign-in-inner">
+                    <h3>Sign In Required</h3>
+                    <p>Please sign in to create and manage survey links</p>
                     <div id="clerk-signin-mount"></div>
                 </div>
             </div>
@@ -313,7 +342,7 @@
                 <form id="createSurveyForm">
                     <div class="form-section">
                         <label class="form-label" for="orgName">
-                            Organization Name <span style="color: #ef4444;">*</span>
+                            Organization Name *
                         </label>
                         <input
                             type="text"
@@ -338,16 +367,13 @@
                         <p class="form-hint">For tracking purposes (not shown to respondents)</p>
                     </div>
 
-                    <button type="submit" class="generate-btn">
-                        <i class="fas fa-link"></i> Generate Survey Link
-                    </button>
+                    <button type="submit" class="generate-btn">Generate Survey Link</button>
                 </form>
 
                 <!-- Result Section -->
                 <div class="result-section" id="resultSection">
                     <div class="result-header">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>Survey Link Created!</h3>
+                        <h3>Survey Link Created</h3>
                     </div>
 
                     <div class="link-display">
@@ -355,29 +381,15 @@
                     </div>
 
                     <div class="action-buttons">
-                        <button class="action-btn copy-btn" id="copyBtn">
-                            <i class="fas fa-copy"></i> Copy Link
-                        </button>
-                        <button class="action-btn open-btn" id="openBtn">
-                            <i class="fas fa-external-link-alt"></i> Open Survey
-                        </button>
-                    </div>
-
-                    <div class="qr-section">
-                        <p style="color: var(--navy-700); font-weight: 600; text-align: center; margin-bottom: 0.5rem;">
-                            <i class="fas fa-qrcode"></i> QR Code (coming soon)
-                        </p>
-                        <p style="color: var(--navy-600); text-align: center; font-size: 0.9rem;">
-                            Print this QR code for easy access on mobile devices
-                        </p>
+                        <button class="action-btn copy-btn" id="copyBtn">Copy Link</button>
+                        <button class="action-btn open-btn" id="openBtn">Open Survey</button>
                     </div>
                 </div>
 
                 <!-- Survey List -->
                 <div class="survey-list" id="surveyList">
-                    <h2><i class="fas fa-list"></i> Recent Surveys</h2>
+                    <h2>Recent Surveys</h2>
                     <div id="surveyItems">
-                        <!-- Survey items will be populated here -->
                     </div>
                 </div>
             </div>
@@ -394,7 +406,6 @@
             if (window.Clerk) {
                 await initializeClerk();
             } else {
-                // Wait for Clerk script to load
                 const checkClerk = setInterval(async () => {
                     if (window.Clerk) {
                         clearInterval(checkClerk);
@@ -410,12 +421,10 @@
 
             await clerkInstance.load();
 
-            // Listen for auth state changes
             clerkInstance.addListener(({ user }) => {
                 updateUIBasedOnAuth(user);
             });
 
-            // Initial UI update
             updateUIBasedOnAuth(clerkInstance.user);
         }
 
@@ -425,17 +434,14 @@
             const mainContent = document.getElementById('mainContent');
 
             if (user) {
-                // User is signed in
                 signInSection.style.display = 'none';
                 mainContent.style.display = 'block';
                 updateUserHeader(user);
                 renderSurveyList();
             } else {
-                // User is not signed in
                 signInSection.style.display = 'block';
                 mainContent.style.display = 'none';
 
-                // Mount SignIn component
                 const signInDiv = document.getElementById('clerk-signin-mount');
                 if (signInDiv && !signInDiv.hasChildNodes()) {
                     clerkInstance.mountSignIn(signInDiv, {
@@ -471,7 +477,6 @@
             const currentEmail = getCurrentUserEmail();
             const allSurveys = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 
-            // Filter by creator if user is logged in
             const surveys = currentEmail
                 ? allSurveys.filter(s => s.createdBy === currentEmail)
                 : allSurveys;
@@ -513,8 +518,8 @@
 
             if (surveys.length === 0) {
                 container.innerHTML = `
-                    <p style="text-align: center; color: var(--navy-600); padding: 2rem;">
-                        No surveys created yet. Create your first survey above!
+                    <p style="text-align: center; color: var(--gray-500); padding: 2rem;">
+                        No surveys created yet. Create your first survey above.
                     </p>
                 `;
                 return;
@@ -526,14 +531,14 @@
                         <div class="survey-name">${survey.orgName}</div>
                         <div class="survey-date">${formatDate(survey.created)}</div>
                     </div>
-                    ${survey.email ? `<p style="color: var(--navy-600); font-size: 0.9rem; margin-bottom: 0.5rem;">Contact: ${survey.email}</p>` : ''}
+                    ${survey.email ? `<p style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Contact: ${survey.email}</p>` : ''}
                     <div class="survey-link">${survey.link}</div>
                     <div class="survey-actions">
-                        <button onclick="copyLink('${survey.link}')" style="background: var(--teal); color: white;">
-                            <i class="fas fa-copy"></i> Copy
+                        <button onclick="copyLink('${survey.link}')" style="background: var(--gray-900); color: white;">
+                            Copy
                         </button>
-                        <button onclick="openLink('${survey.link}')" style="background: var(--navy-800); color: white;">
-                            <i class="fas fa-external-link-alt"></i> Open
+                        <button onclick="openLink('${survey.link}')" style="background: var(--gray-700); color: white;">
+                            Open
                         </button>
                     </div>
                 </div>
@@ -543,11 +548,10 @@
         // Copy link to clipboard
         function copyLink(link) {
             navigator.clipboard.writeText(link).then(() => {
-                // Show feedback
                 const btn = event.target.closest('button');
                 const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                btn.style.background = '#10b981';
+                btn.innerHTML = 'Copied!';
+                btn.style.background = 'var(--gray-600)';
                 setTimeout(() => {
                     btn.innerHTML = originalHTML;
                     btn.style.background = '';
@@ -570,16 +574,14 @@
 
             const userHeader = document.createElement('div');
             userHeader.className = 'user-header';
-            userHeader.style.cssText = 'background: var(--navy-50); padding: 1rem; border-radius: 6px; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--navy-100);';
             userHeader.innerHTML = `
-                <div style="color: var(--navy-900);">
-                    <i class="fas fa-user-circle"></i> Signed in as: <strong>${email}</strong>
+                <div style="color: var(--gray-900);">
+                    Signed in as: <strong>${email}</strong>
                 </div>
                 <div id="clerk-user-button-mount"></div>
             `;
             mainContent.insertBefore(userHeader, mainContent.firstChild);
 
-            // Mount Clerk UserButton
             const userButtonDiv = document.getElementById('clerk-user-button-mount');
             if (userButtonDiv && clerkInstance) {
                 clerkInstance.mountUserButton(userButtonDiv, {
@@ -598,10 +600,8 @@
 
             if (!orgName) return;
 
-            // Generate link
             const link = generateSurveyLink(orgName);
 
-            // Save survey with creator info
             const survey = {
                 id: Date.now().toString(),
                 orgName: orgName,
@@ -612,20 +612,17 @@
             };
             saveSurvey(survey);
 
-            // Show result
             document.getElementById('surveyLink').textContent = link;
             document.getElementById('resultSection').classList.add('show');
 
-            // Update survey list
             renderSurveyList();
 
-            // Setup buttons
             document.getElementById('copyBtn').onclick = function() {
                 copyLink(link);
-                this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                this.innerHTML = 'Copied!';
                 this.classList.add('copied');
                 setTimeout(() => {
-                    this.innerHTML = '<i class="fas fa-copy"></i> Copy Link';
+                    this.innerHTML = 'Copy Link';
                     this.classList.remove('copied');
                 }, 2000);
             };
@@ -634,10 +631,8 @@
                 openLink(link);
             };
 
-            // Scroll to result
             document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-            // Clear form
             document.getElementById('orgName').value = '';
             document.getElementById('contactEmail').value = '';
         });

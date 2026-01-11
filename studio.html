@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUDI Studio - Free AI Workspace for Learning & Productivity | Multi-Model Support</title>
+    <meta name="description" content="RUDI Studio is a free, open-source AI workspace for document drafting, data analysis, research synthesis, and automation. Supports Claude, GPT, Gemini. Download for macOS.">
+    <meta name="keywords" content="AI workspace, AI learning platform, AI productivity tool, RUDI Studio, Claude workspace, GPT interface, document drafting AI, data analysis AI, free AI tool, open source AI">
+    <meta name="author" content="RUDI - Responsible Use of Digital Intelligence">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://learnrudi.com/studio.html">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="RUDI">
+    <meta property="og:title" content="RUDI Studio - Free AI Workspace for Learning & Productivity">
+    <meta property="og:description" content="A unified AI workspace for document drafting, data analysis, research, and automation. Free and open source. Supports Claude, GPT, Gemini.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learnrudi.com/studio.html">
+    <meta property="og:image" content="https://learnrudi.com/images/studio-og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RUDI Studio - Free AI Workspace">
+    <meta name="twitter:description" content="Document drafting, data analysis, research synthesis, and automation in one AI workspace. Free and open source.">
+    <meta name="twitter:image" content="https://learnrudi.com/images/studio-og-preview.png">
+
+    <!-- Structured Data for LLM/Search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "RUDI Studio",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "macOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "RUDI Studio is a free, open-source AI workspace for learning and working with AI. Features include document drafting, data analysis, research synthesis, code generation, and workflow automation. Supports multiple AI models including Claude, GPT, and Gemini.",
+        "featureList": [
+            "Multi-model AI support (Claude, GPT, Gemini)",
+            "Document drafting and editing",
+            "Data analysis and visualization",
+            "Research synthesis across multiple documents",
+            "Code generation and automation",
+            "Project workspace organization",
+            "Prompt library management",
+            "Conversation history and search"
+        ],
+        "author": {
+            "@type": "Organization",
+            "name": "RUDI",
+            "url": "https://learnrudi.com"
+        },
+        "downloadUrl": "https://learnrudi.com/studio.html",
+        "softwareVersion": "1.0",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is RUDI Studio?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RUDI Studio is a free, open-source AI workspace that lets you work with multiple AI models (Claude, GPT, Gemini) in one unified interface. It's designed for document drafting, data analysis, research synthesis, and workflow automation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is RUDI Studio free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, RUDI Studio is completely free and open source. You can download it for macOS and use it with your own API keys for various AI models."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What AI models does RUDI Studio support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RUDI Studio supports multiple AI models including Claude (Anthropic), GPT (OpenAI), Gemini (Google), and more. You can switch between models freely within the same workspace."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What can I do with RUDI Studio?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RUDI Studio enables document drafting, data analysis from spreadsheets, research synthesis across multiple PDFs, code generation, workflow automation, and AI prompt practice. It's ideal for both learning AI skills and daily productivity."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gray-900: #111111;
+            --gray-800: #1a1a1a;
+            --gray-700: #333333;
+            --gray-600: #555555;
+            --gray-500: #777777;
+            --gray-400: #999999;
+            --gray-300: #b3b3b3;
+            --gray-200: #cccccc;
+            --gray-100: #e5e5e5;
+            --gray-50: #f5f5f5;
+            --white: #ffffff;
+            --accent: #c75b39;
+            --accent-dark: #a94d2f;
+            --studio-bg: #1e1e1e;
+            --studio-sidebar: #252526;
+            --studio-border: #3c3c3c;
+            --studio-green: #4ec9b0;
+            --studio-orange: #ce9178;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span {
+            font-weight: 400;
+            color: var(--gray-500);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links a:hover {
+            color: var(--gray-900);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gray-900);
+            border: 1px solid var(--gray-900);
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-alt {
+            background: var(--gray-50);
+        }
+
+        .section-dark {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-label {
+            color: var(--gray-400);
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-dark h2 {
+            color: var(--white);
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .section-dark .section-header p {
+            color: var(--gray-400);
+        }
+
+        /* IDE Preview - RUDI Studio Mockup */
+        /* Video Preview */
+        .video-preview {
+            margin-top: 4rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: slideInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+        }
+
+        .video-preview video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-preview .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 80%, rgba(0, 0, 0, 0.3) 100%);
+            pointer-events: none;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .step-item {
+            padding: 3rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+        }
+
+        .step-number {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-400);
+            margin-bottom: 1.5rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .step-item p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .feature-item {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+        }
+
+        .feature-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-item p {
+            color: var(--gray-600);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        /* Use Cases - Interactive Demos */
+        .usecase-demo {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--gray-700);
+        }
+
+        .usecase-demo:last-child {
+            border-bottom: none;
+        }
+
+        .usecase-demo.reverse {
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .usecase-demo.reverse .usecase-info {
+            order: 2;
+        }
+
+        .usecase-demo.reverse .usecase-preview {
+            order: 1;
+        }
+
+        .usecase-info {
+            padding-right: 2rem;
+        }
+
+        .usecase-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .usecase-info h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .usecase-info p {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1.0625rem;
+        }
+
+        .usecase-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .usecase-tags li {
+            background: var(--gray-800);
+            color: var(--gray-300);
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--gray-700);
+        }
+
+        /* Mini IDE Previews */
+        .mini-ide {
+            background: var(--studio-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .mini-ide-header {
+            background: #323233;
+            padding: 0.625rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .mini-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .mini-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ff5f57;
+        }
+
+        .mini-dots span:nth-child(2) { background: #febc2e; }
+        .mini-dots span:nth-child(3) { background: #28c840; }
+
+        .mini-title {
+            font-size: 0.75rem;
+            color: #999;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .mini-ide-body {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            min-height: 220px;
+        }
+
+        .mini-editor {
+            background: #1e1e1e;
+            padding: 1rem;
+            border-right: 1px solid var(--studio-border);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .editor-line {
+            display: flex;
+            gap: 1rem;
+            padding: 0.125rem 0;
+            line-height: 1.6;
+        }
+
+        .line-num {
+            color: #4d4d4d;
+            min-width: 1.5rem;
+            text-align: right;
+            user-select: none;
+        }
+
+        .code-heading { color: #569cd6; }
+        .code-text { color: #d4d4d4; }
+        .code-keyword { color: #c586c0; }
+        .code-var { color: #9cdcfe; }
+        .code-func { color: #dcdcaa; }
+        .code-string { color: #ce9178; }
+
+        /* Data Table View */
+        .mini-editor.data-view {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .data-table {
+            width: 100%;
+        }
+
+        .data-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid var(--studio-border);
+            font-size: 0.6875rem;
+            color: #a0a0a0;
+        }
+
+        .data-row.header {
+            color: #569cd6;
+            font-weight: 500;
+        }
+
+        .data-row .positive { color: #4ec9b0; }
+        .data-row .negative { color: #f14c4c; }
+
+        /* File List View */
+        .mini-editor.file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .file-item {
+            padding: 0.5rem 0.75rem;
+            color: #a0a0a0;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .file-item.active {
+            background: #37373d;
+            color: #ffffff;
+        }
+
+        /* Mini Chat */
+        .mini-chat {
+            background: #252526;
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            overflow: hidden;
+        }
+
+        .mini-chat-msg {
+            padding: 0.625rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.6875rem;
+            line-height: 1.5;
+        }
+
+        .mini-chat-msg.user {
+            background: #2d2d30;
+            color: #cccccc;
+            align-self: flex-end;
+            max-width: 90%;
+        }
+
+        .mini-chat-msg.ai {
+            background: #1e1e1e;
+            color: #a0a0a0;
+            border: 1px solid var(--studio-border);
+            max-width: 90%;
+        }
+
+        /* Scroll Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .usecase-demo:nth-child(odd) .mini-ide {
+            transform: translateX(20px);
+            opacity: 0;
+            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        }
+
+        .usecase-demo:nth-child(even) .mini-ide {
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        }
+
+        .fade-up.visible .mini-ide {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 1024px) {
+            .usecase-demo,
+            .usecase-demo.reverse {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .usecase-demo.reverse .usecase-info,
+            .usecase-demo.reverse .usecase-preview {
+                order: unset;
+            }
+
+            .usecase-info {
+                padding-right: 0;
+            }
+
+            .mini-ide-body {
+                grid-template-columns: 1fr;
+            }
+
+            .mini-editor {
+                border-right: none;
+                border-bottom: 1px solid var(--studio-border);
+                min-height: 120px;
+            }
+        }
+
+        /* Training Connection */
+        .training-connection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .training-content h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .training-content p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .training-levels {
+            list-style: none;
+            border-left: 1px solid var(--gray-200);
+            padding-left: 2rem;
+        }
+
+        .training-levels li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .training-levels li:last-child {
+            border-bottom: none;
+        }
+
+        .training-levels strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .training-levels span {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .cta-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            padding: 4rem 2rem 2rem;
+            color: var(--gray-400);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand {
+            max-width: 280px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            font-weight: 400;
+            color: var(--gray-500);
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .footer-section h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            text-decoration: none;
+            padding: 0.375rem 0;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .steps-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .usecases-grid,
+            .training-connection {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero-cta,
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">RUDI <span>Studio</span></a>
+            <ul class="nav-links">
+                <li><a href="training.html">Training</a></li>
+                <li><a href="consulting.html">Consulting</a></li>
+                <li><a href="studio.html">Studio</a></li>
+                <li><a href="framework.html">Framework</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-label">AI Workspace</div>
+            <h1>One place to learn, practice, and work with AI</h1>
+            <p class="hero-subtitle">
+                RUDI Studio is the platform we use to teach. A unified workspace for people learning to work with AI effectively.
+            </p>
+            <div class="hero-cta">
+                <a href="#" class="btn btn-primary">Download for macOS</a>
+                <a href="#" class="btn btn-secondary">View on GitHub</a>
+            </div>
+
+            <div class="video-preview">
+                <video autoplay muted loop playsinline>
+                    <source src="images/studio-demo.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">How It Works</div>
+                <h2>Describe. Direct. Create.</h2>
+                <p>You bring the thinking. AI helps with the execution. One interface, no context-switching.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">Step 01</div>
+                    <h3>Express your intent</h3>
+                    <p>Tell Studio what you want to create, analyze, summarize, or research. Plain language. No special syntax required.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">Step 02</div>
+                    <h3>AI assists</h3>
+                    <p>Studio works with your documents, applies the right AI model, and helps you accomplish the task. You stay in control.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">Step 03</div>
+                    <h3>Iterate and refine</h3>
+                    <p>Review results, ask follow-up questions, refine your approach. Everything stays in context as you work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Capabilities</div>
+                <h2>Everything you need in one place</h2>
+                <p>Built for the way people actually work with AI—not how tools think they should.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Project workspace</h3>
+                    <p>Organize your work into projects. Keep documents, conversations, and outputs together in one place.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Multi-model support</h3>
+                    <p>Claude, GPT, Gemini, and more. Use your preferred AI model. Switch between them freely.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Document handling</h3>
+                    <p>Work with PDFs, Word docs, spreadsheets, images, and more. Upload, analyze, and create.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Prompt library</h3>
+                    <p>Save and reuse effective prompts. Build your personal library of what works.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Conversation history</h3>
+                    <p>Your work is saved automatically. Pick up where you left off. Search past conversations.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Export and share</h3>
+                    <p>Export results to common formats. Share outputs with colleagues. Integrate into your workflow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases with Interactive Demos -->
+    <section class="section section-dark">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Use Cases</div>
+                <h2>See it in action</h2>
+                <p>Real workflows, real results. Watch how Studio handles everyday tasks.</p>
+            </div>
+
+            <!-- Use Case 1: Document Drafting -->
+            <div class="usecase-demo">
+                <div class="usecase-info">
+                    <div class="usecase-number">01</div>
+                    <h3>Document Drafting</h3>
+                    <p>Transform rough ideas into polished documents. From bullet points to board-ready reports.</p>
+                    <ul class="usecase-tags">
+                        <li>Emails</li>
+                        <li>Reports</li>
+                        <li>Proposals</li>
+                        <li>Summaries</li>
+                    </ul>
+                </div>
+                <div class="usecase-preview">
+                    <div class="mini-ide">
+                        <div class="mini-ide-header">
+                            <div class="mini-dots"><span></span><span></span><span></span></div>
+                            <span class="mini-title">quarterly-report.md</span>
+                        </div>
+                        <div class="mini-ide-body">
+                            <div class="mini-editor">
+                                <div class="editor-line"><span class="line-num">1</span><span class="code-heading"># Q4 Performance Report</span></div>
+                                <div class="editor-line"><span class="line-num">2</span><span class="code-text"></span></div>
+                                <div class="editor-line"><span class="line-num">3</span><span class="code-heading">## Executive Summary</span></div>
+                                <div class="editor-line typing-line" data-demo="doc"><span class="line-num">4</span><span class="code-text"></span></div>
+                            </div>
+                            <div class="mini-chat">
+                                <div class="mini-chat-msg user">Turn these bullet points into an executive summary</div>
+                                <div class="mini-chat-msg ai">I've drafted a concise executive summary highlighting the 23% revenue growth and key strategic wins...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Case 2: Data Analysis -->
+            <div class="usecase-demo reverse">
+                <div class="usecase-info">
+                    <div class="usecase-number">02</div>
+                    <h3>Data Analysis</h3>
+                    <p>Upload spreadsheets, ask questions in plain English, get insights instantly.</p>
+                    <ul class="usecase-tags">
+                        <li>CSV/Excel</li>
+                        <li>Trends</li>
+                        <li>Visualizations</li>
+                        <li>Reports</li>
+                    </ul>
+                </div>
+                <div class="usecase-preview">
+                    <div class="mini-ide">
+                        <div class="mini-ide-header">
+                            <div class="mini-dots"><span></span><span></span><span></span></div>
+                            <span class="mini-title">sales-data-2024.csv</span>
+                        </div>
+                        <div class="mini-ide-body">
+                            <div class="mini-editor data-view">
+                                <div class="data-table">
+                                    <div class="data-row header">
+                                        <span>Region</span><span>Q3</span><span>Q4</span><span>Growth</span>
+                                    </div>
+                                    <div class="data-row"><span>North</span><span>$2.4M</span><span>$3.1M</span><span class="positive">+29%</span></div>
+                                    <div class="data-row"><span>South</span><span>$1.8M</span><span>$2.2M</span><span class="positive">+22%</span></div>
+                                    <div class="data-row"><span>West</span><span>$3.2M</span><span>$3.0M</span><span class="negative">-6%</span></div>
+                                </div>
+                            </div>
+                            <div class="mini-chat">
+                                <div class="mini-chat-msg user">Which region underperformed and why?</div>
+                                <div class="mini-chat-msg ai">West region declined 6%. Cross-referencing with your notes, this correlates with the supply chain delays in October...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Case 3: Research -->
+            <div class="usecase-demo">
+                <div class="usecase-info">
+                    <div class="usecase-number">03</div>
+                    <h3>Research & Synthesis</h3>
+                    <p>Analyze multiple documents, extract insights, and synthesize findings into actionable intelligence.</p>
+                    <ul class="usecase-tags">
+                        <li>PDFs</li>
+                        <li>Summaries</li>
+                        <li>Comparisons</li>
+                        <li>Citations</li>
+                    </ul>
+                </div>
+                <div class="usecase-preview">
+                    <div class="mini-ide">
+                        <div class="mini-ide-header">
+                            <div class="mini-dots"><span></span><span></span><span></span></div>
+                            <span class="mini-title">research-workspace</span>
+                        </div>
+                        <div class="mini-ide-body">
+                            <div class="mini-editor file-list">
+                                <div class="file-item active">📄 market-analysis-2024.pdf</div>
+                                <div class="file-item">📄 competitor-report.pdf</div>
+                                <div class="file-item">📄 customer-surveys.xlsx</div>
+                                <div class="file-item">📄 industry-trends.pdf</div>
+                            </div>
+                            <div class="mini-chat">
+                                <div class="mini-chat-msg user">What do these 4 documents say about market opportunity?</div>
+                                <div class="mini-chat-msg ai">Synthesizing across all sources: The market shows 3 clear opportunities—enterprise AI training (mentioned in all 4), compliance tools, and...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Case 4: Code & Automation -->
+            <div class="usecase-demo reverse">
+                <div class="usecase-info">
+                    <div class="usecase-number">04</div>
+                    <h3>Code & Automation</h3>
+                    <p>Build scripts, automate workflows, and create tools—even without deep programming knowledge.</p>
+                    <ul class="usecase-tags">
+                        <li>Scripts</li>
+                        <li>APIs</li>
+                        <li>Workflows</li>
+                        <li>Integrations</li>
+                    </ul>
+                </div>
+                <div class="usecase-preview">
+                    <div class="mini-ide">
+                        <div class="mini-ide-header">
+                            <div class="mini-dots"><span></span><span></span><span></span></div>
+                            <span class="mini-title">automation.py</span>
+                        </div>
+                        <div class="mini-ide-body">
+                            <div class="mini-editor">
+                                <div class="editor-line"><span class="line-num">1</span><span class="code-keyword">import</span> <span class="code-var">schedule</span></div>
+                                <div class="editor-line"><span class="line-num">2</span><span class="code-keyword">from</span> <span class="code-var">rudi</span> <span class="code-keyword">import</span> <span class="code-var">Agent</span></div>
+                                <div class="editor-line"><span class="line-num">3</span></div>
+                                <div class="editor-line"><span class="line-num">4</span><span class="code-keyword">def</span> <span class="code-func">daily_report</span>():</div>
+                                <div class="editor-line"><span class="line-num">5</span>    <span class="code-var">agent</span>.<span class="code-func">analyze</span>(<span class="code-string">"inbox/"</span>)</div>
+                            </div>
+                            <div class="mini-chat">
+                                <div class="mini-chat-msg user">Create a script that summarizes my inbox every morning</div>
+                                <div class="mini-chat-msg ai">I've created an automation that runs at 8am, analyzes new emails, and sends you a digest with action items...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Connection -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="training-connection">
+                <div class="training-content">
+                    <div class="section-label">Training Lab</div>
+                    <h2>The platform we use to teach</h2>
+                    <p>
+                        Studio isn't just a tool—it's the hands-on learning environment for RUDI training. What you learn in class, you practice in Studio.
+                    </p>
+                    <p>
+                        For Level 3 (Agents & Automation) learners, Studio is where advanced skills come to life. Build workflows, test automations, and develop real capabilities.
+                    </p>
+                    <a href="training.html" class="btn btn-primary">View Training Programs</a>
+                </div>
+
+                <ul class="training-levels">
+                    <li>
+                        <strong>Level 1: Fundamentals</strong>
+                        <span>Use Studio to practice basic AI interactions and ambient tools</span>
+                    </li>
+                    <li>
+                        <strong>Level 2: Chat & Prompting</strong>
+                        <span>Build your prompt library and master conversation techniques</span>
+                    </li>
+                    <li>
+                        <strong>Level 3: Agents & Automation</strong>
+                        <span>Create workflows, connect tools, and build real automations</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <h2>Ready to try it?</h2>
+            <p>RUDI Studio is free and open source. Download it and start practicing.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Download for macOS</a>
+                <a href="training.html" class="btn btn-secondary">Learn With Training</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">RUDI <span>Studio</span></div>
+                    <p>An open-source AI workspace. The same platform we use to teach—available for your team.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="training.html">Training</a>
+                    <a href="consulting.html">Consulting</a>
+                    <a href="studio.html">Studio</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="framework.html">Framework</a>
+                    <a href="get-certificate.html">Certifications</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="ohio.html">Ohio TechCred</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                2025 RUDI. Free and open source.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations for use case demos
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const demoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    demoObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.usecase-demo').forEach(demo => {
+            demo.classList.add('fade-up');
+            demoObserver.observe(demo);
+        });
+    </script>
+</body>
+</html>

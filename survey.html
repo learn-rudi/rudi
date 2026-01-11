@@ -5,73 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RUDI AI Familiarity & Comfort Survey</title>
     <meta name="description" content="Anonymous AI literacy survey by RUDI - Responsible Use of Digital Intelligence. Help your organization understand AI adoption and comfort levels.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Survey-specific styles */
+        :root {
+            --gray-900: #111111;
+            --gray-800: #1a1a1a;
+            --gray-700: #333333;
+            --gray-600: #555555;
+            --gray-500: #777777;
+            --gray-400: #999999;
+            --gray-300: #b3b3b3;
+            --gray-200: #cccccc;
+            --gray-100: #e5e5e5;
+            --gray-50: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--gray-50);
+            -webkit-font-smoothing: antialiased;
+        }
+
         .survey-container {
             min-height: 100vh;
-            background: #f8fafc;
-            padding: 2rem 0;
+            padding: 2rem;
         }
 
         .survey-card {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             overflow: hidden;
-            border: 1px solid var(--navy-100);
         }
 
         .survey-header {
-            background: var(--navy-900);
-            color: white;
-            padding: 2.5rem 3rem 2rem;
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 3rem;
             text-align: center;
-            border-bottom: 2px solid var(--teal);
         }
 
         .survey-header h1 {
-            font-family: 'Poppins', sans-serif;
             font-size: 2rem;
-            font-weight: 400;
+            font-weight: 300;
             margin-bottom: 0.5rem;
-            color: white;
+            letter-spacing: -0.02em;
         }
 
         .survey-header .subtitle {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0.5rem;
-            font-weight: 300;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
         }
 
         .survey-header .company-name {
-            font-size: 1.1rem;
+            font-size: 1.125rem;
             font-weight: 500;
-            color: var(--teal);
+            color: var(--white);
             margin-top: 1rem;
         }
 
         .survey-intro {
             padding: 2rem 3rem;
-            background: white;
-            border-bottom: 1px solid var(--navy-100);
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
         }
 
         .survey-intro p {
             line-height: 1.7;
-            color: var(--navy-700);
+            color: var(--gray-700);
             margin-bottom: 0.75rem;
-            font-size: 0.95rem;
+            font-size: 0.9375rem;
         }
 
         .survey-section {
             padding: 2rem 3rem;
-            border-bottom: 1px solid var(--navy-100);
+            border-bottom: 1px solid var(--gray-100);
         }
 
         .survey-section:last-of-type {
@@ -89,13 +113,13 @@
         .question-label {
             display: block;
             font-weight: 500;
-            color: var(--navy-900);
+            color: var(--gray-900);
             margin-bottom: 1rem;
             font-size: 1rem;
         }
 
         .question-label .required {
-            color: #ef4444;
+            color: var(--gray-900);
             margin-left: 0.25rem;
         }
 
@@ -110,16 +134,14 @@
             display: flex;
             align-items: center;
             padding: 0.875rem 1rem;
-            border: 1px solid var(--navy-100);
-            border-radius: 6px;
+            border: 1px solid var(--gray-200);
             cursor: pointer;
-            transition: all 0.2s;
-            background: white;
+            background: var(--white);
         }
 
         .radio-option:hover {
-            border-color: var(--navy-600);
-            background: var(--navy-50);
+            border-color: var(--gray-400);
+            background: var(--gray-50);
         }
 
         .radio-option input[type="radio"] {
@@ -127,23 +149,18 @@
             height: 18px;
             margin-right: 0.875rem;
             cursor: pointer;
-            accent-color: var(--navy-800);
-        }
-
-        .radio-option input[type="radio"]:checked + label {
-            color: var(--navy-900);
-            font-weight: 500;
+            accent-color: var(--gray-900);
         }
 
         .radio-option.selected {
-            border-color: var(--navy-800);
-            background: var(--navy-50);
+            border-color: var(--gray-900);
+            background: var(--gray-50);
         }
 
         .radio-option label {
             flex: 1;
             cursor: pointer;
-            color: var(--navy-800);
+            color: var(--gray-700);
         }
 
         /* Checkboxes */
@@ -157,21 +174,19 @@
             display: flex;
             align-items: center;
             padding: 0.875rem 1rem;
-            border: 1px solid var(--navy-100);
-            border-radius: 6px;
+            border: 1px solid var(--gray-200);
             cursor: pointer;
-            transition: all 0.2s;
-            background: white;
+            background: var(--white);
         }
 
         .checkbox-option:hover {
-            border-color: var(--navy-600);
-            background: var(--navy-50);
+            border-color: var(--gray-400);
+            background: var(--gray-50);
         }
 
         .checkbox-option.selected {
-            border-color: var(--navy-800);
-            background: var(--navy-50);
+            border-color: var(--gray-900);
+            background: var(--gray-50);
         }
 
         .checkbox-option input[type="checkbox"] {
@@ -179,20 +194,20 @@
             height: 18px;
             margin-right: 0.75rem;
             cursor: pointer;
-            accent-color: var(--navy-800);
+            accent-color: var(--gray-900);
         }
 
         .checkbox-option label {
             flex: 1;
             cursor: pointer;
-            color: var(--navy-800);
-            font-size: 0.95rem;
+            color: var(--gray-700);
+            font-size: 0.9375rem;
         }
 
         .checkbox-note {
             margin-top: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--navy-600);
+            font-size: 0.875rem;
+            color: var(--gray-500);
             font-style: italic;
         }
 
@@ -200,20 +215,17 @@
         .select-input {
             width: 100%;
             padding: 0.875rem 1rem;
-            border: 1px solid var(--navy-100);
-            border-radius: 6px;
+            border: 1px solid var(--gray-200);
             font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            background-color: white;
+            font-family: inherit;
+            background-color: var(--white);
             cursor: pointer;
-            transition: border-color 0.2s;
-            color: var(--navy-800);
+            color: var(--gray-700);
         }
 
         .select-input:focus {
             outline: none;
-            border-color: var(--navy-800);
-            box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.1);
+            border-color: var(--gray-900);
         }
 
         /* Scale */
@@ -225,8 +237,8 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 1.25rem;
-            font-size: 0.9rem;
-            color: var(--navy-600);
+            font-size: 0.875rem;
+            color: var(--gray-500);
             font-style: italic;
         }
 
@@ -249,63 +261,77 @@
             width: 100%;
             padding: 0.875rem 0.5rem;
             text-align: center;
-            border: 1px solid var(--navy-100);
-            border-radius: 6px;
+            border: 1px solid var(--gray-200);
             cursor: pointer;
             font-weight: 500;
-            transition: all 0.2s;
-            background-color: white;
-            color: var(--navy-700);
+            background-color: var(--white);
+            color: var(--gray-600);
         }
 
         .scale-option input[type="radio"]:checked + label {
-            background-color: var(--navy-900);
-            border-color: var(--navy-900);
-            color: white;
+            background-color: var(--gray-900);
+            border-color: var(--gray-900);
+            color: var(--white);
             font-weight: 600;
         }
 
         .scale-option label:hover {
-            border-color: var(--navy-600);
-            background-color: var(--navy-50);
+            border-color: var(--gray-400);
+            background-color: var(--gray-50);
         }
 
         .scale-option input[type="radio"]:checked + label:hover {
-            background-color: var(--navy-900);
+            background-color: var(--gray-900);
+        }
+
+        /* Progress indicator */
+        .progress-container {
+            padding: 1rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--gray-100);
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gray-900);
+            width: 0%;
+            transition: width 0.3s ease;
         }
 
         /* Submit section */
         .submit-section {
             padding: 2rem 3rem;
-            background: white;
+            background: var(--white);
             text-align: center;
         }
 
         .submit-btn {
-            background: var(--navy-900);
-            color: white;
+            background: var(--gray-900);
+            color: var(--white);
             padding: 1rem 2.5rem;
             border: none;
-            border-radius: 6px;
-            font-size: 1rem;
+            font-size: 0.875rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .submit-btn:hover {
-            background: var(--navy-800);
-        }
-
-        .submit-btn:active {
-            transform: scale(0.98);
+            background: var(--gray-800);
         }
 
         /* Success message */
         .success-message {
             display: none;
-            padding: 3rem;
+            padding: 4rem 3rem;
             text-align: center;
         }
 
@@ -313,48 +339,55 @@
             display: block;
         }
 
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            border: 2px solid var(--gray-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
         .success-message h2 {
-            color: var(--navy-900);
+            color: var(--gray-900);
             margin-bottom: 1rem;
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: 400;
         }
 
         .success-message p {
-            color: var(--navy-700);
+            color: var(--gray-600);
             font-size: 1rem;
             line-height: 1.7;
         }
 
-        /* Progress indicator */
-        .progress-container {
-            padding: 1rem 3rem;
-            background: white;
-            border-bottom: 1px solid var(--navy-100);
+        .success-note {
+            background: var(--gray-50);
+            border-left: 3px solid var(--gray-900);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
         }
 
-        .progress-bar {
-            height: 4px;
-            background: var(--navy-100);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--navy-900);
-            width: 0%;
-            transition: width 0.3s ease;
+        .success-note h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         /* Mobile responsive */
         @media (max-width: 768px) {
+            .survey-container {
+                padding: 1rem;
+            }
+
             .survey-header {
                 padding: 2rem 1.5rem;
             }
 
             .survey-header h1 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
 
             .survey-intro,
@@ -374,7 +407,7 @@
 
             .scale-option label {
                 padding: 0.75rem 0.25rem;
-                font-size: 0.9rem;
+                font-size: 0.875rem;
             }
         }
     </style>
@@ -387,9 +420,9 @@
         <div class="survey-card">
             <!-- Header -->
             <div class="survey-header">
-                <h1>RUDI AI Familiarity & Adoption Survey</h1>
                 <div class="subtitle">Responsible Use of Digital Intelligence</div>
-                <div class="company-name" id="companyName"><!-- Company name will be inserted here --></div>
+                <h1>AI Familiarity & Adoption Survey</h1>
+                <div class="company-name" id="companyName"></div>
             </div>
 
             <!-- Progress Bar -->
@@ -404,35 +437,29 @@
                 <!-- Introduction -->
                 <div class="survey-intro">
                     <p>This short, anonymous survey will help your organization better understand your comfort and familiarity level with AI. Your responses will not be linked to your name.</p>
-                    <p>There are no right or wrong answers – we're simply learning where everyone is starting from.</p>
+                    <p>There are no right or wrong answers. We're simply learning where everyone is starting from.</p>
                     <p>This survey is administered by RUDI (Responsible Use of Digital Intelligence), a public education initiative focused on empowering responsible AI use.</p>
                 </div>
 
                 <!-- Questions -->
                 <div class="survey-section" id="questionContainer">
-                    <!-- Questions will be rendered here by JavaScript -->
                 </div>
 
                 <!-- Submit Section -->
                 <div class="submit-section">
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        <i class="fas fa-paper-plane"></i> Submit Survey
-                    </button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Submit Survey</button>
                 </div>
             </form>
 
             <!-- Success Message -->
             <div class="success-message" id="successMessage">
-                <h2><i class="fas fa-check-circle"></i> Thank You!</h2>
-                <p><strong>Your individual response has been recorded.</strong></p>
+                <div class="success-icon">&#10003;</div>
+                <h2>Thank You</h2>
+                <p><strong>Your response has been recorded.</strong></p>
                 <p>We appreciate your participation in helping us understand AI adoption and comfort levels across your organization.</p>
-                <div style="background: rgba(20, 184, 166, 0.1); border-left: 4px solid var(--teal); padding: 1.5rem; border-radius: 6px; margin-top: 1.5rem;">
-                    <p style="margin: 0 0 0.75rem 0; font-weight: 600; color: var(--navy-900);">
-                        <i class="fas fa-users"></i> Help us get the complete picture
-                    </p>
-                    <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
-                        Share this survey link with your team members so we can collect responses from across your organization. The more participants, the better insights we can provide about your team's AI readiness.
-                    </p>
+                <div class="success-note">
+                    <h3>Help us get the complete picture</h3>
+                    <p>Share this survey link with your team members so we can collect responses from across your organization. The more participants, the better insights we can provide about your team's AI readiness.</p>
                 </div>
             </div>
         </div>
@@ -448,10 +475,10 @@
                 required: true,
                 options: [
                     "Under 25",
-                    "25–34",
-                    "35–44",
-                    "45–54",
-                    "55–64",
+                    "25-34",
+                    "35-44",
+                    "45-54",
+                    "55-64",
                     "65 or older",
                     "Prefer not to say"
                 ]
@@ -462,7 +489,7 @@
                 question: "Which industry best describes your primary work setting?",
                 required: true,
                 options: [
-                    "Education (PreK–12)",
+                    "Education (PreK-12)",
                     "Education (Higher Ed)",
                     "Workforce Development / Training",
                     "Nonprofit / Community Organization",
@@ -488,7 +515,7 @@
                     "GenSpark / Manus (agents)",
                     "Magic School AI",
                     "Khanmigo (Khan Academy)",
-                    "Midjourney / DALL·E / Adobe Firefly (image tools)",
+                    "Midjourney / DALL-E / Adobe Firefly (image tools)",
                     "Runway / Pika Labs (video tools)",
                     "ElevenLabs (voice tools)",
                     "None of these"
@@ -502,7 +529,7 @@
                 options: [
                     "Never",
                     "Rarely (once or twice ever)",
-                    "Occasionally (1–2 times per month)",
+                    "Occasionally (1-2 times per month)",
                     "Weekly",
                     "Daily"
                 ]
@@ -651,12 +678,10 @@
                     const questionId = this.dataset.question;
                     const input = this.querySelector('input[type="radio"]');
 
-                    // Remove selected class from all options in this question
                     document.querySelectorAll(`.radio-option[data-question="${questionId}"]`).forEach(opt => {
                         opt.classList.remove('selected');
                     });
 
-                    // Add selected class to clicked option
                     this.classList.add('selected');
                     input.checked = true;
                     updateProgress();
@@ -666,7 +691,7 @@
             // Checkbox styling and max selection enforcement
             document.querySelectorAll('.checkbox-option').forEach(option => {
                 option.addEventListener('click', function(e) {
-                    if (e.target.tagName === 'INPUT') return; // Let the checkbox handle it naturally
+                    if (e.target.tagName === 'INPUT') return;
 
                     const input = this.querySelector('input[type="checkbox"]');
                     const questionId = this.dataset.question;
@@ -685,7 +710,6 @@
                     updateProgress();
                 });
 
-                // Also handle direct checkbox clicks
                 const input = option.querySelector('input[type="checkbox"]');
                 input.addEventListener('change', function() {
                     const questionId = option.dataset.question;
@@ -705,7 +729,6 @@
                 });
             });
 
-            // All inputs update progress
             document.querySelectorAll('input, select').forEach(input => {
                 input.addEventListener('change', updateProgress);
             });
@@ -735,19 +758,16 @@
         }
 
         // Google Sheets configuration
-        // URL is loaded from js/config.js
-        const SHEETS_URL = CONFIG.SHEETS_WEBHOOK_URL;
+        const SHEETS_URL = typeof CONFIG !== 'undefined' ? CONFIG.SHEETS_WEBHOOK_URL : '';
 
         // Form submission
         document.getElementById('surveyForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Disable submit button
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.innerHTML = 'Submitting...';
 
-            // Collect form data
             const formData = {};
             surveyQuestions.forEach(q => {
                 if (q.type === 'checkbox') {
@@ -760,39 +780,33 @@
                 }
             });
 
-            // Add company name and creator to submission
             formData.company = companyName;
             formData.created_by = creatorEmail;
             formData.timestamp = new Date().toISOString();
 
             try {
-                // Send to Google Sheets
                 if (SHEETS_URL && typeof CONFIG !== 'undefined') {
-                    const response = await fetch(SHEETS_URL, {
+                    await fetch(SHEETS_URL, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify(formData),
-                        mode: 'no-cors' // Apps Script requires no-cors
+                        mode: 'no-cors'
                     });
 
                     console.log('Survey submitted successfully to Google Sheets');
                 } else {
-                    // Fallback: log to console if not configured
                     console.error('CONFIG not loaded. Please check js/config.js');
                     console.log('Survey Response (not saved):', formData);
-                    alert('Configuration error. Please contact the site administrator.');
                 }
 
-                // Show success message
                 document.getElementById('surveyForm').style.display = 'none';
                 document.querySelector('.progress-container').style.display = 'none';
                 document.getElementById('successMessage').classList.add('show');
 
             } catch (error) {
                 console.error('Submission error:', error);
-                // Still show success since no-cors mode doesn't return response
                 document.getElementById('surveyForm').style.display = 'none';
                 document.querySelector('.progress-container').style.display = 'none';
                 document.getElementById('successMessage').classList.add('show');

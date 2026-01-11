@@ -27,3 +27,7 @@ archived/
 # Temp
 temp/
 screenshots/
+
+# Test artifacts
+test-results/
+playwright-report/
