@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund the People, Not the Platforms</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --gray-900: #161616;
+            --gray-600: #525252;
+            --gray-500: #6f6f6f;
+            --gray-400: #8d8d8d;
+            --gray-300: #a8a8a8;
+            --gray-100: #e0e0e0;
+            --white: #ffffff;
+            --accent: #c75b39;
+            --green: #2da05a;
+            --red: #C04040;
+        }
+        html, body {
+            overflow: hidden;
+            height: 100%;
+        }
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--gray-900);
+            color: var(--gray-100);
+            padding: 24px 24px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        h2 { font-size: 20px; font-weight: 400; color: var(--white); margin-bottom: 8px; }
+        .subtitle { font-size: 14px; color: var(--gray-400); margin-bottom: 16px; max-width: 550px; flex-shrink: 0; }
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 6px;
+        }
+        .comparison-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 16px;
+            border-radius: 6px 6px 0 0;
+        }
+        .comparison-label.wrong { background: rgba(192, 57, 43, 0.1); color: var(--red); border: 1px solid rgba(192, 57, 43, 0.2); border-bottom: none; }
+        .comparison-label.right { background: rgba(45, 160, 90, 0.1); color: var(--green); border: 1px solid rgba(45, 160, 90, 0.2); border-bottom: none; }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-shrink: 0;
+        }
+        @media (max-width: 550px) { .comparison-header, .comparison-grid { grid-template-columns: 1fr; } }
+        .comparison-col {
+            background: #0f0f0f;
+            border: 1px solid #1a1a1a;
+            border-radius: 0 0 6px 6px;
+            padding: 20px;
+        }
+        .comparison-col.wrong { border-color: rgba(192, 57, 43, 0.2); }
+        .comparison-col.right { border-color: rgba(45, 160, 90, 0.2); }
+        .comparison-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .comparison-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .comparison-item:first-child { padding-top: 0; }
+        .item-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            flex-shrink: 0;
+        }
+        .comparison-col.wrong .item-icon { background: rgba(192, 57, 43, 0.15); color: var(--red); }
+        .comparison-col.right .item-icon { background: rgba(45, 160, 90, 0.15); color: var(--green); }
+        .item-text { font-size: 13px; color: var(--gray-300); line-height: 1.4; }
+        .item-text strong { color: var(--white); font-weight: 500; }
+        .pyramid-section {
+            background: #0c0c0c;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 12px;
+            flex-shrink: 0;
+        }
+        .pyramid-title {
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+        }
+        .pyramid { max-width: 420px; margin: 0 auto; }
+        .pyramid-level { display: flex; align-items: center; margin-bottom: 6px; }
+        .pyramid-bar {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            border-radius: 4px;
+        }
+        .pyramid-bar .lbl { font-size: 12px; color: var(--white); font-weight: 500; z-index: 1; }
+        .pyramid-bar .sublbl { font-size: 9px; color: rgba(255,255,255,0.5); margin-left: 10px; font-family: 'IBM Plex Mono', monospace; }
+        .level-1 .pyramid-bar { width: 100%; background: linear-gradient(90deg, var(--accent), #a94d2f); }
+        .level-2 .pyramid-bar { width: 80%; background: linear-gradient(90deg, rgba(199, 91, 57, 0.7), rgba(169, 77, 47, 0.7)); }
+        .level-3 .pyramid-bar { width: 60%; background: linear-gradient(90deg, rgba(199, 91, 57, 0.4), rgba(169, 77, 47, 0.4)); }
+        .level-4 .pyramid-bar { width: 40%; background: rgba(199, 91, 57, 0.2); }
+        .pyramid-annotation { margin-left: 14px; font-size: 10px; color: var(--gray-500); font-family: 'IBM Plex Mono', monospace; }
+        .bottom-line {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 12px;
+            flex-shrink: 0;
+        }
+        .bottom-line-text { font-size: 18px; color: var(--white); line-height: 1.5; max-width: 500px; margin: 0 auto; }
+        .bottom-line-text strong { color: var(--accent); font-weight: 500; }
+        .bottom-subtext { font-size: 13px; color: var(--gray-500); margin-top: 12px; }
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        @media (max-width: 550px) { .metrics-row { grid-template-columns: 1fr 1fr; } }
+        .metric-card {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            padding: 14px;
+            text-align: center;
+        }
+        .metric-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 6px;
+        }
+        .metric-value { font-size: 11px; color: var(--gray-300); line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <div class="label">The Bottom Line</div>
+    <h2>Fund the People, Not the Platforms</h2>
+    <p class="subtitle">The question doesn't have a technology answer. It has a human answer.</p>
+
+    <div class="comparison-header">
+        <div class="comparison-label wrong">✗ What Most Fund</div>
+        <div class="comparison-label right">✓ What Actually Works</div>
+    </div>
+
+    <div class="comparison-grid">
+        <div class="comparison-col wrong">
+            <div class="comparison-item"><div class="item-icon">$</div><div class="item-text"><strong>Licenses</strong> — bulk subscriptions to AI tools</div></div>
+            <div class="comparison-item"><div class="item-icon">📋</div><div class="item-text"><strong>One-time workshops</strong> — "intro to ChatGPT"</div></div>
+            <div class="comparison-item"><div class="item-icon">📧</div><div class="item-text"><strong>Policy memos</strong> — guidelines without support</div></div>
+            <div class="comparison-item"><div class="item-icon">🎥</div><div class="item-text"><strong>Vendor training</strong> — teaches the interface</div></div>
+        </div>
+        <div class="comparison-col right">
+            <div class="comparison-item"><div class="item-icon">👤</div><div class="item-text"><strong>AI Leads</strong> — dedicated staff who own the function</div></div>
+            <div class="comparison-item"><div class="item-icon">🔄</div><div class="item-text"><strong>Ongoing practice</strong> — embedded, continuous support</div></div>
+            <div class="comparison-item"><div class="item-icon">🏢</div><div class="item-text"><strong>Resource centers</strong> — office hours, 1:1 coaching</div></div>
+            <div class="comparison-item"><div class="item-icon">📊</div><div class="item-text"><strong>Measurement</strong> — are people actually getting better?</div></div>
+        </div>
+    </div>
+
+    <div class="pyramid-section">
+        <div class="pyramid-title">The Human Infrastructure Stack</div>
+        <div class="pyramid">
+            <div class="pyramid-level level-1"><div class="pyramid-bar"><span class="lbl">AI Lead / Coordinator</span><span class="sublbl">owns the function</span></div></div>
+            <div class="pyramid-level level-2"><div class="pyramid-bar"><span class="lbl">Resource Center</span><span class="sublbl">office hours, coaching</span></div><span class="pyramid-annotation">← minimum viable</span></div>
+            <div class="pyramid-level level-3"><div class="pyramid-bar"><span class="lbl">Faculty Fellows</span><span class="sublbl">peer champions</span></div></div>
+            <div class="pyramid-level level-4"><div class="pyramid-bar"><span class="lbl">Student Assistants</span><span class="sublbl">support capacity</span></div></div>
+        </div>
+    </div>
+
+    <div class="bottom-line">
+        <div class="bottom-line-text">The AI will keep changing.<br><strong>The human infrastructure is what makes it useful.</strong></div>
+        <div class="bottom-subtext">Not a workshop. A permanent institutional function.</div>
+    </div>
+
+    <div class="metrics-row">
+        <div class="metric-card"><div class="metric-label">Measure</div><div class="metric-value">Faculty AI fluency benchmarks</div></div>
+        <div class="metric-card"><div class="metric-label">Measure</div><div class="metric-value">Integration into course design</div></div>
+        <div class="metric-card"><div class="metric-label">Measure</div><div class="metric-value">Administrative efficiency gains</div></div>
+        <div class="metric-card"><div class="metric-label">Measure</div><div class="metric-value">Student preparedness metrics</div></div>
+    </div>
+</body>
+</html>

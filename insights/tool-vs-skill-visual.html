@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool vs Skill Adoption</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --gray-900: #161616;
+            --gray-700: #393939;
+            --gray-600: #525252;
+            --gray-500: #6f6f6f;
+            --gray-400: #8d8d8d;
+            --gray-300: #a8a8a8;
+            --gray-100: #e0e0e0;
+            --gray-50: #f4f4f4;
+            --white: #ffffff;
+            --accent: #c75b39;
+            --blue: #4a90a4;
+        }
+        html, body {
+            overflow: hidden;
+            height: 100%;
+        }
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--gray-900);
+            color: var(--gray-100);
+            padding: 24px 24px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-bottom: 20px;
+            max-width: 600px;
+            flex-shrink: 0;
+        }
+        .diagram {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 16px;
+            padding: 24px 16px;
+            background: #0c0c0c;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .diagram-side { text-align: center; }
+        .diagram-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .diagram-side.tool .diagram-label { color: var(--blue); }
+        .diagram-side.skill .diagram-label { color: var(--accent); }
+        .users-row { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; }
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .diagram-side.tool .user-icon { background: rgba(74, 144, 164, 0.2); border: 1px solid rgba(74, 144, 164, 0.4); color: var(--blue); }
+        .diagram-side.skill .user-icon { background: rgba(199, 91, 57, 0.2); border: 1px solid rgba(199, 91, 57, 0.4); color: var(--accent); }
+        .arrow { font-size: 18px; color: #3a3a3a; margin: 8px 0; }
+        .output-row { display: flex; justify-content: center; gap: 16px; }
+        .output-box {
+            width: 40px;
+            height: 28px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 9px;
+        }
+        .diagram-side.tool .output-box { background: rgba(74, 144, 164, 0.15); border: 1px solid rgba(74, 144, 164, 0.3); color: var(--blue); }
+        .diagram-side.skill .output-box { border: 1px solid rgba(199, 91, 57, 0.3); color: var(--accent); }
+        .diagram-side.skill .output-box.high { background: rgba(199, 91, 57, 0.3); }
+        .diagram-side.skill .output-box.med { background: rgba(199, 91, 57, 0.15); }
+        .diagram-side.skill .output-box.low { background: rgba(199, 91, 57, 0.05); }
+        .caption { font-size: 11px; color: var(--gray-500); margin-top: 12px; font-style: italic; }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex: 1;
+            min-height: 0;
+        }
+        @media (max-width: 600px) { .comparison { grid-template-columns: 1fr; } .diagram { flex-direction: column; gap: 32px; } }
+        .col {
+            background: #0f0f0f;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            padding: 16px;
+        }
+        .col.tool { border-top: 3px solid var(--blue); }
+        .col.skill { border-top: 3px solid var(--accent); }
+        .col-header {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .col.tool .col-header { color: var(--blue); }
+        .col.skill .col-header { color: var(--accent); }
+        .col-title { font-size: 18px; font-weight: 500; color: var(--white); margin-bottom: 12px; }
+        .col-desc { font-size: 13px; color: var(--gray-400); line-height: 1.6; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #1a1a1a; }
+        .attr-list { list-style: none; }
+        .attr-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 13px; color: var(--gray-300); }
+        .attr-icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .col.tool .attr-icon { background: rgba(74, 144, 164, 0.15); color: var(--blue); }
+        .col.skill .attr-icon { background: rgba(199, 91, 57, 0.15); color: var(--accent); }
+        .examples { margin-top: 16px; padding-top: 16px; border-top: 1px solid #1a1a1a; }
+        .examples-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-500); margin-bottom: 10px; }
+        .example-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .example-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 3px 8px; border-radius: 3px; background: #151515; border: 1px solid #222; }
+        .col.tool .example-tag { color: var(--blue); }
+        .col.skill .example-tag { color: var(--accent); }
+        .insight {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            padding: 16px 20px;
+            flex-shrink: 0;
+        }
+        .insight p { font-size: 14px; color: var(--gray-300); line-height: 1.7; margin: 0; }
+        .insight strong { color: var(--accent); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="label">The Core Distinction</div>
+    <h2>Tool Adoption vs. Skill Adoption</h2>
+    <p class="subtitle">Most institutions are treating AI like the wrong kind of technology adoption.</p>
+
+    <div class="diagram">
+        <div class="diagram-side tool">
+            <div class="diagram-label">Tool Adoption</div>
+            <div class="users-row">
+                <div class="user-icon">A</div>
+                <div class="user-icon">B</div>
+                <div class="user-icon">C</div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="output-row">
+                <div class="output-box">=</div>
+                <div class="output-box">=</div>
+                <div class="output-box">=</div>
+            </div>
+            <div class="caption">Same input → same output</div>
+        </div>
+        <div class="diagram-side skill">
+            <div class="diagram-label">Skill Adoption</div>
+            <div class="users-row">
+                <div class="user-icon">A</div>
+                <div class="user-icon">B</div>
+                <div class="user-icon">C</div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="output-row">
+                <div class="output-box high">+++</div>
+                <div class="output-box med">++</div>
+                <div class="output-box low">+</div>
+            </div>
+            <div class="caption">Same tool → different outcomes</div>
+        </div>
+    </div>
+
+    <div class="comparison">
+        <div class="col tool">
+            <div class="col-header">Deterministic</div>
+            <div class="col-title">Tool Adoption</div>
+            <p class="col-desc">Learning the interface. Where to click. The tool performs the same regardless of who's using it.</p>
+            <ul class="attr-list">
+                <li><span class="attr-icon">→</span><span>Institution buys access, trains on UI</span></li>
+                <li><span class="attr-icon">→</span><span>One-time learning curve</span></li>
+                <li><span class="attr-icon">→</span><span>Investment: licenses + onboarding</span></li>
+                <li><span class="attr-icon">→</span><span>Success = "everyone has access"</span></li>
+            </ul>
+            <div class="examples">
+                <div class="examples-label">Examples</div>
+                <div class="example-tags">
+                    <span class="example-tag">Email</span>
+                    <span class="example-tag">Zoom</span>
+                    <span class="example-tag">Blackboard</span>
+                    <span class="example-tag">Teams</span>
+                </div>
+            </div>
+        </div>
+        <div class="col skill">
+            <div class="col-header">Operator-Dependent</div>
+            <div class="col-title">Skill Adoption</div>
+            <p class="col-desc">The tool is only as powerful as what the operator brings. Two people produce wildly different outcomes.</p>
+            <ul class="attr-list">
+                <li><span class="attr-icon">→</span><span>Value depends on clarity of thought</span></li>
+                <li><span class="attr-icon">→</span><span>Ongoing practice required</span></li>
+                <li><span class="attr-icon">→</span><span>Investment: coaches + embedded support</span></li>
+                <li><span class="attr-icon">→</span><span>Success = "people are getting better"</span></li>
+            </ul>
+            <div class="examples">
+                <div class="examples-label">Examples</div>
+                <div class="example-tags">
+                    <span class="example-tag">Writing</span>
+                    <span class="example-tag">Teaching</span>
+                    <span class="example-tag">Excel</span>
+                    <span class="example-tag">AI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="insight">
+        <p>AI looks like software, so institutions treat it like Zoom. But it functions like writing or teaching. <strong>When the tool's value depends on the operator's skill, the investment isn't in the tool — it's in developing the operator.</strong></p>
+    </div>
+</body>
+</html>
