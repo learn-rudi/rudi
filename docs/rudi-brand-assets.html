@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>RUDI Brand Assets — Screenshot & Upload</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #c75b39;
+      --accent-dark: #a94d2f;
+      --gray-900: #161616;
+      --gray-800: #262626;
+      --gray-50: #f4f4f4;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      padding: 3rem 2rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .intro {
+      color: var(--gray-800);
+      margin-bottom: 1rem;
+    }
+
+    .how-to {
+      background: var(--white);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 3rem;
+      font-size: 0.9375rem;
+    }
+
+    .how-to strong { display: block; margin-bottom: 0.5rem; }
+    .how-to ol { margin-left: 1.25rem; line-height: 1.7; }
+    .how-to code {
+      background: var(--gray-50);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85em;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-spec {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8125rem;
+      color: var(--gray-800);
+      margin-bottom: 1.5rem;
+    }
+
+    .asset-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .asset {
+      background: var(--white);
+      border: 1px dashed var(--accent);
+      border-radius: 6px;
+      padding: 1rem;
+      display: inline-block;
+    }
+
+    .asset-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--gray-800);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    /* === ICON 1: White R on terracotta === */
+    .icon-r-on-terracotta {
+      width: 256px;
+      height: 256px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 800;
+      font-size: 180px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    /* === ICON 2: RUDI stacked on terracotta === */
+    .icon-rudi-on-terracotta {
+      width: 256px;
+      height: 256px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    /* === ICON 3: Black RUDI on white === */
+    .icon-rudi-on-white {
+      width: 256px;
+      height: 256px;
+      background: var(--white);
+      border: 1px solid var(--gray-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-900);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    /* === ICON 4: White R on black === */
+    .icon-r-on-black {
+      width: 256px;
+      height: 256px;
+      background: var(--gray-900);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 800;
+      font-size: 180px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    /* === LOGO 1: RUDI wordmark on white === */
+    .logo-wordmark-on-white {
+      width: 600px;
+      height: 128px;
+      background: var(--white);
+      border: 1px solid var(--gray-50);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 32px;
+      color: var(--gray-900);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    /* === LOGO 2: RUDI + tagline on white === */
+    .logo-tagline-on-white {
+      width: 600px;
+      height: 128px;
+      background: var(--white);
+      border: 1px solid var(--gray-50);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: 32px;
+      color: var(--gray-900);
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .logo-tagline-on-white .word {
+      font-weight: 700;
+      font-size: 44px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .logo-tagline-on-white .tag {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-800);
+      margin-top: 6px;
+      letter-spacing: 0.01em;
+    }
+
+    /* === LOGO 3: RUDI on terracotta === */
+    .logo-wordmark-on-terracotta {
+      width: 600px;
+      height: 128px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 32px;
+      color: var(--white);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    /* === LOGO 4: White RUDI + tagline on black === */
+    .logo-on-black {
+      width: 600px;
+      height: 128px;
+      background: var(--gray-900);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: 32px;
+      color: var(--white);
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .logo-on-black .word {
+      font-weight: 700;
+      font-size: 44px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .logo-on-black .tag {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: 6px;
+      letter-spacing: 0.01em;
+    }
+
+    .pick {
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 1.5rem 1.75rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+
+    .pick strong { color: var(--accent); }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h1>RUDI Brand Assets — Screenshot & Upload</h1>
+    <p class="intro">Pick one icon and one logo. Screenshot each at exact pixel size. Upload to Stripe Dashboard → Settings → Branding.</p>
+
+    <div class="how-to">
+      <strong>How to capture (Mac):</strong>
+      <ol>
+        <li>Press <code>⌘ + ⇧ + 4</code> (Command-Shift-4) — cursor becomes crosshairs</li>
+        <li>Hold <code>spacebar</code>, hover over the asset block — it highlights, releases the spacebar OR draw a tight box around just the asset (the dashed border is OUTSIDE the asset — don't include it)</li>
+        <li>Click to capture — PNG saves to your Desktop</li>
+        <li>Upload to Stripe at <a href="https://dashboard.stripe.com/settings/branding" target="_blank">dashboard.stripe.com/settings/branding</a></li>
+      </ol>
+      <strong style="margin-top: 1rem;">Quick screenshot tips:</strong>
+      <ol>
+        <li>Use Chrome at 100% zoom (View → Actual Size, or <code>⌘ + 0</code>) so pixel dimensions are exact</li>
+        <li>If you want a tighter PNG, open the file at the exact pixel size — every asset block is sized to Stripe's recommended dimensions</li>
+      </ol>
+    </div>
+
+    <!-- ============ ICONS ============ -->
+    <div class="section">
+      <p class="section-label">ICONS</p>
+      <h2 class="section-title">Pick one for Stripe's "Icon" upload</h2>
+      <p class="section-spec">256×256 PNG · Used as the top-left icon on Stripe Checkout pages</p>
+
+      <div class="asset-row">
+
+        <div>
+          <div class="asset">
+            <div class="icon-r-on-terracotta">R</div>
+          </div>
+          <div class="asset-label">Option 1 — Bold R on terracotta<br/>(brandable, strong, distinct)</div>
+        </div>
+
+        <div>
+          <div class="asset">
+            <div class="icon-rudi-on-terracotta">RUDI</div>
+          </div>
+          <div class="asset-label">Option 2 — RUDI on terracotta<br/>(more explicit, less iconic)</div>
+        </div>
+
+        <div>
+          <div class="asset">
+            <div class="icon-rudi-on-white">RUDI</div>
+          </div>
+          <div class="asset-label">Option 3 — RUDI on white<br/>(minimal, ultra-clean)</div>
+        </div>
+
+        <div>
+          <div class="asset">
+            <div class="icon-r-on-black">R</div>
+          </div>
+          <div class="asset-label">Option 4 — Terracotta R on black<br/>(boldest, most premium)</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ LOGOS ============ -->
+    <div class="section">
+      <p class="section-label">LOGOS</p>
+      <h2 class="section-title">Pick one for Stripe's "Logo" upload</h2>
+      <p class="section-spec">600×128 PNG · Used in email receipts, the customer portal, and other secondary surfaces</p>
+
+      <div class="asset-row">
+
+        <div>
+          <div class="asset">
+            <div class="logo-wordmark-on-white">RUDI</div>
+          </div>
+          <div class="asset-label">Option 1 — Wordmark on white<br/>(clean, minimal, professional)</div>
+        </div>
+
+        <div>
+          <div class="asset">
+            <div class="logo-tagline-on-white">
+              <div class="word">RUDI</div>
+              <div class="tag">Responsible Use of Digital Intelligence</div>
+            </div>
+          </div>
+          <div class="asset-label">Option 2 — Wordmark + tagline on white<br/>(communicative, explains the brand)</div>
+        </div>
+
+        <div>
+          <div class="asset">
+            <div class="logo-wordmark-on-terracotta">RUDI</div>
+          </div>
+          <div class="asset-label">Option 3 — Wordmark on terracotta<br/>(strong color statement)</div>
+        </div>
+
+        <div>
+          <div class="asset">
+            <div class="logo-on-black">
+              <div class="word">RUDI</div>
+              <div class="tag">Responsible Use of Digital Intelligence</div>
+            </div>
+          </div>
+          <div class="asset-label">Option 4 — Dark mode with terracotta tag<br/>(distinctive, modern)</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="pick">
+      <strong>My recommendation:</strong><br/>
+      <strong>Icon:</strong> Option 1 (bold R on terracotta) — strongest, scales well, brandable<br/>
+      <strong>Logo:</strong> Option 2 (RUDI + tagline on white) — communicates what the brand stands for in receipts and emails<br/>
+      <br/>
+      You can change later if you don't love them. Get something up so the checkout stops looking generic.
+    </div>
+
+  </div>
+</body>
+</html>

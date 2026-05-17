@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUDI AI Training Camps | Live Communities for AI Fluency</title>
+    <meta name="description" content="RUDI AI Training Camps are live communities where professionals learn to work with AI. Pick your camp — Camp Claude, Camp Codex, and more coming soon.">
+    <meta name="keywords" content="AI training camps, Camp Claude, AI fluency, AI literacy, live AI training, RUDI, Brandon Hoff">
+    <meta name="author" content="RUDI">
+    <link rel="canonical" href="https://learnrudi.com/ai-training">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learnrudi.com/ai-training">
+    <meta property="og:title" content="RUDI AI Training Camps">
+    <meta property="og:description" content="Live communities where professionals learn to work with AI. Pick your camp.">
+    <meta property="og:image" content="https://learnrudi.com/images/training-hero.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RUDI AI Training Camps">
+    <meta name="twitter:description" content="Live communities where professionals learn to work with AI. Pick your camp.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "RUDI AI Training Camps",
+        "description": "Live communities where professionals learn to work with AI.",
+        "url": "https://learnrudi.com/ai-training",
+        "provider": {
+            "@type": "Organization",
+            "name": "RUDI",
+            "url": "https://learnrudi.com"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #000000;
+            --gray-900: #161616;
+            --gray-800: #262626;
+            --gray-700: #393939;
+            --gray-600: #525252;
+            --gray-500: #6f6f6f;
+            --gray-400: #8d8d8d;
+            --gray-300: #a8a8a8;
+            --gray-200: #c6c6c6;
+            --gray-100: #e0e0e0;
+            --gray-50: #f4f4f4;
+            --white: #ffffff;
+            --accent: #c75b39;
+            --accent-dark: #a94d2f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.6;
+            font-size: 1rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--gray-900);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ── Nav ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gray-900);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--gray-900);
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 999;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            text-decoration: none;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(199, 91, 57, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gray-900);
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ── Sections ── */
+        section {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0;
+        }
+
+        .section-intro {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 760px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 78vh;
+            padding: 10rem 0 5rem;
+            border-bottom: none;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: var(--white);
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(0, 0, 0, 0.86) 0%, rgba(22, 22, 22, 0.72) 48%, rgba(22, 22, 22, 0.38) 100%),
+                url("images/training-hero.jpg") center / cover no-repeat,
+                var(--gray-900);
+        }
+
+        .hero-inner {
+            max-width: 850px;
+        }
+
+        .hero .section-label {
+            color: var(--accent);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 300;
+            color: var(--white);
+            letter-spacing: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.45rem);
+            color: var(--gray-100);
+            max-width: 720px;
+            line-height: 1.7;
+            margin-bottom: 2.25rem;
+        }
+
+        .hero .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .hero .btn-primary {
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .hero .btn-primary:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .hero .btn-secondary {
+            color: var(--white);
+            border-color: var(--gray-300);
+        }
+
+        .hero .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ── Mode grid (3-col cards with border collapse) ── */
+        .mode-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .mode-card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+            background: var(--white);
+            transition: all 0.25s ease;
+        }
+
+        .mode-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            z-index: 2;
+        }
+
+        .card-kicker {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .mode-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .mode-card p {
+            color: var(--gray-600);
+            font-size: 0.975rem;
+            line-height: 1.7;
+        }
+
+        /* ── Camp grid (2-col desktop, camps + enterprise) ── */
+        .camp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-bottom: 0;
+        }
+
+        .camp-card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-100);
+            margin: -1px 0 0 -1px;
+            background: var(--white);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.25s ease;
+            display: block;
+        }
+
+        .camp-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            z-index: 2;
+        }
+
+        .camp-card .camp-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .camp-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .camp-card .camp-status {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .camp-card p {
+            color: var(--gray-600);
+            font-size: 0.975rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .camp-card-enterprise {
+            grid-column: 1 / -1;
+            background: var(--gray-50);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .camp-card-enterprise .camp-icon {
+            font-size: 2rem;
+            display: inline;
+        }
+
+        .camp-card-enterprise h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .camp-card-enterprise p {
+            margin-bottom: 0;
+        }
+
+        .camp-card-enterprise .enterprise-cta {
+            flex-shrink: 0;
+        }
+
+        /* ── Coming soon badge ── */
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--gray-100);
+            color: var(--gray-500);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.6875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.25rem 0.625rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .camp-card-disabled {
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        .camp-card-disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--gray-100);
+        }
+
+        /* ── Access / How-it-works section ── */
+        .access-section {
+            background: var(--gray-50);
+        }
+
+        .access-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .access-copy {
+            position: sticky;
+            top: 100px;
+        }
+
+        .access-steps {
+            display: grid;
+            gap: 0;
+        }
+
+        .access-step {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 1.5rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gray-900);
+            color: var(--white);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+        }
+
+        .access-step h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .access-step p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ── Certifications teaser ── */
+        .cert-teaser {
+            background: var(--white);
+        }
+
+        .cert-teaser-inner {
+            max-width: 760px;
+        }
+
+        .cert-teaser p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .cert-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+        }
+
+        .cert-link:hover {
+            color: var(--accent-dark);
+        }
+
+        /* ── Instructor section (dark) ── */
+        .instructor-section {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .instructor-section .section-label {
+            color: var(--gray-400);
+        }
+
+        .instructor-section h2 {
+            color: var(--white);
+        }
+
+        .instructor-inner {
+            max-width: 760px;
+        }
+
+        .instructor-body {
+            color: var(--gray-300);
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .instructor-partners {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            max-width: 760px;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .instructor-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9375rem;
+        }
+
+        .instructor-link:hover {
+            color: var(--white);
+        }
+
+        /* ── Final CTA ── */
+        .cta-section {
+            text-align: center;
+            background: var(--gray-50);
+            padding: 5rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            max-width: 620px;
+            margin: 0 auto 2rem;
+            color: var(--gray-600);
+            font-size: 1.125rem;
+        }
+
+        .cta-section .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--gray-900);
+            padding: 4rem 0 2rem;
+            color: var(--gray-300);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.875rem;
+            padding: 0.375rem 0;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-700);
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+        }
+
+        /* ── Fade-in ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1100px) {
+            .camp-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .camp-card-enterprise {
+                grid-column: 1 / -1;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .mode-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .access-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .access-copy {
+                position: static;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                min-height: 72vh;
+                padding: 8rem 0 4rem;
+                background:
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(22, 22, 22, 0.86) 100%),
+                    url("images/training-hero.jpg") center / cover no-repeat,
+                    var(--gray-900);
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .mode-card, .camp-card {
+                padding: 2rem;
+            }
+
+            .camp-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .camp-card-enterprise {
+                grid-column: 1;
+                grid-template-columns: 1fr;
+            }
+
+            .access-step {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- Vercel Web Analytics -->
+    <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">RUDI</a>
+            <ul class="nav-links">
+                <li><a href="/ai-training" class="active">AI Training</a></li>
+                <li><a href="consulting.html">Consulting</a></li>
+                <li><a href="studio.html">Studio</a></li>
+                <li><a href="framework.html">Framework</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="/ai-training">AI Training</a>
+        <a href="consulting.html">Consulting</a>
+        <a href="studio.html">Studio</a>
+        <a href="framework.html">Framework</a>
+        <a href="partners.html">Partners</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- 1. Hero -->
+    <section class="hero fade-in">
+        <div class="container">
+            <div class="hero-inner">
+                <p class="section-label">RUDI AI Training Camps</p>
+                <h1>From AI happening around you to AI working <em>alongside</em> you.</h1>
+                <p class="hero-subtitle">Live communities where professionals learn to work with AI. Pick your camp.</p>
+                <div class="cta-group">
+                    <a href="#camps" class="btn btn-primary">Join Camp Claude</a>
+                    <a href="ai-training/custom.html" class="btn btn-secondary">For organizations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. The progression -->
+    <section class="fade-in">
+        <div class="container">
+            <p class="section-label">THE PROGRESSION</p>
+            <h2 class="section-title">Three stages of AI fluency.</h2>
+            <p class="section-intro">Most professionals are stuck at stage one. The camps move you through all three.</p>
+
+            <div class="mode-grid">
+                <div class="mode-card">
+                    <div class="card-kicker">01 Around</div>
+                    <h3>AI happening around you</h3>
+                    <p>You hear about it, see it in tools, watch it change your industry. You're not driving it yet.</p>
+                </div>
+                <div class="mode-card">
+                    <div class="card-kicker">02 Collaborating</div>
+                    <h3>AI collaborating with you</h3>
+                    <p>You're using chat interfaces. Asking questions, drafting documents, brainstorming.</p>
+                </div>
+                <div class="mode-card">
+                    <div class="card-kicker">03 Alongside</div>
+                    <h3>AI working alongside you</h3>
+                    <p>Agents and automations doing real work in your account. You delegate. They ship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Pick your camp -->
+    <section id="camps" class="fade-in" style="background: var(--gray-50);">
+        <div class="container">
+            <p class="section-label">PICK YOUR CAMP</p>
+            <h2 class="section-title">Live communities, one per AI tool.</h2>
+            <p class="section-intro">Each camp is a recurring live community built around one AI platform — campfires, library, async space, vertical sub-tracks.</p>
+
+            <div class="camp-grid">
+                <a href="ai-training/camp-claude.html" class="camp-card">
+                    <span class="camp-icon">🏕️</span>
+                    <h3>Camp Claude</h3>
+                    <span class="camp-status">Live now · $99/mo</span>
+                    <p>The signature camp. For professionals using Claude to do real work. Weekly campfires, the library, the community.</p>
+                    <span class="btn btn-primary">Join the waitlist</span>
+                </a>
+
+                <div class="camp-card camp-card-disabled">
+                    <span class="camp-icon">🏕️</span>
+                    <h3>Camp Codex</h3>
+                    <span class="coming-soon-badge">Coming Q3 2026</span>
+                    <p>For developers building with OpenAI's Codex and GPT-4o in real production workflows.</p>
+                    <a href="mailto:hoff@learnrudi.com?subject=Camp Codex waitlist" class="btn btn-secondary">Join waitlist</a>
+                </div>
+
+                <div class="camp-card camp-card-disabled">
+                    <span class="camp-icon">🏕️</span>
+                    <h3>Camp Gemini</h3>
+                    <span class="coming-soon-badge">Coming 2027</span>
+                    <p>For professionals working in Google Workspace who want AI embedded in their daily operations.</p>
+                    <a href="mailto:hoff@learnrudi.com?subject=Camp Gemini waitlist" class="btn btn-secondary">Join waitlist</a>
+                </div>
+
+                <a href="ai-training/custom.html" class="camp-card camp-card-enterprise">
+                    <div>
+                        <span class="camp-icon">🏢</span>
+                        <h3>Custom Camp for your organization</h3>
+                        <span class="camp-status">From $25K per engagement</span>
+                        <p>Private community, custom curriculum, branded space, dedicated facilitator. The Camp Claude experience, built for your team.</p>
+                    </div>
+                    <div class="enterprise-cta">
+                        <span class="btn btn-primary">Inquire about a Custom Camp</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. How camps work -->
+    <section class="access-section fade-in">
+        <div class="container">
+            <div class="access-grid">
+                <div class="access-copy">
+                    <p class="section-label">HOW IT WORKS</p>
+                    <h2 class="section-title">Inside every camp.</h2>
+                    <p class="section-intro">The structure is the same across camps. The tool and the curriculum change.</p>
+                </div>
+                <div class="access-steps">
+                    <div class="access-step">
+                        <div class="step-number">01</div>
+                        <div>
+                            <h3>Live campfires</h3>
+                            <p>Recurring sessions hosted by Brandon. Tonight's campfire might be on connectors, plugins, or a vertical-specific automation.</p>
+                        </div>
+                    </div>
+                    <div class="access-step">
+                        <div class="step-number">02</div>
+                        <div>
+                            <h3>Async community</h3>
+                            <p>Members-only Circle space. Ask questions, share automations, get feedback between campfires.</p>
+                        </div>
+                    </div>
+                    <div class="access-step">
+                        <div class="step-number">03</div>
+                        <div>
+                            <h3>Library</h3>
+                            <p>Every past campfire, every template, every working automation. An asset that compounds as you stay.</p>
+                        </div>
+                    </div>
+                    <div class="access-step">
+                        <div class="step-number">04</div>
+                        <div>
+                            <h3>Vertical sub-tracks</h3>
+                            <p>When you're ready: Real Estate, Finance, Small Business sub-communities inside the main camp.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Certifications teaser -->
+    <section class="cert-teaser fade-in">
+        <div class="container">
+            <div class="cert-teaser-inner">
+                <p class="section-label">CERTIFICATIONS</p>
+                <h2 class="section-title">Coming: Camp Claude certifications.</h2>
+                <p>Camp Claude members will be able to earn certifications that demonstrate real AI fluency — not quiz completion, but verified ability to ship automations and delegate work to AI. Certifications will be issued through RUDI and tied to campfire attendance and demonstrated output.</p>
+                <a href="#" class="cert-link">Read more about certifications — coming soon →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Founder section -->
+    <section class="instructor-section fade-in">
+        <div class="container">
+            <div class="instructor-inner">
+                <p class="section-label">WHO RUNS THIS</p>
+                <h2 class="section-title">Brandon Z. Hoff</h2>
+                <p class="instructor-body">Founder of RUDI. Builds programs that move professionals from "I use ChatGPT" to "I have an automation running in my account." Camp Claude is his signature program — the live community format he's been running since the beginning.</p>
+                <p class="instructor-body">RUDI partners with corporate partners and state education systems on AI fluency programs at scale.</p>
+                <p class="instructor-partners">NSF TechAccess AI-Ready America · Avanade INSPIRE · Warren County ESC · ULI Cincinnati · Ohio AI initiatives</p>
+                <a href="founder.html" class="instructor-link">Read more about Brandon →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Final CTA -->
+    <section class="cta-section fade-in">
+        <div class="container">
+            <h2>Pick your camp.</h2>
+            <p>Camp Claude is live and taking founding members. Custom Camps available for organizations.</p>
+            <div class="cta-group">
+                <a href="ai-training/camp-claude.html" class="btn btn-primary">Join Camp Claude</a>
+                <a href="ai-training/custom.html" class="btn btn-secondary">Inquire about a Custom Camp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo" style="color: var(--white); margin-bottom: 1rem;">RUDI</div>
+                    <p>Responsible Use of Digital Intelligence. Training, consulting, and tools for organizations adopting AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="/ai-training">AI Training</a>
+                    <a href="ai-training/camp-claude.html">Camp Claude</a>
+                    <a href="consulting.html">Consulting</a>
+                    <a href="studio.html">Studio</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="framework.html">Framework</a>
+                    <a href="get-certificate.html">Certifications</a>
+                    <a href="https://camp-claude.github.io/" target="_blank" rel="noopener">Resource Hub</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 RUDI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (navToggle && mobileMenu) {
+            navToggle.addEventListener('click', function() {
+                navToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

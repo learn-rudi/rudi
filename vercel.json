@@ -2,6 +2,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "framework": null,
+  "redirects": [
+    { "source": "/training", "destination": "/ai-training", "permanent": true },
+    { "source": "/training.html", "destination": "/ai-training", "permanent": true },
+    { "source": "/camp-claude", "destination": "/ai-training/camp-claude", "permanent": true },
+    { "source": "/camp-claude.html", "destination": "/ai-training/camp-claude", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

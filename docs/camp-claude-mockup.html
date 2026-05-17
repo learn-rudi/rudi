@@ -1,0 +1,2162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Camp Claude — Community Mockup</title>
+  <meta name="description" content="Static prototype of the Camp Claude community as it would appear on Circle." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #c75b39;
+      --accent-dark: #a94d2f;
+      --accent-soft: #fbeee8;
+      --gray-900: #161616;
+      --gray-800: #262626;
+      --gray-700: #393939;
+      --gray-600: #525252;
+      --gray-500: #6f6f6f;
+      --gray-400: #8d8d8d;
+      --gray-300: #a8a8a8;
+      --gray-200: #c6c6c6;
+      --gray-100: #e0e0e0;
+      --gray-50: #f4f4f4;
+      --gray-25: #fafafa;
+      --white: #ffffff;
+      --green: #2c8a4a;
+      --blue: #0e64b9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--gray-900);
+      background: var(--gray-50);
+      min-height: 100vh;
+    }
+
+    /* === MOCKUP BANNER === */
+    .mockup-banner {
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 0.625rem 1.5rem;
+      font-size: 0.75rem;
+      font-family: 'IBM Plex Mono', monospace;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .mockup-banner strong { color: var(--accent); }
+
+    /* === TOP HEADER === */
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+    .brand .emoji { font-size: 1.25rem; }
+    .brand .sub {
+      font-size: 0.6875rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-left: 0.625rem;
+      padding-left: 0.625rem;
+      border-left: 1px solid var(--gray-200);
+    }
+    .search {
+      flex: 1;
+      max-width: 480px;
+    }
+    .search input {
+      width: 100%;
+      padding: 0.5rem 0.875rem;
+      border: 1px solid var(--gray-200);
+      background: var(--gray-50);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      color: var(--gray-700);
+    }
+    .search input::placeholder { color: var(--gray-400); }
+    .topbar-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gray-50);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--gray-600);
+      position: relative;
+      font-size: 1.05rem;
+    }
+    .icon-btn .dot {
+      position: absolute;
+      top: 8px;
+      right: 9px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--white);
+    }
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.875rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* === LAYOUT === */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr 320px;
+      gap: 0;
+      max-width: 1440px;
+      margin: 0 auto;
+      min-height: calc(100vh - 50px);
+    }
+
+    /* === LEFT SIDEBAR (NAV) === */
+    .sidebar {
+      background: var(--white);
+      border-right: 1px solid var(--gray-100);
+      padding: 1.5rem 0;
+    }
+    .sidebar-section {
+      margin-bottom: 1.75rem;
+    }
+    .sidebar-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.625rem 1.25rem;
+      color: var(--gray-700);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      border-left: 3px solid transparent;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .nav-item:hover {
+      background: var(--gray-50);
+      color: var(--gray-900);
+    }
+    .nav-item.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-left-color: var(--accent);
+      font-weight: 600;
+    }
+    .nav-item .nav-icon { font-size: 1.1rem; width: 22px; text-align: center; }
+    .nav-item .badge {
+      margin-left: auto;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.6875rem;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .nav-item.active .badge { background: var(--accent-dark); }
+    .nav-item .badge.neutral {
+      background: var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    .footer-meta {
+      padding: 1rem 1.25rem;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      border-top: 1px solid var(--gray-100);
+      margin-top: 1rem;
+    }
+    .footer-meta strong { color: var(--gray-700); }
+    .founder-pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* === MAIN FEED === */
+    .feed {
+      padding: 2rem 2.5rem;
+      max-width: 720px;
+      display: none;
+    }
+    .feed.active {
+      display: block;
+    }
+    .feed-header {
+      margin-bottom: 1.5rem;
+    }
+    .feed-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.375rem;
+      letter-spacing: -0.01em;
+    }
+    .feed-subtitle {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 0.25rem;
+      margin: 1rem 0 0.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .tab {
+      padding: 0.625rem 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+    .tab.active {
+      color: var(--gray-900);
+      border-bottom-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .compose {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 0.875rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      cursor: text;
+    }
+    .compose .avatar { flex-shrink: 0; }
+    .compose-placeholder {
+      flex: 1;
+      color: var(--gray-500);
+      font-size: 0.9375rem;
+    }
+
+    /* === POST CARDS === */
+    .post {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .post-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      flex-shrink: 0;
+    }
+    .avatar-1 { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+    .avatar-2 { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+    .avatar-3 { background: linear-gradient(135deg, #84cc16, #65a30d); }
+    .avatar-4 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .avatar-5 { background: linear-gradient(135deg, #ec4899, #db2777); }
+    .avatar-brandon { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); }
+
+    .post-meta { flex: 1; }
+    .post-author {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--gray-900);
+    }
+    .author-badge {
+      display: inline-block;
+      font-size: 0.625rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-left: 0.375rem;
+      vertical-align: 1px;
+      letter-spacing: 0.03em;
+    }
+    .badge-host {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .badge-founder {
+      background: var(--gray-900);
+      color: var(--white);
+    }
+    .post-sub {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      display: flex;
+      gap: 0.375rem;
+      margin-top: 1px;
+    }
+    .post-sub .dot { color: var(--gray-300); }
+
+    .post-body {
+      color: var(--gray-800);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      margin-bottom: 0.875rem;
+    }
+    .post-body strong { color: var(--gray-900); }
+    .post-body em { color: var(--gray-700); font-style: normal; background: var(--accent-soft); padding: 1px 4px; border-radius: 3px; font-weight: 500; }
+
+    .post-attachment {
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin: 0.75rem 0;
+      background: var(--gray-25);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+    .post-attachment .att-icon { font-size: 1.1rem; }
+    .post-attachment .att-title { font-weight: 600; color: var(--gray-900); }
+    .post-attachment .att-sub { color: var(--gray-500); font-size: 0.75rem; }
+
+    .post-tags {
+      display: flex;
+      gap: 0.375rem;
+      margin: 0.5rem 0;
+      flex-wrap: wrap;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.02em;
+    }
+    .tag-vertical { background: #e8f5ed; color: var(--green); }
+    .tag-level { background: #e8eef9; color: var(--blue); }
+
+    .post-actions {
+      display: flex;
+      gap: 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--gray-100);
+      margin-top: 0.875rem;
+      font-size: 0.8125rem;
+      color: var(--gray-600);
+    }
+    .post-action {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .post-action:hover { color: var(--accent); }
+    .post-action .ax-emoji { font-size: 0.875rem; }
+
+    .reactions {
+      display: inline-flex;
+      gap: 0.125rem;
+      align-items: center;
+      padding: 2px 8px;
+      background: var(--gray-50);
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray-700);
+    }
+
+    /* Featured post (pinned) */
+    .post.pinned {
+      border: 1px solid var(--accent);
+      background: linear-gradient(180deg, var(--accent-soft) 0%, var(--white) 30%);
+    }
+    .pinned-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    /* === RIGHT SIDEBAR === */
+    .rightbar {
+      padding: 2rem 1.5rem;
+      border-left: 1px solid var(--gray-100);
+      background: var(--white);
+    }
+    .widget {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 8px;
+      padding: 1.125rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .widget-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+    .countdown-event {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+      line-height: 1.4;
+    }
+    .countdown-meta {
+      font-size: 0.8125rem;
+      color: var(--gray-600);
+      margin-bottom: 0.875rem;
+    }
+    .countdown-time {
+      display: flex;
+      gap: 0.625rem;
+      margin-bottom: 0.875rem;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .count-block {
+      flex: 1;
+      text-align: center;
+      padding: 0.5rem 0;
+      background: var(--gray-50);
+      border-radius: 4px;
+    }
+    .count-num {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      line-height: 1;
+    }
+    .count-label {
+      font-size: 0.625rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+    .widget-btn {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0.875rem;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: background 0.15s ease;
+    }
+    .widget-btn:hover { background: var(--accent-dark); }
+    .widget-btn.ghost {
+      background: transparent;
+      color: var(--gray-700);
+      border: 1px solid var(--gray-200);
+    }
+    .widget-btn.ghost:hover { background: var(--gray-50); color: var(--gray-900); }
+
+    /* Vote widget */
+    .vote-question {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      margin-bottom: 0.625rem;
+    }
+    .vote-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 0;
+      font-size: 0.8125rem;
+      color: var(--gray-700);
+    }
+    .vote-bar {
+      flex: 1;
+      height: 6px;
+      background: var(--gray-100);
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 0 0.5rem;
+    }
+    .vote-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    .vote-pct {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      font-family: 'IBM Plex Mono', monospace;
+      min-width: 32px;
+      text-align: right;
+    }
+
+    /* Members online */
+    .members-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-bottom: 0.5rem;
+    }
+    .mini-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.6875rem;
+      position: relative;
+    }
+    .mini-avatar.online::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 9px;
+      height: 9px;
+      background: var(--green);
+      border: 2px solid var(--white);
+      border-radius: 50%;
+    }
+    .members-count {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 0.375rem;
+    }
+
+    /* === NEW UTILITY CLASSES === */
+
+    /* Video thumbnail placeholder */
+    .video-thumb {
+      position: relative;
+      background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-700) 100%);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 0.75rem 0;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .video-thumb .play-btn {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      z-index: 1;
+    }
+    .video-thumb .video-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, transparent 100%);
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    .video-thumb .video-duration {
+      position: absolute;
+      top: 0.625rem;
+      right: 0.625rem;
+      background: rgba(0,0,0,0.7);
+      color: var(--white);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* Steps list */
+    .steps-list {
+      list-style: none;
+      counter-reset: steps;
+      margin: 0.875rem 0;
+    }
+    .steps-list li {
+      counter-increment: steps;
+      display: flex;
+      gap: 0.875rem;
+      padding: 0.875rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      align-items: flex-start;
+    }
+    .steps-list li:last-child { border-bottom: none; }
+    .steps-list li::before {
+      content: counter(steps);
+      min-width: 28px;
+      height: 28px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.875rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .steps-list li .step-text {
+      font-size: 0.9375rem;
+      color: var(--gray-800);
+      line-height: 1.5;
+    }
+    .steps-list li .step-text strong { color: var(--gray-900); }
+
+    /* Members directory grid */
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin: 0.875rem 0;
+    }
+    .member-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.875rem 0.5rem;
+      background: var(--gray-25);
+      border: 1px solid var(--gray-100);
+      border-radius: 8px;
+      text-align: center;
+    }
+    .member-card .post-avatar { width: 44px; height: 44px; font-size: 0.9375rem; }
+    .member-name { font-size: 0.8125rem; font-weight: 600; color: var(--gray-900); line-height: 1.3; }
+    .member-role { font-size: 0.6875rem; color: var(--gray-500); line-height: 1.3; }
+    .member-city { font-size: 0.625rem; color: var(--gray-400); font-family: 'IBM Plex Mono', monospace; }
+
+    /* Section heading within feed */
+    .section-heading {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    /* Large active poll card */
+    .poll-card {
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .poll-card .poll-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.375rem;
+      line-height: 1.3;
+    }
+    .poll-card .poll-meta {
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+      margin-bottom: 1.125rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .poll-option-row {
+      margin-bottom: 0.75rem;
+    }
+    .poll-option-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-800);
+      margin-bottom: 0.3rem;
+    }
+    .poll-option-label .poll-pct {
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .poll-bar-track {
+      height: 10px;
+      background: var(--gray-100);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .poll-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dark) 100%);
+      border-radius: 5px;
+    }
+    .poll-bar-fill.winner { background: linear-gradient(90deg, var(--green) 0%, #1f6b38 100%); }
+    .poll-card .poll-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.125rem;
+      align-items: center;
+    }
+    .poll-card .widget-btn { flex: 1; }
+
+    /* CTA card */
+    .cta-card {
+      background: var(--gray-25);
+      border: 1px dashed var(--gray-200);
+      border-radius: 8px;
+      padding: 1.125rem 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .cta-card .cta-input {
+      flex: 1;
+      padding: 0.5rem 0.875rem;
+      border: 1px solid var(--gray-200);
+      background: var(--white);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      color: var(--gray-700);
+    }
+    .cta-card .cta-input::placeholder { color: var(--gray-400); }
+    .cta-card .cta-btn {
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    /* Past poll cards */
+    .past-poll {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .past-poll-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .past-poll-title { font-size: 0.9rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.25rem; }
+    .past-poll-result { font-size: 0.8125rem; color: var(--gray-600); }
+    .past-poll-result .winner-label { color: var(--green); font-weight: 600; }
+    .past-poll-link { font-size: 0.75rem; color: var(--accent); font-weight: 600; cursor: pointer; margin-top: 0.25rem; display: block; }
+
+    /* Learning Labs — hero card */
+    .lab-hero {
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .lab-hero::before {
+      content: '🧪';
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+      font-size: 3rem;
+      opacity: 0.15;
+    }
+    .lab-hero .lab-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.625rem;
+    }
+    .lab-hero .lab-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .lab-hero .lab-meta {
+      font-size: 0.875rem;
+      color: var(--gray-300);
+      margin-bottom: 1.25rem;
+    }
+    .lab-hero .countdown-time {
+      margin-bottom: 1.25rem;
+    }
+    .lab-hero .count-block {
+      background: rgba(255,255,255,0.1);
+    }
+    .lab-hero .count-num { color: var(--white); }
+    .lab-hero .count-label { color: var(--gray-300); }
+
+    /* Learning Labs — grid */
+    .labs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .lab-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.15s ease;
+    }
+    .lab-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .lab-thumb {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      padding: 0.75rem;
+      line-height: 1.4;
+    }
+    .lab-thumb-1 { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+    .lab-thumb-2 { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+    .lab-thumb-3 { background: linear-gradient(135deg, #84cc16, #65a30d); }
+    .lab-thumb-4 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .lab-thumb-5 { background: linear-gradient(135deg, #ec4899, #db2777); }
+    .lab-thumb-6 { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); }
+    .lab-card-body { padding: 0.75rem; }
+    .lab-card-title { font-size: 0.875rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.25rem; line-height: 1.3; }
+    .lab-card-meta { font-size: 0.75rem; color: var(--gray-500); display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .lab-card-meta span::after { content: '·'; margin-left: 0.5rem; color: var(--gray-300); }
+    .lab-card-meta span:last-child::after { display: none; }
+
+    /* Skill Builders — grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 8px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.15s ease;
+    }
+    .skill-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .skill-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.375rem; }
+    .skill-card-title { font-size: 0.875rem; font-weight: 600; color: var(--gray-900); line-height: 1.3; }
+    .skill-duration {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .skill-card-desc { font-size: 0.8125rem; color: var(--gray-600); line-height: 1.5; margin-bottom: 0.625rem; }
+    .skill-card-meta { font-size: 0.75rem; color: var(--gray-400); display: flex; align-items: center; gap: 0.5rem; }
+    .skill-card-meta .ax-emoji { font-size: 0.875rem; }
+
+    /* Dept tabs */
+    .dept-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.875rem;
+      flex-wrap: wrap;
+    }
+    .dept-tab {
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border-radius: 20px;
+      border: 2px solid var(--gray-200);
+      background: var(--white);
+      color: var(--gray-700);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .dept-tab.active {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .dept-tab:hover:not(.active) { border-color: var(--gray-400); color: var(--gray-900); }
+
+    /* Filter chips */
+    .filter-row {
+      display: flex;
+      gap: 0.375rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-label {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      font-weight: 600;
+      margin-right: 0.25rem;
+    }
+    .filter-chip {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 12px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      cursor: pointer;
+      border: 1px solid transparent;
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.02em;
+    }
+    .filter-chip.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Resource cards grid */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.875rem;
+    }
+    .resource-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 8px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.15s ease;
+    }
+    .resource-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .resource-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .resource-card-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.375rem;
+      line-height: 1.3;
+    }
+    .resource-card-desc {
+      font-size: 0.8125rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+      margin-bottom: 0.625rem;
+    }
+    .resource-card-footer {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: auto;
+    }
+    .resource-card-footer .ax-emoji { font-size: 0.875rem; }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .layout { grid-template-columns: 240px 1fr; }
+      .rightbar { display: none; }
+    }
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .feed { padding: 1.25rem; }
+      .search { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mockup-banner">
+    📐 <strong>MOCKUP</strong> — Static prototype of how Camp Claude could look on Circle. Not a live interface.
+  </div>
+
+  <!-- TOP HEADER -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="emoji">🏕️</span>
+      <span>Camp Claude</span>
+      <span class="sub">A RUDI AI Training Camp</span>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search the camp — campfires, labs, automations, library…" />
+    </div>
+    <div class="topbar-right">
+      <span class="icon-btn">🔍</span>
+      <span class="icon-btn">🔔<span class="dot"></span></span>
+      <span class="avatar">BH</span>
+    </div>
+  </header>
+
+  <!-- LAYOUT GRID -->
+  <div class="layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Camp</div>
+        <a href="#" class="nav-item" data-target="start-here">
+          <span class="nav-icon">🚪</span>
+          <span>Start Here</span>
+          <span class="badge neutral">1</span>
+        </a>
+        <a href="#" class="nav-item" data-target="vote">
+          <span class="nav-icon">📊</span>
+          <span>Vote</span>
+        </a>
+        <a href="#" class="nav-item" data-target="learning-labs">
+          <span class="nav-icon">🧪</span>
+          <span>Learning Labs</span>
+        </a>
+        <a href="#" class="nav-item" data-target="skill-builders">
+          <span class="nav-icon">🛠️</span>
+          <span>Skill Builders</span>
+          <span class="badge">2</span>
+        </a>
+        <a href="#" class="nav-item active" data-target="campfires">
+          <span class="nav-icon">🔥</span>
+          <span>The Campfires</span>
+          <span class="badge">12</span>
+        </a>
+        <a href="#" class="nav-item" data-target="resource-center">
+          <span class="nav-icon">📚</span>
+          <span>AI Resource Center</span>
+        </a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Quick Links</div>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📅</span>
+          <span>Calendar</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">👥</span>
+          <span>Members</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span>Settings</span>
+        </a>
+      </div>
+
+      <div class="footer-meta">
+        Signed in as <strong>Brandon Z. Hoff</strong>
+        <div class="founder-pill">🔥 FOUNDER · $49/MO LOCKED</div>
+      </div>
+    </aside>
+
+    <!-- ================================================ -->
+    <!-- VIEW: START HERE                                  -->
+    <!-- ================================================ -->
+    <main class="feed" data-view="start-here">
+
+      <div class="feed-header">
+        <h1 class="feed-title">🚪 Start Here</h1>
+        <p class="feed-subtitle">Welcome to Camp Claude. Get oriented in 5 minutes.</p>
+      </div>
+
+      <!-- Pinned welcome post -->
+      <article class="post pinned">
+        <div class="pinned-label">📌 PINNED · FROM BRANDON</div>
+        <div class="post-header">
+          <div class="post-avatar avatar-brandon">BH</div>
+          <div class="post-meta">
+            <div class="post-author">Brandon Z. Hoff <span class="author-badge badge-host">HOST</span></div>
+            <div class="post-sub">
+              <span>Camp founder</span>
+              <span class="dot">·</span>
+              <span>Start Here · Welcome</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-body">
+          👋 <strong>Welcome to Camp Claude.</strong><br /><br />
+          Before you do anything else, watch this 4-minute video. I'll show you exactly what Camp Claude is, what you'll get out of it, and why we built it differently from every other AI course out there.
+        </div>
+        <!-- Video thumbnail placeholder -->
+        <div class="video-thumb">
+          <div class="play-btn">▶</div>
+          <div class="video-label">Watch: What is Camp Claude? — 3:47</div>
+          <div class="video-duration">3:47</div>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">🔥 89 · 🙌 44 · 💯 21</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 31 comments</span>
+          <span class="post-action"><span class="ax-emoji">🔖</span> Save</span>
+        </div>
+      </article>
+
+      <!-- How Camp Claude works -->
+      <article class="post">
+        <div class="post-body" style="margin-bottom: 0;">
+          <strong>How Camp Claude works</strong>
+        </div>
+        <ol class="steps-list">
+          <li>
+            <div class="step-text">
+              <strong>Show up to the monthly Learning Lab</strong> — live or watch the recording the next day. That's the main event. Brandon teaches one focused topic per month, builds something real, and takes questions.
+            </div>
+          </li>
+          <li>
+            <div class="step-text">
+              <strong>Try the Skill Builders when something interesting drops</strong> — these are ad hoc 10–30 min how-tos whenever there's something worth showing. No schedule. Watch on demand.
+            </div>
+          </li>
+          <li>
+            <div class="step-text">
+              <strong>Hang out at The Campfires</strong> — the member-to-member feed where people share what they're building, ask what they're stuck on, and post wins. Brandon shows up here too.
+            </div>
+          </li>
+          <li>
+            <div class="step-text">
+              <strong>Save what works to your Library</strong> — the AI Resource Center compounds as you stay. Skills, templates, connector maps, and prompt stacks — all organized by department and level.
+            </div>
+          </li>
+        </ol>
+      </article>
+
+      <!-- Members directory preview -->
+      <div class="section-heading">👥 Members — who's in the camp</div>
+      <article class="post" style="padding: 1rem;">
+        <div class="members-grid">
+          <div class="member-card">
+            <div class="post-avatar avatar-3">SC</div>
+            <div class="member-name">Sarah Chen</div>
+            <div class="member-role">Real Estate Agent</div>
+            <div class="member-city">Atlanta, GA</div>
+          </div>
+          <div class="member-card">
+            <div class="post-avatar avatar-5">JP</div>
+            <div class="member-name">Jasmine Park</div>
+            <div class="member-role">FP&A Analyst</div>
+            <div class="member-city">Chicago, IL</div>
+          </div>
+          <div class="member-card">
+            <div class="post-avatar avatar-2">MJ</div>
+            <div class="member-name">Maya Johnson</div>
+            <div class="member-role">Strategy Consultant</div>
+            <div class="member-city">New York, NY</div>
+          </div>
+          <div class="member-card">
+            <div class="post-avatar avatar-4">DR</div>
+            <div class="member-name">David Reyes</div>
+            <div class="member-role">Marketing Director</div>
+            <div class="member-city">Austin, TX</div>
+          </div>
+          <div class="member-card">
+            <div class="post-avatar avatar-1">EK</div>
+            <div class="member-name">Elena Kim</div>
+            <div class="member-role">Operations Manager</div>
+            <div class="member-city">Seattle, WA</div>
+          </div>
+          <div class="member-card">
+            <div class="post-avatar avatar-2">RT</div>
+            <div class="member-name">Raj Torres</div>
+            <div class="member-role">CFO — 30-person firm</div>
+            <div class="member-city">Miami, FL</div>
+          </div>
+          <div class="member-card">
+            <div class="post-avatar avatar-5">LM</div>
+            <div class="member-name">Layla Morris</div>
+            <div class="member-role">Loan Officer</div>
+            <div class="member-city">Phoenix, AZ</div>
+          </div>
+          <div class="member-card">
+            <div class="post-avatar avatar-3">TW</div>
+            <div class="member-name">Theo Walsh</div>
+            <div class="member-role">Independent Consultant</div>
+            <div class="member-city">Boston, MA</div>
+          </div>
+          <div class="member-card">
+            <div class="post-avatar avatar-4">NA</div>
+            <div class="member-name">Nia Adeyemi</div>
+            <div class="member-role">Content Strategist</div>
+            <div class="member-city">Houston, TX</div>
+          </div>
+        </div>
+        <div style="font-size: 0.8125rem; color: var(--gray-500); margin-top: 0.75rem;">142 members total — <a href="#" style="color: var(--accent); font-weight: 600;">See all members →</a></div>
+      </article>
+
+      <!-- Recent Introductions -->
+      <div class="section-heading">👋 Recent Introductions</div>
+
+      <article class="post">
+        <div class="post-header">
+          <div class="post-avatar avatar-1">EK</div>
+          <div class="post-meta">
+            <div class="post-author">Elena Kim <span class="author-badge badge-founder">FOUNDER</span></div>
+            <div class="post-sub"><span>3 days ago</span><span class="dot">·</span><span>Start Here · Intro</span></div>
+          </div>
+        </div>
+        <div class="post-body">
+          👋 Hi camp! Operations manager at a regional logistics company. I've been dabbling with Claude for six months but feel like I'm only using 10% of what it can do. Specifically looking to automate our weekly status report process — currently takes me 4 hours every Friday. Here to fix that.
+        </div>
+        <div class="post-tags">
+          <span class="tag">🚪 Intro</span>
+          <span class="tag tag-vertical">🏢 Operations</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">👋 22 · 🙌 8</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 5 replies</span>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-header">
+          <div class="post-avatar avatar-5">LM</div>
+          <div class="post-meta">
+            <div class="post-author">Layla Morris <span class="author-badge badge-founder">FOUNDER</span></div>
+            <div class="post-sub"><span>5 days ago</span><span class="dot">·</span><span>Start Here · Intro</span></div>
+          </div>
+        </div>
+        <div class="post-body">
+          Hey everyone — loan officer here, 12 years in mortgage. My manager sent me a link to Camp Claude and I'm glad she did. First goal: get Claude to do the first pass on borrower pre-qual letters so I can focus on actual relationships. Excited to be here.
+        </div>
+        <div class="post-tags">
+          <span class="tag">🚪 Intro</span>
+          <span class="tag tag-vertical">🏦 Finance</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">👋 18 · 🔥 6</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 9 replies</span>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-header">
+          <div class="post-avatar avatar-4">NA</div>
+          <div class="post-meta">
+            <div class="post-author">Nia Adeyemi <span class="author-badge badge-founder">FOUNDER</span></div>
+            <div class="post-sub"><span>1 week ago</span><span class="dot">·</span><span>Start Here · Intro</span></div>
+          </div>
+        </div>
+        <div class="post-body">
+          Content strategist for a B2B SaaS company — I write too much and automate too little. Here because I want to build a Cowork flow that turns our interview transcripts into draft thought leadership articles without losing the speaker's voice. Big ask, let's see.
+        </div>
+        <div class="post-tags">
+          <span class="tag">🚪 Intro</span>
+          <span class="tag tag-vertical">✍️ Marketing</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">👋 31 · 💯 12 · 🔥 7</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 14 replies · <strong style="color: var(--accent);">Brandon replied</strong></span>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- ================================================ -->
+    <!-- VIEW: VOTE                                        -->
+    <!-- ================================================ -->
+    <main class="feed" data-view="vote">
+
+      <div class="feed-header">
+        <h1 class="feed-title">📊 Vote</h1>
+        <p class="feed-subtitle">You pick what we teach. Polls close Friday.</p>
+      </div>
+
+      <!-- Active poll -->
+      <div class="section-heading">🟢 Active Poll — Closes Friday May 23</div>
+
+      <div class="poll-card">
+        <div class="poll-title">Pick July's Learning Lab topic</div>
+        <div class="poll-meta">
+          <span>📊 147 votes cast</span>
+          <span>·</span>
+          <span>⏱️ 4 days remaining</span>
+        </div>
+        <div class="poll-option-row">
+          <div class="poll-option-label">
+            <span>🧩 Plugins deep-dive — build your first plugin from scratch</span>
+            <span class="poll-pct">42%</span>
+          </div>
+          <div class="poll-bar-track"><div class="poll-bar-fill" style="width: 42%"></div></div>
+        </div>
+        <div class="poll-option-row">
+          <div class="poll-option-label">
+            <span>🤖 Cowork scheduling — recurring automations that actually hold</span>
+            <span class="poll-pct">28%</span>
+          </div>
+          <div class="poll-bar-track"><div class="poll-bar-fill" style="width: 28%"></div></div>
+        </div>
+        <div class="poll-option-row">
+          <div class="poll-option-label">
+            <span>🔒 Agent security 101 — what can go wrong and how to stop it</span>
+            <span class="poll-pct">20%</span>
+          </div>
+          <div class="poll-bar-track"><div class="poll-bar-fill" style="width: 20%"></div></div>
+        </div>
+        <div class="poll-option-row">
+          <div class="poll-option-label">
+            <span>🏡 Real estate workflows — listing to close with Claude</span>
+            <span class="poll-pct">10%</span>
+          </div>
+          <div class="poll-bar-track"><div class="poll-bar-fill" style="width: 10%"></div></div>
+        </div>
+        <div class="poll-actions">
+          <a href="#" class="widget-btn">Cast your vote</a>
+        </div>
+      </div>
+
+      <!-- Submit a topic CTA -->
+      <div class="cta-card">
+        <input type="text" class="cta-input" placeholder="Suggest a topic for a future Learning Lab…" />
+        <button class="cta-btn">Submit →</button>
+      </div>
+
+      <!-- Past polls -->
+      <div class="section-heading">📁 Past Polls — Results</div>
+
+      <div class="past-poll">
+        <div class="past-poll-icon">📊</div>
+        <div style="flex: 1;">
+          <div class="past-poll-title">Pick June's Learning Lab topic</div>
+          <div class="past-poll-result"><span class="winner-label">✅ WINNER: Skills vs Connectors — when to use what (42%)</span></div>
+          <a href="#" class="past-poll-link">Watch the recording →</a>
+        </div>
+        <div class="post-tags" style="flex-direction: column; gap: 0.25rem; align-items: flex-end;">
+          <span class="tag">89 votes</span>
+          <span class="tag">May 2026</span>
+        </div>
+      </div>
+
+      <div class="past-poll">
+        <div class="past-poll-icon">📊</div>
+        <div style="flex: 1;">
+          <div class="past-poll-title">Pick May's Learning Lab topic</div>
+          <div class="past-poll-result"><span class="winner-label">✅ WINNER: Building Your First Cowork Automation (38%)</span></div>
+          <a href="#" class="past-poll-link">Watch the recording →</a>
+        </div>
+        <div class="post-tags" style="flex-direction: column; gap: 0.25rem; align-items: flex-end;">
+          <span class="tag">74 votes</span>
+          <span class="tag">Apr 2026</span>
+        </div>
+      </div>
+
+      <div class="past-poll">
+        <div class="past-poll-icon">📊</div>
+        <div style="flex: 1;">
+          <div class="past-poll-title">Pick April's Learning Lab topic</div>
+          <div class="past-poll-result"><span class="winner-label">✅ WINNER: Claude 4.7 — what changes for us (51%)</span></div>
+          <a href="#" class="past-poll-link">Watch the recording →</a>
+        </div>
+        <div class="post-tags" style="flex-direction: column; gap: 0.25rem; align-items: flex-end;">
+          <span class="tag">61 votes</span>
+          <span class="tag">Mar 2026</span>
+        </div>
+      </div>
+
+      <div class="past-poll">
+        <div class="past-poll-icon">📊</div>
+        <div style="flex: 1;">
+          <div class="past-poll-title">Pick March's Learning Lab topic</div>
+          <div class="past-poll-result"><span class="winner-label">✅ WINNER: Connectors for Real Estate Agents (33%)</span></div>
+          <a href="#" class="past-poll-link">Watch the recording →</a>
+        </div>
+        <div class="post-tags" style="flex-direction: column; gap: 0.25rem; align-items: flex-end;">
+          <span class="tag">49 votes</span>
+          <span class="tag">Feb 2026</span>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ================================================ -->
+    <!-- VIEW: LEARNING LABS                               -->
+    <!-- ================================================ -->
+    <main class="feed" data-view="learning-labs">
+
+      <div class="feed-header">
+        <h1 class="feed-title">🧪 Learning Labs</h1>
+        <p class="feed-subtitle">The main event. Once a month. Live or recording the next day.</p>
+      </div>
+
+      <!-- Hero: Next Learning Lab -->
+      <div class="lab-hero">
+        <div class="lab-label">📅 Next Learning Lab — Tuesday Jun 3 · 7pm ET</div>
+        <div class="lab-title">Skills vs Connectors — when to use what</div>
+        <div class="lab-meta">90 min · Brandon Z. Hoff · Level 201 · Intermediate</div>
+        <div class="countdown-time">
+          <div class="count-block">
+            <div class="count-num">6</div>
+            <div class="count-label">Days</div>
+          </div>
+          <div class="count-block">
+            <div class="count-num">14</div>
+            <div class="count-label">Hrs</div>
+          </div>
+          <div class="count-block">
+            <div class="count-num">22</div>
+            <div class="count-label">Min</div>
+          </div>
+        </div>
+        <a href="#" class="widget-btn">Add to calendar</a>
+      </div>
+
+      <!-- Past Labs grid -->
+      <div class="section-heading">📼 Past Learning Labs — Watch Anytime</div>
+
+      <div class="labs-grid">
+        <div class="lab-card">
+          <div class="lab-thumb lab-thumb-2">Skills vs Connectors — when to use what</div>
+          <div class="lab-card-body">
+            <div class="lab-card-title">Skills vs Connectors — when to use what</div>
+            <div class="lab-card-meta">
+              <span>Jun 3 2026</span>
+              <span>82 min</span>
+              <span>watched 89×</span>
+            </div>
+            <div class="post-tags" style="margin-top: 0.5rem;">
+              <span class="tag tag-level">201</span>
+              <span class="tag tag-vertical">🏢 All verticals</span>
+            </div>
+          </div>
+        </div>
+        <div class="lab-card">
+          <div class="lab-thumb lab-thumb-3">Building Your First Cowork Automation</div>
+          <div class="lab-card-body">
+            <div class="lab-card-title">Building Your First Cowork Automation</div>
+            <div class="lab-card-meta">
+              <span>May 6 2026</span>
+              <span>74 min</span>
+              <span>watched 131×</span>
+            </div>
+            <div class="post-tags" style="margin-top: 0.5rem;">
+              <span class="tag tag-level">101</span>
+              <span class="tag">🤖 Cowork</span>
+            </div>
+          </div>
+        </div>
+        <div class="lab-card">
+          <div class="lab-thumb lab-thumb-4">Claude 4.7 — What Changes for Us</div>
+          <div class="lab-card-body">
+            <div class="lab-card-title">Claude 4.7 — What Changes for Us</div>
+            <div class="lab-card-meta">
+              <span>Apr 1 2026</span>
+              <span>68 min</span>
+              <span>watched 204×</span>
+            </div>
+            <div class="post-tags" style="margin-top: 0.5rem;">
+              <span class="tag tag-level">101</span>
+              <span class="tag">📰 News</span>
+            </div>
+          </div>
+        </div>
+        <div class="lab-card">
+          <div class="lab-thumb lab-thumb-5">Connectors for Real Estate Agents</div>
+          <div class="lab-card-body">
+            <div class="lab-card-title">Connectors for Real Estate Agents</div>
+            <div class="lab-card-meta">
+              <span>Mar 4 2026</span>
+              <span>91 min</span>
+              <span>watched 77×</span>
+            </div>
+            <div class="post-tags" style="margin-top: 0.5rem;">
+              <span class="tag tag-level">201</span>
+              <span class="tag tag-vertical">🏡 Real Estate</span>
+            </div>
+          </div>
+        </div>
+        <div class="lab-card">
+          <div class="lab-thumb lab-thumb-6">The Compliance Mental Model</div>
+          <div class="lab-card-body">
+            <div class="lab-card-title">The Compliance Mental Model</div>
+            <div class="lab-card-meta">
+              <span>Feb 4 2026</span>
+              <span>58 min</span>
+              <span>watched 62×</span>
+            </div>
+            <div class="post-tags" style="margin-top: 0.5rem;">
+              <span class="tag tag-level">201</span>
+              <span class="tag">🔒 Security</span>
+            </div>
+          </div>
+        </div>
+        <div class="lab-card">
+          <div class="lab-thumb lab-thumb-1">Agent Security 101</div>
+          <div class="lab-card-body">
+            <div class="lab-card-title">Agent Security 101</div>
+            <div class="lab-card-meta">
+              <span>Jan 7 2026</span>
+              <span>85 min</span>
+              <span>watched 118×</span>
+            </div>
+            <div class="post-tags" style="margin-top: 0.5rem;">
+              <span class="tag tag-level">301</span>
+              <span class="tag">🔒 Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ================================================ -->
+    <!-- VIEW: SKILL BUILDERS                              -->
+    <!-- ================================================ -->
+    <main class="feed" data-view="skill-builders">
+
+      <div class="feed-header">
+        <h1 class="feed-title">🛠️ Skill Builders</h1>
+        <p class="feed-subtitle">Quick how-tos when something useful comes up. Ad hoc — no schedule.</p>
+      </div>
+
+      <!-- Latest featured -->
+      <div class="section-heading">🆕 Latest Skill Builder</div>
+
+      <article class="post pinned">
+        <div class="pinned-label">🆕 NEW — Posted Yesterday</div>
+        <div class="post-header">
+          <div class="post-avatar avatar-brandon">BH</div>
+          <div class="post-meta">
+            <div class="post-author">Brandon Z. Hoff <span class="author-badge badge-host">HOST</span></div>
+            <div class="post-sub"><span>Yesterday</span><span class="dot">·</span><span>Skill Builders</span></div>
+          </div>
+        </div>
+        <div class="post-body">
+          🛠️ <strong>Setting up the Google Drive connector — 30 min walkthrough.</strong><br /><br />
+          Step-by-step from zero to a working Drive connector in Claude Cowork. Covers auth, folder scoping, permission gotchas, and a real example pulling client docs into a summarization flow.
+        </div>
+        <div class="video-thumb" style="aspect-ratio: 16 / 7;">
+          <div class="play-btn">▶</div>
+          <div class="video-label">Setting up the Google Drive connector — Full walkthrough</div>
+          <div class="video-duration">30:14</div>
+        </div>
+        <div class="post-tags">
+          <span class="tag">🔌 Connectors</span>
+          <span class="tag tag-level">101 · Beginner</span>
+          <span class="tag tag-vertical">🏢 All verticals</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">🔥 33 · 🙌 18 · 💯 9</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 14 comments</span>
+          <span class="post-action"><span class="ax-emoji">▶</span> Watch · 47 viewed</span>
+        </div>
+      </article>
+
+      <!-- Skill Builders grid -->
+      <div class="section-heading">📼 All Skill Builders</div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-card-title">Cowork scheduling for weekly tasks</div>
+            <span class="skill-duration">18 min</span>
+          </div>
+          <div class="skill-card-desc">Set up a recurring Cowork flow that runs every Monday and sends a status digest. No code required.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag">🤖 Cowork</span><span class="tag tag-level">101</span></div>
+          <div class="skill-card-meta"><span class="ax-emoji">▶</span> 63 watched <span style="color: var(--gray-200);">·</span> 3 days ago</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-card-title">Writing your first Claude Skill</div>
+            <span class="skill-duration">22 min</span>
+          </div>
+          <div class="skill-card-desc">From blank file to a working skill with a real output. Covers structure, system prompt, and testing inside Claude Pro.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag">🛠️ Skills</span><span class="tag tag-level">101</span></div>
+          <div class="skill-card-meta"><span class="ax-emoji">▶</span> 112 watched <span style="color: var(--gray-200);">·</span> 5 days ago</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-card-title">Webflow + Claude for landing pages</div>
+            <span class="skill-duration">16 min</span>
+          </div>
+          <div class="skill-card-desc">Wire Claude to your Webflow CMS so new product pages draft themselves from a one-line input.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag">🔌 Connectors</span><span class="tag tag-level">201</span></div>
+          <div class="skill-card-meta"><span class="ax-emoji">▶</span> 44 watched <span style="color: var(--gray-200);">·</span> 1 week ago</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-card-title">QuickBooks export automation</div>
+            <span class="skill-duration">12 min</span>
+          </div>
+          <div class="skill-card-desc">Pull your weekly P&L export from QuickBooks and have Claude format it into a clean executive summary.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-vertical">💰 Finance</span><span class="tag tag-level">201</span></div>
+          <div class="skill-card-meta"><span class="ax-emoji">▶</span> 38 watched <span style="color: var(--gray-200);">·</span> 1 week ago</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-card-title">Email triage with Skills</div>
+            <span class="skill-duration">14 min</span>
+          </div>
+          <div class="skill-card-desc">Build a skill that reads your Gmail, categorizes by urgency, and drafts one-line reply starters for the top 5.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag">🛠️ Skills</span><span class="tag tag-level">101</span></div>
+          <div class="skill-card-meta"><span class="ax-emoji">▶</span> 97 watched <span style="color: var(--gray-200);">·</span> 2 weeks ago</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-card-title">Calendar parsing connector</div>
+            <span class="skill-duration">10 min</span>
+          </div>
+          <div class="skill-card-desc">Connect your Google Calendar to Cowork so Claude knows your schedule and can block prep time automatically.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag">🔌 Connectors</span><span class="tag tag-level">101</span></div>
+          <div class="skill-card-meta"><span class="ax-emoji">▶</span> 71 watched <span style="color: var(--gray-200);">·</span> 2 weeks ago</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-card-title">GitHub PR review automation</div>
+            <span class="skill-duration">24 min</span>
+          </div>
+          <div class="skill-card-desc">Claude reviews open PRs against your style guide and posts structured feedback as a GitHub comment. Live build.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag">🤖 Cowork</span><span class="tag tag-level">301</span></div>
+          <div class="skill-card-meta"><span class="ax-emoji">▶</span> 29 watched <span style="color: var(--gray-200);">·</span> 3 weeks ago</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <div class="skill-card-title">MLS listing → buyer email skill</div>
+            <span class="skill-duration">19 min</span>
+          </div>
+          <div class="skill-card-desc">Drop in a property URL and Claude generates a polished, personalized buyer email in your tone. Shared by Sarah Chen.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-vertical">🏡 Real Estate</span><span class="tag tag-level">201</span></div>
+          <div class="skill-card-meta"><span class="ax-emoji">▶</span> 58 watched <span style="color: var(--gray-200);">·</span> 1 month ago</div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ================================================ -->
+    <!-- VIEW: THE CAMPFIRES (existing content preserved)  -->
+    <!-- ================================================ -->
+    <main class="feed active" data-view="campfires">
+
+      <div class="feed-header">
+        <h1 class="feed-title">🔥 The Campfires</h1>
+        <p class="feed-subtitle">Where members share what they're building, what they're learning, and what they're stuck on. Brandon shows up here.</p>
+      </div>
+
+      <div class="filter-tabs">
+        <span class="tab active">Latest</span>
+        <span class="tab">Wins</span>
+        <span class="tab">Questions</span>
+        <span class="tab">Automations</span>
+        <span class="tab">News</span>
+      </div>
+
+      <div class="compose">
+        <span class="avatar">BH</span>
+        <span class="compose-placeholder">Share something around the campfire…</span>
+      </div>
+
+      <!-- PINNED POST: Next Learning Lab -->
+      <article class="post pinned">
+        <div class="pinned-label">📌 PINNED · NEXT LEARNING LAB</div>
+        <div class="post-header">
+          <div class="post-avatar avatar-brandon">BH</div>
+          <div class="post-meta">
+            <div class="post-author">Brandon Z. Hoff <span class="author-badge badge-host">HOST</span></div>
+            <div class="post-sub">
+              <span>2 days ago</span>
+              <span class="dot">·</span>
+              <span>Learning Labs · Announcement</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-body">
+          🧪 <strong>Next Learning Lab: "Skills vs Connectors — when to use what."</strong><br /><br />
+          You voted, I'm building. We'll walk through 3 real workflows where the answer isn't obvious, build one live, and I'll show the mental model I use to decide in under 10 seconds.<br /><br />
+          📅 <strong>Tuesday, June 3 · 7pm ET</strong> · Can't make it live? Recording goes up the next day.
+        </div>
+        <div class="post-tags">
+          <span class="tag">🧪 Learning Lab</span>
+          <span class="tag tag-level">201 · Intermediate</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">🔥 24 · 🙌 11 · 🎯 6</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 8 comments</span>
+          <span class="post-action"><span class="ax-emoji">📅</span> Add to calendar</span>
+        </div>
+      </article>
+
+      <!-- POST 1: Member win -->
+      <article class="post">
+        <div class="post-header">
+          <div class="post-avatar avatar-2">MJ</div>
+          <div class="post-meta">
+            <div class="post-author">Maya Johnson <span class="author-badge badge-founder">FOUNDER</span></div>
+            <div class="post-sub">
+              <span>4 hours ago</span>
+              <span class="dot">·</span>
+              <span>Posted in Campfires</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-body">
+          🎉 <strong>First automation shipped.</strong><br /><br />
+          Got the Google Drive connector wired to a Cowork flow that processes new client onboarding agreements automatically — pulls the doc, extracts key fields into our CRM, and emails the client a welcome packet. Saved me <em>~2 hrs this week</em>.<br /><br />
+          Took me 3 tries to get the prompt right. Happy to share the skill if anyone wants it.
+        </div>
+        <div class="post-tags">
+          <span class="tag">🔌 Connectors</span>
+          <span class="tag">🤖 Cowork</span>
+          <span class="tag tag-vertical">🏢 Consulting</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">🔥 18 · 🙌 9 · 💯 4</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 12 comments</span>
+          <span class="post-action"><span class="ax-emoji">↗️</span> Share</span>
+        </div>
+      </article>
+
+      <!-- POST 2: Question -->
+      <article class="post">
+        <div class="post-header">
+          <div class="post-avatar avatar-4">DR</div>
+          <div class="post-meta">
+            <div class="post-author">David Reyes</div>
+            <div class="post-sub">
+              <span>6 hours ago</span>
+              <span class="dot">·</span>
+              <span>Posted in Campfires · Question</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-body">
+          Question for the camp — anyone figured out the cleanest way to get Claude to stop hallucinating Tailwind utility classes that don't exist?<br /><br />
+          I'm using the Webflow connector and ~10% of the time it generates classes like <em>flex-3</em> or <em>p-7</em> that aren't valid. Adding "only use valid Tailwind classes" to the prompt helps but isn't bulletproof.
+        </div>
+        <div class="post-tags">
+          <span class="tag">🛠️ Skills</span>
+          <span class="tag tag-level">301 · Advanced</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">🙋 7 · 👀 4</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 5 replies · <strong style="color: var(--accent);">Brandon replied</strong></span>
+          <span class="post-action"><span class="ax-emoji">🔖</span> Save</span>
+        </div>
+      </article>
+
+      <!-- POST 3: News -->
+      <article class="post">
+        <div class="post-header">
+          <div class="post-avatar avatar-brandon">BH</div>
+          <div class="post-meta">
+            <div class="post-author">Brandon Z. Hoff <span class="author-badge badge-host">HOST</span></div>
+            <div class="post-sub">
+              <span>Yesterday</span>
+              <span class="dot">·</span>
+              <span>Posted in Campfires · News</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-body">
+          📰 <strong>Claude 4.7 just dropped.</strong><br /><br />
+          The big shifts that matter for us:<br />
+          — <strong>1M context window</strong> on Opus (was 200K)<br />
+          — Image-in / image-out in Cowork tasks<br />
+          — New "memory" feature for recurring automations<br /><br />
+          I'll cover what this changes for our workflows in next Tuesday's Learning Lab. Drop your questions below — I'll work the best ones into the session.
+        </div>
+        <div class="post-tags">
+          <span class="tag">📰 News</span>
+          <span class="tag">🤖 Cowork</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">🔥 31 · 🤯 14 · 🙌 8</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 19 comments</span>
+          <span class="post-action"><span class="ax-emoji">↗️</span> Share</span>
+        </div>
+      </article>
+
+      <!-- POST 4: Shared automation -->
+      <article class="post">
+        <div class="post-header">
+          <div class="post-avatar avatar-3">SC</div>
+          <div class="post-meta">
+            <div class="post-author">Sarah Chen <span class="author-badge badge-founder">FOUNDER</span></div>
+            <div class="post-sub">
+              <span>Yesterday</span>
+              <span class="dot">·</span>
+              <span>Posted in Campfires · Automation</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-body">
+          🛠️ <strong>Sharing: my real-estate listing email skill.</strong><br /><br />
+          Drop your MLS link in the prompt, and Claude generates a polished email for buyers — pulls property details, formats them, adds a CTA to schedule a showing. Works with the Webflow + Google Drive connectors.<br /><br />
+          Forking it = welcome. Already saving me ~15 listings/week.
+        </div>
+        <div class="post-attachment">
+          <span class="att-icon">📦</span>
+          <div>
+            <div class="att-title">real-estate-listing-email.skill</div>
+            <div class="att-sub">Saved to AI Resource Center → Verticals → Real Estate</div>
+          </div>
+        </div>
+        <div class="post-tags">
+          <span class="tag">🛠️ Skills</span>
+          <span class="tag tag-vertical">🏡 Real Estate</span>
+          <span class="tag tag-level">201 · Intermediate</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">🔥 27 · 🙌 11 · 💯 5</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 9 comments</span>
+          <span class="post-action"><span class="ax-emoji">📦</span> Fork skill</span>
+        </div>
+      </article>
+
+      <!-- POST 5: Intro -->
+      <article class="post">
+        <div class="post-header">
+          <div class="post-avatar avatar-5">JP</div>
+          <div class="post-meta">
+            <div class="post-author">Jasmine Park <span class="author-badge badge-founder">FOUNDER</span></div>
+            <div class="post-sub">
+              <span>2 days ago</span>
+              <span class="dot">·</span>
+              <span>Posted in Campfires · Intro</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-body">
+          👋 New here. FP&A at a 50-person SaaS company. I joined Camp Claude because my CFO told me to "figure out how AI fits into our forecasting" and I had no idea where to start.<br /><br />
+          First goal: automate the monthly board deck data refresh. Anyone here built something similar?
+        </div>
+        <div class="post-tags">
+          <span class="tag">🚪 Intro</span>
+          <span class="tag tag-vertical">💰 Finance</span>
+        </div>
+        <div class="post-actions">
+          <span class="post-action"><span class="reactions">👋 14 · 🙌 6</span></span>
+          <span class="post-action"><span class="ax-emoji">💬</span> 7 comments</span>
+          <span class="post-action"><span class="ax-emoji">↗️</span> Share</span>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- ================================================ -->
+    <!-- VIEW: AI RESOURCE CENTER                          -->
+    <!-- ================================================ -->
+    <main class="feed" data-view="resource-center">
+
+      <div class="feed-header">
+        <h1 class="feed-title">📚 AI Resource Center</h1>
+        <p class="feed-subtitle">Skills, templates, repos, references. The asset that compounds as you stay.</p>
+      </div>
+
+      <!-- Department selector -->
+      <div class="dept-tabs">
+        <button class="dept-tab active">🔌 Connectors</button>
+        <button class="dept-tab">🛠️ Skills</button>
+        <button class="dept-tab">🧩 Plugins</button>
+        <button class="dept-tab">🤖 Cowork & Automation</button>
+        <button class="dept-tab">🏢 Verticals</button>
+      </div>
+
+      <!-- Filter chips -->
+      <div class="filter-row">
+        <span class="filter-label">Level:</span>
+        <span class="filter-chip active">101</span>
+        <span class="filter-chip">201</span>
+        <span class="filter-chip">301</span>
+        <span class="filter-label" style="margin-left: 0.5rem;">Tool:</span>
+        <span class="filter-chip">Claude Pro</span>
+        <span class="filter-chip">Claude Max</span>
+        <span class="filter-chip">API</span>
+        <span class="filter-chip">Cowork</span>
+        <span class="filter-label" style="margin-left: 0.5rem;">Vertical:</span>
+        <span class="filter-chip">Real Estate</span>
+        <span class="filter-chip">Finance</span>
+        <span class="filter-chip">Marketing</span>
+      </div>
+
+      <!-- Resource cards -->
+      <div class="resources-grid">
+
+        <div class="resource-card">
+          <span class="resource-card-icon">🔌</span>
+          <div class="resource-card-title">Google Drive → Slack Connector Map</div>
+          <div class="resource-card-desc">Wires Drive folder events to Slack notifications via a Cowork trigger. Covers auth, scoping, and error handling.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">101</span><span class="tag">Cowork</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 41 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 17 forks</div>
+        </div>
+
+        <div class="resource-card">
+          <span class="resource-card-icon">🛠️</span>
+          <div class="resource-card-title">Real Estate Listing Email Skill</div>
+          <div class="resource-card-desc">Drop in an MLS URL, get a polished buyer email with property highlights and a showing CTA. By Sarah Chen.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">201</span><span class="tag tag-vertical">🏡 Real Estate</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 58 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 29 forks</div>
+        </div>
+
+        <div class="resource-card">
+          <span class="resource-card-icon">📑</span>
+          <div class="resource-card-title">Daily Morning Brief Template</div>
+          <div class="resource-card-desc">A Cowork template that pulls calendar, email, and news into a single briefing doc every morning at 7am.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">101</span><span class="tag">🤖 Cowork</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 93 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 44 forks</div>
+        </div>
+
+        <div class="resource-card">
+          <span class="resource-card-icon">🔗</span>
+          <div class="resource-card-title">Claude Skills Cookbook v2</div>
+          <div class="resource-card-desc">Reference repo with 12 annotated skill patterns — extraction, summarization, classification, generation, and more.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">201</span><span class="tag">🛠️ Skills</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 77 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 38 forks</div>
+        </div>
+
+        <div class="resource-card">
+          <span class="resource-card-icon">📑</span>
+          <div class="resource-card-title">FP&A Forecasting Prompt Stack</div>
+          <div class="resource-card-desc">A layered prompt stack for variance analysis, scenario modeling, and board-ready language. Built for Claude Max.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">201</span><span class="tag tag-vertical">💰 Finance</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 34 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 12 forks</div>
+        </div>
+
+        <div class="resource-card">
+          <span class="resource-card-icon">🛠️</span>
+          <div class="resource-card-title">Onboarding Email Sequence Skill</div>
+          <div class="resource-card-desc">5-email drip sequence generated from a single client intake form. Customizes tone, vertical, and pain point per lead.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">101</span><span class="tag tag-vertical">✍️ Marketing</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 66 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 31 forks</div>
+        </div>
+
+        <div class="resource-card">
+          <span class="resource-card-icon">📑</span>
+          <div class="resource-card-title">Compliance Decision Tree</div>
+          <div class="resource-card-desc">Prompt template that walks Claude through a structured compliance checklist before any client-facing output. Level 301.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">301</span><span class="tag">🔒 Security</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 28 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 9 forks</div>
+        </div>
+
+        <div class="resource-card">
+          <span class="resource-card-icon">🔌</span>
+          <div class="resource-card-title">Connector Stack Map for Consulting</div>
+          <div class="resource-card-desc">Visual reference doc — which connectors to pair for client intake, project tracking, billing, and reporting workflows.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">201</span><span class="tag tag-vertical">🏢 Consulting</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 52 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 18 forks</div>
+        </div>
+
+        <div class="resource-card">
+          <span class="resource-card-icon">🔗</span>
+          <div class="resource-card-title">Cowork Recurring Task Setup</div>
+          <div class="resource-card-desc">Step-by-step repo showing how to configure, schedule, and monitor a recurring Cowork automation with retry logic.</div>
+          <div class="post-tags" style="margin-bottom: 0.5rem;"><span class="tag tag-level">101</span><span class="tag">🤖 Cowork</span></div>
+          <div class="resource-card-footer"><span class="ax-emoji">📦</span> 81 saves <span style="color: var(--gray-200);">·</span> <span class="ax-emoji">🔀</span> 49 forks</div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="rightbar">
+
+      <!-- Countdown widget -->
+      <div class="widget">
+        <div class="widget-title">🧪 Next Learning Lab</div>
+        <div class="countdown-event">Skills vs Connectors — when to use what</div>
+        <div class="countdown-meta">Tue Jun 3 · 7pm ET · 90 min</div>
+        <div class="countdown-time">
+          <div class="count-block">
+            <div class="count-num">6</div>
+            <div class="count-label">Days</div>
+          </div>
+          <div class="count-block">
+            <div class="count-num">14</div>
+            <div class="count-label">Hrs</div>
+          </div>
+          <div class="count-block">
+            <div class="count-num">22</div>
+            <div class="count-label">Min</div>
+          </div>
+        </div>
+        <a href="#" class="widget-btn">Add to calendar</a>
+      </div>
+
+      <!-- Vote widget -->
+      <div class="widget">
+        <div class="widget-title">📊 Vote — Closes Friday</div>
+        <div class="vote-question">Pick July's Learning Lab topic</div>
+        <div class="vote-option">
+          <span>Plugins deep-dive</span>
+          <div class="vote-bar"><div class="vote-fill" style="width: 42%"></div></div>
+          <span class="vote-pct">42%</span>
+        </div>
+        <div class="vote-option">
+          <span>Cowork scheduling</span>
+          <div class="vote-bar"><div class="vote-fill" style="width: 28%"></div></div>
+          <span class="vote-pct">28%</span>
+        </div>
+        <div class="vote-option">
+          <span>Agent security</span>
+          <div class="vote-bar"><div class="vote-fill" style="width: 20%"></div></div>
+          <span class="vote-pct">20%</span>
+        </div>
+        <div class="vote-option">
+          <span>Real estate workflows</span>
+          <div class="vote-bar"><div class="vote-fill" style="width: 10%"></div></div>
+          <span class="vote-pct">10%</span>
+        </div>
+        <a href="#" class="widget-btn ghost" style="margin-top: 0.625rem;">Cast your vote</a>
+      </div>
+
+      <!-- Skill Builder -->
+      <div class="widget">
+        <div class="widget-title">🛠️ Latest Skill Builder</div>
+        <div class="countdown-event" style="font-size: 0.9375rem;">Setting up the Google Drive connector — 30 min walkthrough</div>
+        <div class="countdown-meta">Posted yesterday · 47 watched</div>
+        <a href="#" class="widget-btn ghost" style="margin-top: 0.75rem;">Watch now</a>
+      </div>
+
+      <!-- Members online -->
+      <div class="widget">
+        <div class="widget-title">👥 Members online</div>
+        <div class="members-row">
+          <span class="mini-avatar avatar-2 online">MJ</span>
+          <span class="mini-avatar avatar-3 online">SC</span>
+          <span class="mini-avatar avatar-4 online">DR</span>
+          <span class="mini-avatar avatar-5 online">JP</span>
+          <span class="mini-avatar avatar-brandon online">BH</span>
+          <span class="mini-avatar avatar-1 online">EK</span>
+          <span class="mini-avatar avatar-2 online">RT</span>
+          <span class="mini-avatar avatar-3 online">LM</span>
+        </div>
+        <div class="members-count">8 of 142 members online · 28 founders so far</div>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <script>
+    (function () {
+      var navItems = document.querySelectorAll('.sidebar .nav-item[data-target]');
+      var feeds = document.querySelectorAll('.feed[data-view]');
+
+      function showView(target) {
+        // Update nav active state
+        navItems.forEach(function (item) {
+          if (item.getAttribute('data-target') === target) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+
+        // Show matching feed, hide others
+        feeds.forEach(function (feed) {
+          if (feed.getAttribute('data-view') === target) {
+            feed.classList.add('active');
+          } else {
+            feed.classList.remove('active');
+          }
+        });
+      }
+
+      navItems.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          showView(item.getAttribute('data-target'));
+        });
+      });
+
+      // Default: campfires on load
+      showView('campfires');
+    })();
+  </script>
+
+</body>
+</html>

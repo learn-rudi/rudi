@@ -19,6 +19,7 @@ const requiredPublicFiles = [
 const forbiddenPublicEntries = ['archive', 'docs', 'internal', 'scripts', 'tools'];
 const allowedPublicRootFiles = new Set([
   'about.html',
+  'ai-training.html',
   'assessment.html',
   'camp-claude.html',
   'capabilities.html',
@@ -35,6 +36,7 @@ const allowedPublicRootFiles = new Set([
   'nsf-techaccess.html',
   'ohio.html',
   'partners.html',
+  'privacy.html',
   'prompting.html',
   'research.html',
   'resources.html',
@@ -44,9 +46,11 @@ const allowedPublicRootFiles = new Set([
   'studio.html',
   'survey-admin.html',
   'survey.html',
+  'terms.html',
   'training.html',
 ]);
 const allowedPublicRootDirectories = new Set([
+  'ai-training',
   'assets',
   'case-studies',
   'css',

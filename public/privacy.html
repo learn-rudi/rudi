@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | RUDI</title>
-    <meta name="description" content="Get in touch with RUDI. Schedule a consultation for AI training, consulting, or partnership opportunities.">
-    <meta name="keywords" content="contact RUDI, AI training consultation, AI consulting inquiry">
+    <title>Privacy Policy | RUDI</title>
+    <meta name="description" content="How RUDI collects, uses, and protects customer data. Plain English. Last updated May 2026.">
+    <meta name="robots" content="noindex">
     <meta name="author" content="RUDI">
-    <link rel="canonical" href="https://learnrudi.com/contact.html">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://learnrudi.com/contact.html">
-    <meta property="og:title" content="Contact | RUDI">
-    <meta property="og:description" content="Get in touch with RUDI for AI training and consulting.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +14,7 @@
 
     <style>
         :root {
+            --accent: #c75b39;
             --gray-900: #111111;
             --gray-800: #1a1a1a;
             --gray-700: #333333;
@@ -95,6 +90,7 @@
         .nav-links a:hover {
             color: var(--gray-900);
         }
+
         /* Hamburger Menu */
         .nav-toggle {
             display: none;
@@ -163,8 +159,6 @@
             color: var(--accent);
         }
 
-
-
         /* Hero */
         .hero {
             padding: 10rem 2rem 4rem;
@@ -198,160 +192,98 @@
         .hero-subtitle {
             font-size: 1.125rem;
             color: var(--gray-400);
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
             line-height: 1.7;
         }
 
-        /* Main Content */
+        /* Content */
         .section {
             padding: 6rem 2rem;
         }
 
         .section-inner {
-            max-width: 1100px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        /* Info Column */
-        .info-section h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .info-item {
-            display: flex;
-            gap: 1.5rem;
-            padding: 1.5rem 0;
+        .policy-section {
+            margin-bottom: 3.5rem;
+            padding-bottom: 3.5rem;
             border-bottom: 1px solid var(--gray-100);
         }
 
-        .info-item:last-child {
+        .policy-section:last-child {
             border-bottom: none;
+            margin-bottom: 0;
         }
 
-        .info-icon {
-            flex-shrink: 0;
-            width: 48px;
-            height: 48px;
-            border: 1px solid var(--gray-900);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
+        .policy-section h2 {
+            font-size: 1.25rem;
             font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
         }
 
-        .info-content h3 {
+        .policy-section p {
             font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 0.875rem;
         }
 
-        .info-content p {
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            margin: 0.75rem 0;
+        }
+
+        .policy-section ul li {
+            font-size: 1rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            padding: 0.25rem 0 0.25rem 1.25rem;
+            position: relative;
+        }
+
+        .policy-section ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--gray-400);
+        }
+
+        .policy-section a {
+            color: var(--gray-900);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .policy-section a:hover {
+            color: var(--accent);
+        }
+
+        .policy-note {
+            background: var(--gray-50);
+            border-left: 3px solid var(--gray-200);
+            padding: 1.25rem 1.5rem;
+            margin-top: 1rem;
             font-size: 0.9375rem;
             color: var(--gray-600);
+            line-height: 1.6;
         }
 
-        /* Form Column */
-        .form-section {
-            background: var(--gray-50);
-            padding: 2.5rem;
-            border: 1px solid var(--gray-100);
-        }
-
-        .form-section h2 {
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid var(--gray-200);
-            background: var(--white);
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gray-900);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-family: inherit;
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .btn-primary {
-            background: var(--gray-900);
-            color: var(--white);
-        }
-
-        /* Success Message */
-        .form-success {
-            display: none;
+        .footer-note {
             text-align: center;
-            padding: 3rem 2rem;
-        }
-
-        .form-success .check {
-            width: 64px;
-            height: 64px;
-            border: 2px solid var(--gray-900);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1.5rem;
-        }
-
-        .form-success h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-success p {
-            color: var(--gray-600);
+            padding: 2rem;
+            border-top: 1px solid var(--gray-100);
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* Footer */
@@ -419,11 +351,6 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
@@ -434,6 +361,7 @@
             .nav-links {
                 display: none;
             }
+
             .nav-toggle {
                 display: flex;
             }
@@ -441,8 +369,6 @@
             .mobile-menu {
                 display: block;
             }
-
-
 
             .hero {
                 padding: 8rem 1.5rem 3rem;
@@ -501,100 +427,109 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-inner">
-            <div class="hero-label">Contact</div>
-            <h1>Get in touch</h1>
+            <div class="hero-label">Updated May 2026</div>
+            <h1>Privacy Policy</h1>
             <p class="hero-subtitle">
-                Questions about training, consulting, or partnerships? We'd like to hear from you.
+                How RUDI (Responsible Use of Digital Intelligence) handles your data. Short and in plain English.
             </p>
         </div>
     </section>
 
-    <!-- Contact Content -->
+    <!-- Content -->
     <section class="section">
         <div class="section-inner">
-            <div class="contact-grid">
-                <div class="info-section">
-                    <h2>What we can help with</h2>
 
-                    <div class="info-item">
-                        <div class="info-icon">T</div>
-                        <div class="info-content">
-                            <h3>Training Programs</h3>
-                            <p>Discuss certification paths, team training, and custom programs for your organization.</p>
-                        </div>
-                    </div>
+            <div class="policy-section">
+                <h2>Who we are</h2>
+                <p>RUDI is the brand. <strong>P&amp;P Management Group LLC</strong> is the legal entity that operates it. We're based in Cincinnati, Ohio.</p>
+                <p>Questions about this policy: <a href="mailto:hoff@learnrudi.com">hoff@learnrudi.com</a></p>
+            </div>
 
-                    <div class="info-item">
-                        <div class="info-icon">C</div>
-                        <div class="info-content">
-                            <h3>Consulting Engagements</h3>
-                            <p>AI readiness assessments, implementation support, and strategic advisory.</p>
-                        </div>
-                    </div>
+            <div class="policy-section">
+                <h2>What data we collect</h2>
+                <p><strong>Things you give us directly:</strong></p>
+                <ul>
+                    <li>Your name and email address</li>
+                    <li>Payment information — handled entirely by Stripe. We never see or store your card number.</li>
+                    <li>Workshop registration details (what you signed up for, when)</li>
+                    <li>Any messages you send us via email or our contact form</li>
+                </ul>
+                <p><strong>Things collected automatically:</strong></p>
+                <ul>
+                    <li>Basic analytics via Vercel Analytics — page views, country, browser type. This is anonymized. No personal tracking.</li>
+                    <li>Stripe collects its own payment data per their privacy policy.</li>
+                </ul>
+            </div>
 
-                    <div class="info-item">
-                        <div class="info-icon">$</div>
-                        <div class="info-content">
-                            <h3>Ohio TechCred</h3>
-                            <p>Ohio employers may be eligible for up to $2,000 per employee for approved training.</p>
-                        </div>
-                    </div>
+            <div class="policy-section">
+                <h2>Why we collect it</h2>
+                <ul>
+                    <li>To deliver the workshops and services you paid for</li>
+                    <li>To send you the recording, templates, and follow-up materials</li>
+                    <li>To send occasional emails about new RUDI programs — you can unsubscribe anytime</li>
+                    <li>To improve our content based on what's used</li>
+                    <li>To comply with tax and legal obligations</li>
+                </ul>
+            </div>
 
-                    <div class="info-item">
-                        <div class="info-icon">P</div>
-                        <div class="info-content">
-                            <h3>Partnerships</h3>
-                            <p>Explore partnership opportunities for training providers and organizations.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-section">
-                    <h2>Send us a message</h2>
-
-                    <form id="contactForm" action="https://formspree.io/f/manpzqqe" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="company">Organization</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="interest">I'm interested in...</label>
-                            <select id="interest" name="interest">
-                                <option value="">Select an option</option>
-                                <option value="training">Training programs</option>
-                                <option value="consulting">Consulting services</option>
-                                <option value="techcred">Ohio TechCred</option>
-                                <option value="partnership">Partnership</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-
-                    <div class="form-success" id="formSuccess">
-                        <div class="check">&#10003;</div>
-                        <h3>Thank you</h3>
-                        <p>We'll be in touch within 1 business day.</p>
-                    </div>
+            <div class="policy-section">
+                <h2>Who we share it with</h2>
+                <ul>
+                    <li><strong>Stripe</strong> — payment processing. See <a href="https://stripe.com/privacy" target="_blank" rel="noopener">stripe.com/privacy</a>.</li>
+                    <li><strong>Zoom</strong> — workshop hosting. See <a href="https://zoom.us/privacy" target="_blank" rel="noopener">zoom.us/privacy</a>.</li>
+                    <li><strong>Email providers</strong> — currently sending from hoff@learnrudi.com via Gmail and may use services like Resend for transactional emails.</li>
+                    <li><strong>Vercel</strong> — website hosting and anonymized analytics.</li>
+                </ul>
+                <div class="policy-note">
+                    We do NOT sell your data to third parties. We do NOT share it with advertisers. We don't use it for anything beyond delivering what you signed up for.
                 </div>
             </div>
+
+            <div class="policy-section">
+                <h2>How long we keep it</h2>
+                <ul>
+                    <li><strong>Customer records:</strong> indefinitely while you're an active customer, or 7 years for tax records</li>
+                    <li><strong>Email subscribers:</strong> until you unsubscribe</li>
+                    <li><strong>Workshop recordings:</strong> indefinitely, so members can re-watch</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>Your rights</h2>
+                <ul>
+                    <li><strong>Request a copy of your data:</strong> email <a href="mailto:hoff@learnrudi.com">hoff@learnrudi.com</a></li>
+                    <li><strong>Request deletion:</strong> email <a href="mailto:hoff@learnrudi.com">hoff@learnrudi.com</a>. Note: we're required to keep records of paid transactions for 7 years per IRS requirements, but we'll remove your info from all marketing systems.</li>
+                    <li><strong>Opt out of emails:</strong> every email we send includes an unsubscribe link</li>
+                    <li><strong>Right to be informed of breaches:</strong> if your data is ever compromised, we'll notify you within 72 hours</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>Cookies</h2>
+                <p>We use minimal cookies: Vercel Analytics (anonymized), and any cookies Stripe or Zoom set during their respective interactions. No advertising cookies. No third-party tracking pixels.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Children</h2>
+                <p>RUDI services are intended for people 18 and over. We don't knowingly collect data from anyone under 18.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Changes to this policy</h2>
+                <p>We may update this policy from time to time. Material changes will be announced via email to existing customers. The date at the top of the page reflects the current version.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Contact</h2>
+                <p>Questions or requests: <a href="mailto:hoff@learnrudi.com">hoff@learnrudi.com</a></p>
+                <p>Mailing address: P&amp;P Management Group LLC, dba RUDI<br>520 Camden Avenue, Cincinnati, OH 45229</p>
+                <p>Also see our <a href="terms.html">Terms of Service</a>.</p>
+            </div>
+
+        </div>
+
+        <div class="footer-note">
+            Last updated May 2026. For legal questions or to request changes, contact <a href="mailto:hoff@learnrudi.com">hoff@learnrudi.com</a>.
         </div>
     </section>
 
@@ -622,48 +557,17 @@
                     <a href="about.html">About</a>
                     <a href="ohio.html">Ohio TechCred</a>
                     <a href="partners.html">Partners</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                2025 RUDI. All rights reserved.
+                2026 RUDI / P&amp;P Management Group LLC. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
-        const form = document.getElementById('contactForm');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const formData = new FormData(form);
-                const jsonData = {};
-                for (let [key, value] of formData.entries()) {
-                    jsonData[key] = value;
-                }
-
-                fetch('https://formspree.io/f/manpzqqe', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(jsonData)
-                }).then(response => {
-                    if (response.ok) {
-                        form.style.display = 'none';
-                        document.getElementById('formSuccess').style.display = 'block';
-                    } else {
-                        alert('There was an error submitting your form.');
-                    }
-                }).catch(error => {
-                    alert('There was an error submitting your form.');
-                });
-            });
-        }
-    </script>
-
-    <script>
-        // Mobile menu toggle
         const navToggle = document.querySelector('.nav-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
 
