@@ -4,7 +4,7 @@
 
 Sales reps spend nearly a fifth of their day updating their CRM.
 
-That time doesn't go to selling. It goes to logging emails, changing deal stages, and writing follow-up notes that an AI could write in two seconds.
+It goes to logging emails, updating deal stages, and drafting follow-up notes. Work that already has an automated version.
 
 That's one of seven manual handoffs I wrote about this week — moments where work stops moving because a person has to copy something from one tool into another.
 
@@ -20,7 +20,7 @@ The seven:
 
 None of these require a developer. Setup is an afternoon.
 
-The constraint was never the technology. It's knowing which problem to point it at.
+Most teams already have the tools to automate all seven. What's missing is someone who's mapped the handoff and wired the trigger — usually a two-hour job once you know where to look.
 
 Full breakdown: https://learnrudi.com/insights/ai-workflows-mcp-connectors.html
 
@@ -30,6 +30,6 @@ Full breakdown: https://learnrudi.com/insights/ai-workflows-mcp-connectors.html
 
 The moment a meeting ends, someone has to turn vague promises into actual tasks.
 
-That's a workflow. And it can run automatically.
+That handoff can run automatically.
 
 [continue with list above from #01]
